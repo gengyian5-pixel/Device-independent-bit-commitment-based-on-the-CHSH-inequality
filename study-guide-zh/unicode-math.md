@@ -7,8 +7,8 @@
 | 方式 | 命令 / 位置 |
 |---|---|
 | GitHub / Cursor 预览 | 打开任意 `study-guide-zh/*.md` 文件 |
-| HTML（KaTeX） | 运行 `bash ../scripts/build_study_guide.sh`，然后打开 `../study-guide/build/study-guide.html` |
-| PDF（XeLaTeX + Unicode 数学字体） | 使用同一脚本；打开 `../study-guide/build/study-guide.pdf` |
+| HTML（KaTeX） | 运行 `bash ../scripts/build_study_guide_zh.sh`，然后打开 `build/study-guide-zh.html` |
+| PDF（XeLaTeX + Unicode 数学字体） | 使用同一脚本；打开 `build/study-guide-zh.pdf` |
 
 XeLaTeX 随 **TeX Live**、**fontspec** 和 **unicode-math** 一同安装。正文字体使用 DejaVu；公式使用 **TeX Gyre DejaVu Math**，因此 PDF 中的希腊字母、运算符和下标都是真正的 Unicode 字形。
 
@@ -73,5 +73,5 @@ XeLaTeX 随 **TeX Live**、**fontspec** 和 **unicode-math** 一同安装。正�
 
 ```bash
 python3 ../scripts/convert_math_delimiters.py *.md   # 如果你输入了 \( ... \)
-bash ../scripts/build_study_guide.sh
+bash ../scripts/build_study_guide_zh.sh
 ```

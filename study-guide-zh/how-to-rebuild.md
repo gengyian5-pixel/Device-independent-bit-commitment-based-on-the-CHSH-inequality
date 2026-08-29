@@ -6,7 +6,7 @@
 
 | 产物 | 命令 | 输出 |
 |---|---|---|
-| 排版后的 HTML + PDF | `bash ../scripts/build_study_guide.sh` | `../study-guide/build/study-guide.html`、`../study-guide/build/study-guide.pdf` |
+| 完整中文版 HTML + PDF | `bash ../scripts/build_study_guide_zh.sh` | `build/study-guide-zh.html`、`build/study-guide-zh.pdf` |
 | 中文入门版 HTML + PDF | `bash ../scripts/build_beginner_zh.sh` | `../study-guide/build/beginner-zh.html`、`../study-guide/build/beginner-zh.pdf` |
 | 图 1 和图 3 | `python ../scripts/reconstruct_figures.py` | `../study-guide/figures/*.png` |
 | 数学定界符修复 | `python ../scripts/convert_math_delimiters.py *.md` | 就地改写 `.md` 文件 |
@@ -162,7 +162,7 @@ grep -n '$P_{\\mathrm{cont}}$' 03-bit-commitment.md | head
 从 `study-guide-zh/` 目录运行：
 
 ```bash
-bash ../scripts/build_study_guide.sh
+bash ../scripts/build_study_guide_zh.sh
 ```
 
 **脚本依次执行以下操作**
@@ -182,8 +182,8 @@ bash ../scripts/build_study_guide.sh
 Writing HTML (KaTeX)...
 Writing PDF (XeLaTeX + Unicode math font)...
 Wrote:
--rw-r--r-- ... study-guide/build/study-guide.html
--rw-r--r-- ... study-guide/build/study-guide.pdf
+-rw-r--r-- ... study-guide-zh/build/study-guide-zh.html
+-rw-r--r-- ... study-guide-zh/build/study-guide-zh.pdf
 ```
 
 PDF 步骤需要几秒钟。如果失败，终端会显示 XeLaTeX 错误；请参阅下方的**故障排除**。
@@ -191,7 +191,7 @@ PDF 步骤需要几秒钟。如果失败，终端会显示 XeLaTeX 错误；请�
 确认文件是新生成的：
 
 ```bash
-ls -lh ../study-guide/build/study-guide.html ../study-guide/build/study-guide.pdf
+ls -lh build/study-guide-zh.html build/study-guide-zh.pdf
 ```
 
 时间戳应显示为“刚刚”。
@@ -203,15 +203,15 @@ ls -lh ../study-guide/build/study-guide.html ../study-guide/build/study-guide.pd
 **HTML（检查数学公式是否已渲染的最快方式）**
 
 ```bash
-xdg-open ../study-guide/build/study-guide.html
+xdg-open build/study-guide-zh.html
 ```
 
-或者在 Cursor 中：右键单击 `../study-guide/build/study-guide.html` → Open。你应当看到目录和排版后的公式（希腊字母、分数、下标），而不是原始的 `$...$`。
+或者在 Cursor 中：右键单击 `build/study-guide-zh.html` → Open。你应当看到目录和排版后的公式（希腊字母、分数、下标），而不是原始的 `$...$`。
 
 **PDF**
 
 ```bash
-xdg-open ../study-guide/build/study-guide.pdf
+xdg-open build/study-guide-zh.pdf
 ```
 
 或者从文件树中打开它。搜索 `P_cont`，或查看第 1 章：CHSH 以及 $\le$、$\otimes$、$\pi$ 应当显示为真正的字形。
@@ -228,7 +228,7 @@ xdg-open ../study-guide/build/study-guide.pdf
 
 1. 编辑例如 `study-guide-zh/08-bob-security-asymptotic.md`。
 2. 如果你粘贴了 `\( ... \)`，运行步骤 4。
-3. 运行步骤 5（`bash ../scripts/build_study_guide.sh`）。
+3. 运行步骤 5（`bash ../scripts/build_study_guide_zh.sh`）。
 4. 重新加载 HTML 或 PDF（某些查看器会缓存文件；如果 PDF 看起来仍是旧版，请关闭后重新打开）。
 
 除非修改了绘图脚本，否则**无需**执行步骤 3。
@@ -243,7 +243,7 @@ xdg-open ../study-guide/build/study-guide.pdf
 | `katex.min.js: does not exist` | 缺少 KaTeX 软件包 | `sudo apt-get install libjs-katex fonts-katex` |
 | `Missing character: There is no … in font DejaVu Serif` | Unicode 符号位于**文本**中，而不是数学环境中 | 将其放入 `$...$`（数学字体）中，或替换为 LaTeX（`\emptyset`、`\ll`） |
 | HTML 显示原始 `$P_cont$` | 文件仍使用 `\(` `\)` | 执行步骤 4，然后执行步骤 5 |
-| PDF 构建成功，但打开的是旧版本 | 查看器缓存 | 关闭 PDF，然后重新打开 `../study-guide/build/study-guide.pdf` |
+| PDF 构建成功，但打开的是旧版本 | 查看器缓存 | 关闭 PDF，然后重新打开 `build/study-guide-zh.pdf` |
 | `python3: No module named matplotlib` | 缺少绘图依赖 | `pip install -r ../scripts/requirements.txt` |
 | 绘图脚本中的健全性检查失败 | `reconstruct_figures.py` 中的公式与 (8)–(10) 不一致 | 修复前不要重新生成图 |
 | 构建缓慢 / XeLaTeX 卡住 | 第一次运行 TeX 时可能会生成格式文件 | 等待；后续运行会更快 |
@@ -251,7 +251,7 @@ xdg-open ../study-guide/build/study-guide.pdf
 若要检查 PDF 是否确实包含 Unicode 数学字符（而不是原始 TeX 源码）：
 
 ```bash
-pdftotext -f 1 -l 5 ../study-guide/build/study-guide.pdf - | head
+pdftotext -f 1 -l 5 build/study-guide-zh.pdf - | head
 ```
 
 你应看到斜体字母和诸如 n、P、≤、∞ 的符号，而不是 `\mathrm` 和 `\le`。
@@ -265,11 +265,11 @@ pdftotext -f 1 -l 5 ../study-guide/build/study-guide.pdf - | head
 ```bash
 python3 ../scripts/convert_math_delimiters.py *.md
 python3 ../scripts/reconstruct_figures.py
-bash ../scripts/build_study_guide.sh
-ls -lh ../study-guide/build/study-guide.html ../study-guide/build/study-guide.pdf
+bash ../scripts/build_study_guide_zh.sh
+ls -lh build/study-guide-zh.html build/study-guide-zh.pdf
 ```
 
-然后打开 `../study-guide/build/study-guide.pdf`。
+然后打开 `build/study-guide-zh.pdf`。
 
 对于详细的中文入门版：
 

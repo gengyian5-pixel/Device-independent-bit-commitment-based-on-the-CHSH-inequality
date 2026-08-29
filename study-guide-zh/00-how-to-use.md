@@ -25,23 +25,23 @@
 
 各章使用 `$inline$` 和 `$$display$$` 数学格式（GitHub / KaTeX / MathJax）。它们应当能在 GitHub 和 Cursor 预览中正确渲染。如果你想要完整排版的版本：
 
-- HTML：[build/study-guide.html](../study-guide/build/study-guide.html)
-- 使用 Unicode 数学字体的 PDF：[build/study-guide.pdf](../study-guide/build/study-guide.pdf)
-- 符号卡片：[unicode-math.md](../study-guide/unicode-math.md)（π、θ、≤、⊕、⊗、√、∞、……）
-- 完整的重新构建步骤：[how-to-rebuild.md](../study-guide/how-to-rebuild.md)
+- HTML：[build/study-guide-zh.html](build/study-guide-zh.html)
+- 使用 Unicode 数学字体的 PDF：[build/study-guide-zh.pdf](build/study-guide-zh.pdf)
+- 符号卡片：[unicode-math.md](unicode-math.md)（π、θ、≤、⊕、⊗、√、∞、……）
+- 完整的重新构建步骤：[how-to-rebuild.md](how-to-rebuild.md)
 
 编辑后重新构建：
 
 ```bash
-bash scripts/build_study_guide.sh
+bash scripts/build_study_guide_zh.sh
 ```
 
 ## 建议的学习方法
 
 - 准备一本笔记本，记录由*你自己*提出并编号的引理。到撰写阶段之前，不要照抄论文中的编号。
 - 每学完一章，先合上指南，尝试不看内容，用一段话复述该章的论点。
-- 只有这样做完之后，才打开该章对应的 [solutions.md](../study-guide/solutions.md)。
-- 在开始写作之前，用 [reconstruction-checklist.md](../study-guide/reconstruction-checklist.md) 作为“论文完整性”测试。
+- 只有这样做完之后，才打开该章对应的 [solutions.md](solutions.md)。
+- 在开始写作之前，用 [reconstruction-checklist.md](reconstruction-checklist.md) 作为“论文完整性”测试。
 
 ## 推荐顺序（不要跳过）
 
