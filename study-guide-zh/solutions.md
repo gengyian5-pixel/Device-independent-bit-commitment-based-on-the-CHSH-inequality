@@ -95,7 +95,7 @@ $$
 P_{\mathrm{gain}}=\frac14\max(2A+B)=\frac14\max\bigl(A+(A+B)\bigr)\le\frac14(1+2)=\frac34.
 $$
 
-**7.4.** 若 $r^c=b$，则只要 $ab=0$，也就是以 $3/4$ 的概率，就有 $q=r^c\oplus ab=b$。
+**7.4.** 若 $r^c=b$，则只要 $ab=0$，也就是以 $3/4$ 的概率，就有 $q=r^c\oplus ab$ 等于 $b$。
 
 **7.5.** 设置 $s^{\bar c}=0$ 和 $s^c=2$ 对应同一可观测量，所以当 $b=0$ 时，Bob 的结果与 Alice 的结果相同；又因为 $q=r^c$，所以他总是猜中 $2$。当 $b=1$ 时，两可观测量相差 $\pi/2$，因此 $\langle\sigma\otimes\sigma\rangle=0$，他有一半概率猜对。平均值为 $3/4$。
 
