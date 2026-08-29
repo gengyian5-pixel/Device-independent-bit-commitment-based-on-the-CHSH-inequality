@@ -14,7 +14,7 @@ The guide is a reconstruction workbook, not a paraphrase of the paper. Each chap
 
 Chapters use GitHub-style math (`$...$` inline, `$$...$$` display). That renders in GitHub and in Cursor’s markdown preview.
 
-To get a typeset copy with Unicode math fonts (XeLaTeX + TeX Gyre DejaVu Math):
+To get a typeset copy with Unicode math fonts (XeLaTeX + TeX Gyre DejaVu Math), follow the numbered steps in [`study-guide/how-to-rebuild.md`](study-guide/how-to-rebuild.md). The short version is:
 
 ```bash
 bash scripts/build_study_guide.sh

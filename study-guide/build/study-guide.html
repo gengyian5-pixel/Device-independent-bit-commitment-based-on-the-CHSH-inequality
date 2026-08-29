@@ -468,6 +468,27 @@ in raw text)</a></li>
 <li><a href="#rebuild-after-editing-chapters" id="toc-rebuild-after-editing-chapters">Rebuild after editing
 chapters</a></li>
 </ul></li>
+<li><a href="#how-to-rebuild-step-by-step" id="toc-how-to-rebuild-step-by-step">How to rebuild (step by step)</a>
+<ul>
+<li><a href="#step-0.-open-a-terminal-in-the-repository" id="toc-step-0.-open-a-terminal-in-the-repository">Step 0. Open a
+terminal in the repository</a></li>
+<li><a href="#step-1.-check-that-the-tools-are-installed" id="toc-step-1.-check-that-the-tools-are-installed">Step 1. Check that
+the tools are installed</a></li>
+<li><a href="#step-2.-install-the-tools-only-if-step-1-failed" id="toc-step-2.-install-the-tools-only-if-step-1-failed">Step 2. Install
+the tools (only if Step 1 failed)</a></li>
+<li><a href="#step-3.-optional-rebuild-figures-1-and-3" id="toc-step-3.-optional-rebuild-figures-1-and-3">Step 3. (Optional)
+Rebuild Figures 1 and 3</a></li>
+<li><a href="#step-4.-optional-fix-math-delimiters" id="toc-step-4.-optional-fix-math-delimiters">Step 4. (Optional) Fix
+math delimiters</a></li>
+<li><a href="#step-5.-rebuild-the-html-and-pdf-the-main-step" id="toc-step-5.-rebuild-the-html-and-pdf-the-main-step">Step 5. Rebuild
+the HTML and PDF (the main step)</a></li>
+<li><a href="#step-6.-open-the-rebuilt-files" id="toc-step-6.-open-the-rebuilt-files">Step 6. Open the rebuilt
+files</a></li>
+<li><a href="#after-you-edit-a-chapter" id="toc-after-you-edit-a-chapter">After you edit a chapter</a></li>
+<li><a href="#troubleshooting" id="toc-troubleshooting">Troubleshooting</a></li>
+<li><a href="#one-shot-recipe-everything" id="toc-one-shot-recipe-everything">One-shot recipe
+(everything)</a></li>
+</ul></li>
 </ul>
 </nav>
 <h1 id="how-to-use-this-guide">0. How to use this guide</h1>
@@ -503,6 +524,7 @@ Cursor preview. If you want a fully typeset copy:</p>
 <li>PDF with Unicode math font: <a href="build/study-guide.pdf">build/study-guide.pdf</a></li>
 <li>Symbol card: <a href="unicode-math.md">unicode-math.md</a> (π, θ, ≤,
 ⊕, ⊗, √, ∞, …)</li>
+<li>Full rebuild steps: <a href="how-to-rebuild.md">how-to-rebuild.md</a></li>
 </ul>
 <p>Rebuild after editing:</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">bash</span> scripts/build_study_guide.sh</span></code></pre></div>
@@ -2829,5 +2851,288 @@ in raw text)</h2>
 chapters</h2>
 <div class="sourceCode" id="cb3"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">python3</span> scripts/convert_math_delimiters.py study-guide/<span class="pp">*</span>.md   <span class="co"># if you typed \( ... \)</span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">bash</span> scripts/build_study_guide.sh</span></code></pre></div>
+<h1 id="how-to-rebuild-step-by-step">How to rebuild (step by step)</h1>
+<p>“Rebuild” means regenerating the <strong>typeset study guide</strong>
+(HTML + PDF) from the Markdown chapters, and optionally regenerating
+<strong>Figures 1 and 3</strong>. You do this after you edit a chapter,
+or when math is not displaying.</p>
+<p>There are three products:</p>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Product</th>
+<th>Command</th>
+<th>Output</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Typeset HTML + PDF</td>
+<td><code>bash scripts/build_study_guide.sh</code></td>
+<td><code>study-guide/build/study-guide.html</code>,
+<code>study-guide/build/study-guide.pdf</code></td>
+</tr>
+<tr class="even">
+<td>Figs. 1 and 3</td>
+<td><code>python scripts/reconstruct_figures.py</code></td>
+<td><code>study-guide/figures/*.png</code></td>
+</tr>
+<tr class="odd">
+<td>Math-delimiter fix</td>
+<td><code>python scripts/convert_math_delimiters.py study-guide/*.md</code></td>
+<td>rewrites the <code>.md</code> files in place</td>
+</tr>
+</tbody>
+</table>
+<p>Do the steps below in order. Skip a step only when the text says it
+is optional.</p>
+<hr />
+<h2 id="step-0.-open-a-terminal-in-the-repository">Step 0. Open a
+terminal in the repository</h2>
+<ol type="1">
+<li>Open a terminal (in Cursor: <strong>Terminal → New
+Terminal</strong>).</li>
+<li>Go to the <strong>root of this repo</strong> — the folder that
+contains <code>scripts/</code> and <code>study-guide/</code>:</li>
+</ol>
+<div class="sourceCode" id="cb4"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="bu">pwd</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span></span></code></pre></div>
+<p>You should see <code>README.md</code>, <code>scripts/</code>, and
+<code>study-guide/</code>.</p>
+<p>If you are somewhere else:</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> /path/to/Device-independent-bit-commitment-based-on-the-CHSH-inequality</span></code></pre></div>
+<p>On this cloud workspace that path is <code>/workspace</code>.</p>
+<hr />
+<h2 id="step-1.-check-that-the-tools-are-installed">Step 1. Check that
+the tools are installed</h2>
+<p>Run:</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">which</span> pandoc xelatex python3</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="ex">pandoc</span> <span class="at">--version</span> <span class="kw">|</span> <span class="fu">head</span> <span class="at">-1</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="ex">xelatex</span> <span class="at">--version</span> <span class="kw">|</span> <span class="fu">head</span> <span class="at">-1</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="ex">python3</span> <span class="at">--version</span></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> /usr/share/javascript/katex/katex.min.js</span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a><span class="ex">fc-list</span> : family <span class="kw">|</span> <span class="fu">grep</span> <span class="at">-E</span> <span class="st">&#39;DejaVu Serif|TeX Gyre DejaVu Math&#39;</span></span></code></pre></div>
+<p><strong>What “good” looks like</strong></p>
+<ul>
+<li><code>pandoc</code> prints a path such as
+<code>/usr/bin/pandoc</code> and a version (3.x is fine).</li>
+<li><code>xelatex</code> prints a path and
+<code>XeTeX ... (TeX Live ...)</code>.</li>
+<li><code>python3</code> is 3.10+.</li>
+<li>The KaTeX file exists.</li>
+<li>Fontconfig lists <strong>DejaVu Serif</strong> and <strong>TeX Gyre
+DejaVu Math</strong>.</li>
+</ul>
+<p>If any of those fail, do <strong>Step 2</strong>. If they all
+succeed, skip to <strong>Step 3</strong>.</p>
+<hr />
+<h2 id="step-2.-install-the-tools-only-if-step-1-failed">Step 2. Install
+the tools (only if Step 1 failed)</h2>
+<p>On Debian/Ubuntu:</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt-get update</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt-get install <span class="at">-y</span> <span class="at">--no-install-recommends</span> <span class="dt">\</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>  pandoc <span class="dt">\</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>  texlive-xetex <span class="dt">\</span></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>  texlive-latex-recommended <span class="dt">\</span></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>  texlive-latex-extra <span class="dt">\</span></span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>  texlive-fonts-recommended <span class="dt">\</span></span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>  texlive-science <span class="dt">\</span></span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>  latexmk <span class="dt">\</span></span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>  fonts-dejavu <span class="dt">\</span></span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a>  fonts-lmodern <span class="dt">\</span></span>
+<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a>  fonts-texgyre <span class="dt">\</span></span>
+<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a>  fonts-texgyre-math <span class="dt">\</span></span>
+<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a>  libjs-katex <span class="dt">\</span></span>
+<span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a>  fonts-katex</span></code></pre></div>
+<p>For the figure script only:</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="ex">python3</span> <span class="at">-m</span> pip install <span class="at">-r</span> scripts/requirements.txt</span></code></pre></div>
+<p>That installs <code>numpy</code> and <code>matplotlib</code>.</p>
+<p>Then repeat <strong>Step 1</strong>.</p>
+<hr />
+<h2 id="step-3.-optional-rebuild-figures-1-and-3">Step 3. (Optional)
+Rebuild Figures 1 and 3</h2>
+<p>Do this if you changed the analytic formulae, or if
+<code>study-guide/figures/</code> is missing the PNGs.</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="ex">python3</span> scripts/reconstruct_figures.py</span></code></pre></div>
+<p><strong>What should happen</strong></p>
+<pre><code>sanity checks passed:
+  theta=pi/4 =&gt; phi=0.785398, I=2.828427, C=0.853553
+  D=4+2√2=6.828427
+wrote .../study-guide/figures/fig1_alice_control.png
+wrote .../study-guide/figures/fig3_finite_N.png</code></pre>
+<p>If the sanity checks fail, the formulae in the script no longer match
+equations (8)–(10) of the paper. Do not ignore that.</p>
+<hr />
+<h2 id="step-4.-optional-fix-math-delimiters">Step 4. (Optional) Fix
+math delimiters</h2>
+<p>The HTML/PDF builder and GitHub preview expect:</p>
+<ul>
+<li>inline math: <code>$P_{\mathrm{cont}}$</code></li>
+<li>display math:</li>
+</ul>
+<div class="sourceCode" id="cb11"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>P_{\mathrm{cont}}=\cos^2(\theta/2)</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>$$</span></code></pre></div>
+<p>They do <strong>not</strong> render <code>\( ... \)</code> /
+<code>\[ ... \]</code> reliably.</p>
+<p>If you (or an editor) typed the LaTeX-style delimiters, convert them
+first:</p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="ex">python3</span> scripts/convert_math_delimiters.py study-guide/<span class="pp">*</span>.md</span></code></pre></div>
+<p>The script rewrites those files in place and skips fenced code blocks
+(including mermaid). If a file was already using <code>$...$</code>, it
+prints <code>unchanged</code>.</p>
+<p>Check one file:</p>
+<div class="sourceCode" id="cb13"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">grep</span> <span class="at">-n</span> <span class="st">&#39;$P_{\\mathrm{cont}}$&#39;</span> study-guide/03-bit-commitment.md <span class="kw">|</span> <span class="fu">head</span></span></code></pre></div>
+<p>You should see dollar-delimited math, not <code>\(</code>
+<code>\)</code>.</p>
+<hr />
+<h2 id="step-5.-rebuild-the-html-and-pdf-the-main-step">Step 5. Rebuild
+the HTML and PDF (the main step)</h2>
+<p>From the repo root:</p>
+<div class="sourceCode" id="cb14"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">bash</span> scripts/build_study_guide.sh</span></code></pre></div>
+<p><strong>What the script does, in order</strong></p>
+<ol type="1">
+<li>Resolves the repo root from the location of
+<code>scripts/</code>.</li>
+<li>Creates <code>study-guide/build/</code> if it does not exist.</li>
+<li>Concatenates the chapters in this order: <code>00</code> …
+<code>11</code>, then <code>equation-map.md</code>,
+<code>reconstruction-checklist.md</code>, <code>unicode-math.md</code>.
+(<code>solutions.md</code> is <strong>not</strong> included, so the
+built book stays a workbook.)</li>
+<li>Runs <strong>Pandoc → HTML</strong>, using the local KaTeX files at
+<code>/usr/share/javascript/katex/</code> and embedding CSS/fonts so the
+HTML is self-contained.</li>
+<li>Runs <strong>Pandoc → XeLaTeX → PDF</strong>, with:
+<ul>
+<li>body font: DejaVu Serif</li>
+<li>math font: TeX Gyre DejaVu Math (Unicode: π, ≤, ⊕, subscripts,
+…)</li>
+</ul></li>
+<li>Prints the sizes of the two output files.</li>
+</ol>
+<p><strong>What should happen</strong></p>
+<pre><code>Writing HTML (KaTeX)...
+Writing PDF (XeLaTeX + Unicode math font)...
+Wrote:
+-rw-r--r-- ... study-guide/build/study-guide.html
+-rw-r--r-- ... study-guide/build/study-guide.pdf</code></pre>
+<p>The PDF step takes a few seconds. If it fails, the terminal will show
+a XeLaTeX error; see <strong>Troubleshooting</strong> below.</p>
+<p>Confirm the files are new:</p>
+<div class="sourceCode" id="cb16"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> <span class="at">-lh</span> study-guide/build/study-guide.html study-guide/build/study-guide.pdf</span></code></pre></div>
+<p>The timestamps should be “just now”.</p>
+<hr />
+<h2 id="step-6.-open-the-rebuilt-files">Step 6. Open the rebuilt
+files</h2>
+<p><strong>HTML (fastest way to check that math rendered)</strong></p>
+<div class="sourceCode" id="cb17"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">xdg-open</span> study-guide/build/study-guide.html</span></code></pre></div>
+<p>Or in Cursor: right-click
+<code>study-guide/build/study-guide.html</code> → Open. You should see a
+table of contents and typeset formulae (Greek letters, fractions,
+subscripts), not raw <code>$...$</code>.</p>
+<p><strong>PDF</strong></p>
+<div class="sourceCode" id="cb18"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="fu">xdg-open</span> study-guide/build/study-guide.pdf</span></code></pre></div>
+<p>Or open it from the file tree. Search for <code>P_cont</code> or look
+at Chapter 1: CHSH and (), (), () should be real glyphs.</p>
+<p><strong>Markdown preview (no rebuild needed for this
+one)</strong></p>
+<p>Open any <code>study-guide/*.md</code> in Cursor. GitHub-style
+<code>$...$</code> math should render in preview. If you only see the
+dollar signs, use the HTML/PDF from Step 5.</p>
+<hr />
+<h2 id="after-you-edit-a-chapter">After you edit a chapter</h2>
+<p>Typical loop:</p>
+<ol type="1">
+<li>Edit
+e.g. <code>study-guide/08-bob-security-asymptotic.md</code>.</li>
+<li>If you pasted <code>\( ... \)</code>, run Step 4.</li>
+<li>Run Step 5 (<code>bash scripts/build_study_guide.sh</code>).</li>
+<li>Reload the HTML or PDF (some viewers cache; close and reopen the PDF
+if it looks old).</li>
+</ol>
+<p>You do <strong>not</strong> need Step 3 unless you changed the figure
+script.</p>
+<hr />
+<h2 id="troubleshooting">Troubleshooting</h2>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Symptom</th>
+<th>Likely cause</th>
+<th>Fix</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>pandoc: command not found</code> or
+<code>xelatex: command not found</code></td>
+<td>TeX/Pandoc not installed</td>
+<td>Step 2</td>
+</tr>
+<tr class="even">
+<td><code>katex.min.js: does not exist</code></td>
+<td>KaTeX package missing</td>
+<td><code>sudo apt-get install libjs-katex fonts-katex</code></td>
+</tr>
+<tr class="odd">
+<td><code>Missing character: There is no … in font DejaVu Serif</code></td>
+<td>A Unicode symbol is in <strong>text</strong>, not math</td>
+<td>Put it in <code>$...$</code> (math font) or replace with LaTeX
+(<code>\emptyset</code>, <code>\ll</code>)</td>
+</tr>
+<tr class="even">
+<td>HTML shows raw <code>$P_cont$</code></td>
+<td>File still uses <code>\(</code> <code>\)</code></td>
+<td>Step 4, then Step 5</td>
+</tr>
+<tr class="odd">
+<td>PDF succeeded but an old version opens</td>
+<td>Viewer cache</td>
+<td>Close the PDF, reopen
+<code>study-guide/build/study-guide.pdf</code></td>
+</tr>
+<tr class="even">
+<td><code>python3: No module named matplotlib</code></td>
+<td>Figure deps missing</td>
+<td><code>pip install -r scripts/requirements.txt</code></td>
+</tr>
+<tr class="odd">
+<td>Sanity check in figure script fails</td>
+<td>Formulae in <code>reconstruct_figures.py</code> do not match
+(8)–(10)</td>
+<td>Do not rebuild figures until that is fixed</td>
+</tr>
+<tr class="even">
+<td>Build is slow / XeLaTeX hangs</td>
+<td>First TeX run can generate formats</td>
+<td>Wait; later runs are faster</td>
+</tr>
+</tbody>
+</table>
+<p>To see whether the PDF actually contains Unicode math (not raw TeX
+source):</p>
+<div class="sourceCode" id="cb19"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="ex">pdftotext</span> <span class="at">-f</span> 1 <span class="at">-l</span> 5 study-guide/build/study-guide.pdf <span class="at">-</span> <span class="kw">|</span> <span class="fu">head</span></span></code></pre></div>
+<p>You want characters such as <code>𝑛</code>, <code>𝑃</code>,
+<code>≤</code>, <code>∞</code>, not <code>\mathrm</code> and
+<code>\le</code>.</p>
+<hr />
+<h2 id="one-shot-recipe-everything">One-shot recipe (everything)</h2>
+<p>From the repo root, after tools are installed:</p>
+<div class="sourceCode" id="cb20"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="ex">python3</span> scripts/convert_math_delimiters.py study-guide/<span class="pp">*</span>.md</span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a><span class="ex">python3</span> scripts/reconstruct_figures.py</span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a><span class="fu">bash</span> scripts/build_study_guide.sh</span>
+<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> <span class="at">-lh</span> study-guide/build/study-guide.html study-guide/build/study-guide.pdf</span></code></pre></div>
+<p>Then open <code>study-guide/build/study-guide.pdf</code>.</p>
 </body>
 </html>

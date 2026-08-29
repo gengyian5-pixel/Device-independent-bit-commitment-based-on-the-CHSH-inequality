@@ -21,6 +21,7 @@ The chapters use `$inline$` and `$$display$$` math (GitHub / KaTeX / MathJax). T
 - HTML: [build/study-guide.html](build/study-guide.html)
 - PDF with Unicode math font: [build/study-guide.pdf](build/study-guide.pdf)
 - Symbol card: [unicode-math.md](unicode-math.md) (π, θ, ≤, ⊕, ⊗, √, ∞, …)
+- Full rebuild steps: [how-to-rebuild.md](how-to-rebuild.md)
 
 Rebuild after editing:
 

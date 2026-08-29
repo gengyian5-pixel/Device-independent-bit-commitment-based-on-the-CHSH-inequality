@@ -21,14 +21,14 @@ Work in this order:
 
 Then:
 
+- [How to rebuild (step by step)](how-to-rebuild.md)
 - [Reconstruction checklist](reconstruction-checklist.md)
 - [Equation map](equation-map.md)
 - [Worked solutions](solutions.md) — after you have tried the exercises
-
 - [Unicode / LaTeX symbol card](unicode-math.md)
 - [HTML (KaTeX)](build/study-guide.html) and [PDF (XeLaTeX)](build/study-guide.pdf)
 
-Rebuild Figs. 1 and 3, then the typeset guide:
+Rebuild Figs. 1 and 3, then the typeset guide (details in [how-to-rebuild.md](how-to-rebuild.md)):
 
 ```bash
 python scripts/reconstruct_figures.py

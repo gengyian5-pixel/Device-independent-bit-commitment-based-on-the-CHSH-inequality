@@ -23,6 +23,7 @@ CHAPTERS=(
   equation-map.md
   reconstruction-checklist.md
   unicode-math.md
+  how-to-rebuild.md
 )
 
 SOURCES=()
