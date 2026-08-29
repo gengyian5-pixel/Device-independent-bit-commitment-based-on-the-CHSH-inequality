@@ -29,7 +29,6 @@ Rebuild after editing:
 bash scripts/build_study_guide.sh
 ```
 
-
 ## Suggested working method
 
 - Keep a notebook with numbered lemmas of *your* making. Do not copy the paper’s numbering until the write-up stage.

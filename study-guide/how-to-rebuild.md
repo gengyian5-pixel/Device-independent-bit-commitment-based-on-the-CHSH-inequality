@@ -207,7 +207,7 @@ Or in Cursor: right-click `study-guide/build/study-guide.html` → Open. You sho
 xdg-open study-guide/build/study-guide.pdf
 ```
 
-Or open it from the file tree. Search for `P_cont` or look at Chapter 1: CHSH and \(\le\), \(\otimes\), \(\pi\) should be real glyphs.
+Or open it from the file tree. Search for `P_cont` or look at Chapter 1: CHSH and $\le$, $\otimes$, $\pi$ should be real glyphs.
 
 **Markdown preview (no rebuild needed for this one)**
 
@@ -247,7 +247,7 @@ To see whether the PDF actually contains Unicode math (not raw TeX source):
 pdftotext -f 1 -l 5 study-guide/build/study-guide.pdf - | head
 ```
 
-You want characters such as `𝑛`, `𝑃`, `≤`, `∞`, not `\mathrm` and `\le`.
+You want italic letters and symbols such as n, P, ≤, ∞, not `\mathrm` and `\le`.
 
 ---
 
