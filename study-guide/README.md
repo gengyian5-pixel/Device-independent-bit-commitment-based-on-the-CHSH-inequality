@@ -15,7 +15,7 @@ Work in this order:
 6. [The protocol](06-protocol.md)
 7. [Alice’s security](07-alice-security.md)
 8. [Bob’s security (asymptotic)](08-bob-security-asymptotic.md)
-9. [Bob’s security (finite \(N\))](09-bob-security-finite.md)
+9. [Bob’s security (finite $N$)](09-bob-security-finite.md)
 10. [Appendices A–C](10-appendices.md)
 11. [Write the paper](11-write-the-paper.md)
 
@@ -25,10 +25,12 @@ Then:
 - [Equation map](equation-map.md)
 - [Worked solutions](solutions.md) — after you have tried the exercises
 
-Rebuild Figs. 1 and 3:
+- [Unicode / LaTeX symbol card](unicode-math.md)
+- [HTML (KaTeX)](build/study-guide.html) and [PDF (XeLaTeX)](build/study-guide.pdf)
+
+Rebuild Figs. 1 and 3, then the typeset guide:
 
 ```bash
 python scripts/reconstruct_figures.py
+bash scripts/build_study_guide.sh
 ```
-
-Output goes to `study-guide/figures/`.

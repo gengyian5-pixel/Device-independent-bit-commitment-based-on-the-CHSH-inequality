@@ -10,14 +10,31 @@ Read [`study-guide/00-how-to-use.md`](study-guide/00-how-to-use.md) and then wor
 
 The guide is a reconstruction workbook, not a paraphrase of the paper. Each chapter tells you **what to derive**, **why it is needed**, and **how to check yourself**. Worked solutions live in [`study-guide/solutions.md`](study-guide/solutions.md); use them only after you have attempted the exercises. An equation-by-equation index is in [`study-guide/equation-map.md`](study-guide/equation-map.md).
 
+## How to see the math
+
+Chapters use GitHub-style math (`$...$` inline, `$$...$$` display). That renders in GitHub and in Cursor’s markdown preview.
+
+To get a typeset copy with Unicode math fonts (XeLaTeX + TeX Gyre DejaVu Math):
+
+```bash
+bash scripts/build_study_guide.sh
+```
+
+Then open:
+
+- [`study-guide/build/study-guide.html`](study-guide/build/study-guide.html) — KaTeX in the browser
+- [`study-guide/build/study-guide.pdf`](study-guide/build/study-guide.pdf) — printable PDF
+
+A Unicode symbol card (π, ≤, ⊕, ⊗, …) is in [`study-guide/unicode-math.md`](study-guide/unicode-math.md).
+
 ## Target numbers (so you know what you are aiming at)
 
 In the infinite-test limit the protocol matches the GHZ-based protocol of Silman *et al.*, PRL **106**, 220501 (2011):
 
 | Quantity | Symbol | Value |
 |---|---|---|
-| Alice’s control (cheating probability) | \(P_{\mathrm{cont}}\) | \(\cos^2(\pi/8)\simeq 0.8536\) |
-| Bob’s information gain | \(P_{\mathrm{gain}}\) | \(3/4 = 0.75\) |
+| Alice’s control (cheating probability) | $P_{\mathrm{cont}}$ | $\cos^2(\pi/8)\simeq 0.8536$ |
+| Bob’s information gain | $P_{\mathrm{gain}}$ | $3/4 = 0.75$ |
 
 The price is that Alice cannot choose the reveal time freely. Appendices B and C of the paper remove that restriction in two different ways.
 
@@ -25,20 +42,13 @@ The price is that Alice cannot choose the reveal time freely. Appendices B and C
 
 ```
 study-guide/          reconstruction workbook
-  00-how-to-use.md
-  01-prerequisites.md
-  02-the-research-question.md
-  03-bit-commitment.md
-  04-device-independence.md
-  05-honest-resources.md
-  06-protocol.md
-  07-alice-security.md
-  08-bob-security-asymptotic.md
-  09-bob-security-finite.md
-  10-appendices.md
-  11-write-the-paper.md
-  reconstruction-checklist.md
-  solutions.md
+  ...
+  unicode-math.md      Unicode / LaTeX symbol card
+  build/
+    study-guide.html   KaTeX HTML
+    study-guide.pdf    XeLaTeX PDF (Unicode math font)
 scripts/
-  reconstruct_figures.py   rebuild Figs. 1 and 3 from the analytic formulae
+  reconstruct_figures.py
+  convert_math_delimiters.py
+  build_study_guide.sh
 ```
