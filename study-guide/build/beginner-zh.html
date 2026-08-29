@@ -490,7 +490,10 @@ NPA：为什么需要计算机，但不神秘</a></li>
 </ul>
 <p>这叫 <strong>比特承诺</strong>（bit commitment），像把一张写好 0/1
 的纸放进信封：封口后你改不了字，对方撕开前看不到字。</p>
-<p>古典世界里，如果对方电脑无限强、什么都算得出来，这种信封要么能被拆穿，要么能被改口，<strong>做不到两边同时防</strong>。量子世界也<strong>做不到完美</strong>（永远封死、永远看不穿），但可以做到<strong>两边都只能部分作弊</strong>。这篇论文就是给出一种这样的协议，并且声称：就算测量仪器内部怎么做的你完全不知道，只要仪器表现得“够非定域”，协议仍然安全。</p>
+<p>在标准的非相对论、无可信第三方、无预共享设置、要求信息论安全的两方模型中，经典协议不能同时做到隐藏性和绑定性；标准量子模型中也不存在完美比特承诺。不过，允许作弊概率大于
+<span class="math inline">1/2</span> 的不完美量子协议仍然存在。</p>
+<p>这篇论文给出这样一种协议，而且不依赖设备内部维数、状态和测量实现。但“设备无关”<strong>不是没有假设</strong>：安全性仍建立在量子理论、可信私人随机数、诚实实验室不泄密、需要时两盒不能通信，以及每次输入都有输出之上。CHSH
+统计是在这些前提下约束未知设备的可观测证据。</p>
 <h2 id="只要四个日常概念">1.2 只要四个日常概念</h2>
 <h3 id="比特">比特</h3>
 <p>一个比特是一个只能取 <strong>0 或 1</strong>
@@ -553,8 +556,9 @@ s^0=0,s^1=1)=0.4</span>，意思是这组按钮下出现“左灯 0、右灯 1�
 <li>一个显示屏：它吐出一个比特 <span class="math inline">r</span>（0 或
 1）。</li>
 </ul>
-<p>你<strong>不许打开盒子看里面</strong>。厂商可能在撒谎，Alice 或 Bob
-也可能事先把盒子做手脚。这就是“设备无关”：安全不能靠“说明书上写着这是光子偏振计”。</p>
+<p>你<strong>不许靠打开盒子确认内部实现</strong>。厂商可能在撒谎，Alice
+或 Bob
+也可能事先把盒子做手脚。这就是“设备无关”：安全不能靠“说明书上写着这是光子偏振计”，而要靠协议假设和实际输入输出统计共同证明。</p>
 <h3 id="不能传信无信令">不能传信（无信令）</h3>
 <p>两只盒子可以很神奇地“对答案”，但有一条铁律：</p>
 <blockquote>
@@ -576,6 +580,60 @@ s^0=0,s^1=1)=0.4</span>，意思是这组按钮下出现“左灯 0、右灯 1�
 <p>合法的量子关联可以让两边把记录拿到一起比较时发现惊人的规律，但 Bob
 <strong>单独</strong>看自己的记录时，每个按钮下仍看不出 Alice
 的选择。比较记录需要普通通信；在比较之前不能超光速传消息。</p>
+<h3 id="用概率表真的算一次">用概率表真的算一次</h3>
+<p>假设 Bob 固定按 <span class="math inline">y=0</span>。无论 Alice 按
+<span class="math inline">x=0</span> 还是 <span class="math inline">x=1</span>，联合概率都可能改变，但 Bob
+的边际保持不变：</p>
+<table style="width:100%;">
+<colgroup>
+<col style="width: 14%" />
+<col style="width: 14%" />
+<col style="width: 14%" />
+<col style="width: 14%" />
+<col style="width: 14%" />
+<col style="width: 14%" />
+<col style="width: 14%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: right;">Alice 输入 <span class="math inline">x</span></th>
+<th style="text-align: right;"><span class="math inline">P(00\mid
+x,0)</span></th>
+<th style="text-align: right;"><span class="math inline">P(01\mid
+x,0)</span></th>
+<th style="text-align: right;"><span class="math inline">P(10\mid
+x,0)</span></th>
+<th style="text-align: right;"><span class="math inline">P(11\mid
+x,0)</span></th>
+<th style="text-align: right;">Bob 见 0 的概率</th>
+<th style="text-align: right;">Bob 见 1 的概率</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.50</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.50</td>
+<td style="text-align: right;"><span class="math inline">0.50+0=0.50</span></td>
+<td style="text-align: right;"><span class="math inline">0+0.50=0.50</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0.25</td>
+<td style="text-align: right;">0.25</td>
+<td style="text-align: right;">0.25</td>
+<td style="text-align: right;">0.25</td>
+<td style="text-align: right;"><span class="math inline">0.25+0.25=0.50</span></td>
+<td style="text-align: right;"><span class="math inline">0.25+0.25=0.50</span></td>
+</tr>
+</tbody>
+</table>
+<p>第一行两边总相同，第二行完全随机，<strong>相关结构不同</strong>；但
+Bob 单看自己，两个输入下都只见到各 50% 的 0/1，因此不知道 Alice
+选了什么。注意表头 <span class="math inline">P(r^0r^1\mid x,0)</span>
+中第二位输出属于 Bob。</p>
 <h2 id="诚实的人和作弊的人">1.4 诚实的人和作弊的人</h2>
 <p>协议里永远要分清三种角色：</p>
 <table>
@@ -726,6 +784,7 @@ B_1</span>。矛盾。因此四题至少错一题；题目均匀出现时最多�
 <li>胜率 75% 对应 <span class="math inline">|I|\le 2</span>；</li>
 <li><span class="math inline">I</span> 越大，表示“比瞎约定更会赢”。</li>
 </ul>
+<p>这里固定采用论文的正号与输出标签约定，所以关注 <span class="math inline">I</span> 朝正方向增大。一般写经典界时应写 <span class="math inline">|I|\le2</span>；一个负方向的违反通常可通过局部重标记输出改成正方向。</p>
 <p>更精确地，若每种输入一样常见，CHSH 胜率 <span class="math inline">p_{\mathrm{win}}</span> 与分数 <span class="math inline">I</span> 的关系是</p>
 <p><span class="math display">
 p_{\mathrm{win}}=\frac12+\frac{I}{8},
@@ -789,10 +848,10 @@ I=8p_{\mathrm{win}}-4.
 <strong>没有</strong>伪心灵感应。</p>
 </blockquote>
 <p>旧的设备无关比特承诺就是靠 GHZ
-的“必赢”，才能用<strong>同一次按键</strong>既检查“盒子够神奇”，又检查“Alice
-没改口”。CHSH
-做不到必赢，所以必须换招：<strong>把“检查神奇”藏进很多轮里，让盒子分不清哪一轮才是在抓作弊。</strong>
-这就是本文的核心发明。</p>
+理想关联的“必赢”，才能在同一轮随机一致性检验中既约束盒子，又检查 Alice
+的揭示；一旦违反必胜关系便立即失败。要注意：<strong>单次获胜本身不能像多轮
+Bell 统计那样认证任意未知设备。</strong> CHSH
+做不到必赢，所以本文换招：<strong>把核验轮藏进许多可能的测试轮中，让盒子分不清哪一轮才是在抓作弊。</strong></p>
 <h2 id="同一对盒子的第二种用法对答案">2.4
 同一对盒子的第二种用法：对答案</h2>
 <p>诚实的盒子除了会玩
@@ -807,7 +866,9 @@ CHSH，还被调成：某些按钮组合下，<strong>两屏数字必须一样</
 <li>另一组配对按钮：用来让两只盒子<strong>对齐同一个比特</strong>（理想情况
 100% 相同）。</li>
 </ol>
-<p>噪声存在时两件事都会打折，所以协议允许“差一点就作废重来”。</p>
+<p>噪声会降低 CHSH 分数，也会使诚实的最终相等性检查偶尔失败。协议只对
+CHSH
+<strong>平均分</strong>设置阈值；最终两输出不相等时仍直接中止，并没有另设容差，也不能把“中止”自动理解为安全地重试。</p>
 <h2 id="检查点零公式版">2.5 检查点（零公式版）</h2>
 <ul>
 <li>CHSH 是一场不许通话的答题游戏。</li>
@@ -874,10 +935,9 @@ gain）</strong><br />
 <td>有人证明量子平衡协议最好也只能到大约 <span class="math inline">0.739</span></td>
 </tr>
 <tr class="odd">
-<td><strong>本文</strong></td>
+<td><strong>本文（最大 CHSH、渐近极限）</strong></td>
 <td>约 <span class="math inline">0.85</span> 对 <span class="math inline">0.75</span></td>
-<td><strong>不平衡</strong>；不是去打 <span class="math inline">0.739</span> 那个纪录，而是去打“设备无关 +
-只用两只盒子”</td>
+<td><strong>不平衡</strong>；有限轮、较低阈值下 Alice 的上界会更高</td>
 </tr>
 </tbody>
 </table>
@@ -901,8 +961,9 @@ P_{\mathrm{cont}}=\frac{p_0+p_1}{2}.
 也能支撑设备无关的互不信任协议。</p>
 <h2 id="设备无关说明书作废">3.3 设备无关：说明书作废</h2>
 <p>普通量子密码常常假设：“这台机器真的在测光子的某个角度。”有人做过实验攻击：用别的光脉冲骗过探测器。</p>
-<p><strong>设备无关</strong>的意思：把每台机器当成黑盒子。安全结论只来自你们<strong>看见的按钮与屏幕统计</strong>——例如
-CHSH 游戏赢得够多——而不是来自厂家标签。</p>
+<p><strong>设备无关</strong>的意思：安全证明不依赖设备内部维数、量子态和测量实现。它把设备当成黑盒子，用你们<strong>看见的按钮与屏幕统计</strong>——例如
+CHSH
+游戏赢得够多——而不是厂家标签来约束行为；但仍需量子理论、可信私人随机数、诚实实验室不泄密、盒间可隔离和无损失等前提。</p>
 <p>代价：盒子必须表现出“非定域”（游戏赢过经典
 75%）。如果它们表现得像普通事先约定，协议会直接中止。</p>
 <h2 id="安全模型到底在比较什么">3.4 安全模型到底在比较什么</h2>
@@ -942,16 +1003,16 @@ CHSH 游戏赢得够多——而不是来自厂家标签。</p>
 谁是需要被保护的诚实方。</strong></p>
 <h2 id="和相对论信封的区别避免混">3.5
 和“相对论信封”的区别（避免混）</h2>
-<p>还有一种完美比特承诺，靠<strong>光速</strong>：让承诺和揭示发生在对对方来说来不及通风报信的地方。那需要至少一方有<strong>两座离得很远的安全实验室</strong>。</p>
+<p>还有一类相对论比特承诺，安全性靠<strong>光速上限</strong>和特定时空安排：让空间分离的代理在协议要求的时间窗内来不及通风报信。其“完美”或持续安全性取决于具体协议、代理与时空模型；通常至少一方需要多个空间分离的安全站点。</p>
 <p>本文<strong>不</strong>走这条路：每方一座实验室，靠把盒子<strong>屏蔽</strong>起来不让它们通话，不要求测量必须“同时到没法传光”。</p>
 <h2 id="检查点">3.6 检查点</h2>
 <ul>
 <li>承诺 = 先交凭证、后公布内容。</li>
 <li>Alice 怕的是自己改不了；Bob
 怕的是自己看不穿——两者互相矛盾，所以只能部分安全。</li>
-<li>设备无关 = 不信任仪器内部，只信任按钮和灯。</li>
-<li>本文数字是大约 85%（Alice）对
-75%（Bob），不是完美，也不是“平衡最优”。</li>
+<li>设备无关 = 不依赖仪器内部实现，但仍需要明确的物理与实验假设。</li>
+<li>本文渐近最大 CHSH 数字是约 85%（Alice）对
+75%（Bob），不是诚实成功率，也不是“平衡最优”。</li>
 </ul>
 <p>下一节：把黑盒子、CHSH 游戏和信封三件事，按时间顺序装成协议。</p>
 <h1 id="协议故事闹钟抽签寄盒子">4. 协议故事：闹钟、抽签、寄盒子</h1>
@@ -962,10 +1023,11 @@ CHSH 游戏赢得够多——而不是来自厂家标签。</p>
 <li>两只黑盒子，按钮 0,1,2,3，屏幕 0 或 1。</li>
 <li>一只大家都看得见的<strong>闹钟</strong>，响铃时刻 <span class="math inline">t_1&lt;t_2&lt;\cdots</span> 事先写在纸上。</li>
 <li>一个公开的及格线 <span class="math inline">I_{\mathrm{th}}</span>（“CHSH 要打得够好”）。</li>
-<li>一个事先约定的最大测试轮数 <span class="math inline">N</span>（比如几十、几百）。</li>
+<li>一个事先约定的最大测试轮数 <span class="math inline">N</span>。所需大小取决于阈值和目标安全参数；本文的有限轮界很保守，不能凭“几十或几百轮”断言已经足够安全。</li>
 </ul>
 <p>诚实时，两只盒子像一对默契搭档：用 0、1 键打 CHSH 能接近 85%
 胜率；用另外的配对键则屏幕数字相同。</p>
+<p>“重复使用盒子”不表示反复测量同一对粒子。诚实实现可以在盒内预存很多对共享量子子系统，每轮消耗一对；盒子的控制器则可以保留跨轮记忆。安全证明允许这种长期记忆。</p>
 <h2 id="为什么要有闹钟">4.2 为什么要有闹钟</h2>
 <p>不诚实的 Alice 最怕什么？她希望：</p>
 <ul>
@@ -978,11 +1040,43 @@ CHSH 游戏赢得够多——而不是来自厂家标签。</p>
 CHSH”和“抓改口”。</p>
 <p>两个铃之间还要留够时间：寄量子系统、Alice 按键、把古典比特寄回、Bob
 再按自己那只盒子。</p>
+<h3 id="两道防线解决的是不同攻击">两道防线解决的是不同攻击</h3>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>防线</th>
+<th>阻止盒子依据什么切换？</th>
+<th>若去掉会怎样？</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>秘密随机 <span class="math inline">n</span></td>
+<td>“这是第几次使用”</td>
+<td>盒子预知第 <span class="math inline">n+1</span>
+次是核验，按计数器切换</td>
+</tr>
+<tr class="even">
+<td>固定公开时刻 <span class="math inline">t_i</span></td>
+<td>“墙上时间 / 收到揭示后的特殊延迟”</td>
+<td>盒子把非正常时刻的测量识别为核验</td>
+</tr>
+</tbody>
+</table>
+<p>两者缺一不可。秘密 <span class="math inline">n</span>
+并不能阻止盒子看钟；固定时刻也不能阻止一个知道公开 <span class="math inline">n</span> 的计数器。</p>
 <h2 id="三幕剧">4.3 三幕剧</h2>
 <h3 id="第一幕bob-私下抽签然后考试">第一幕：Bob 私下抽签，然后考试</h3>
 <p>Bob <strong>偷偷</strong>均匀随机抽一个整数 <span class="math inline">n</span>（1 到 <span class="math inline">N</span>）。Alice 不知道 <span class="math inline">n</span>。</p>
 <p>然后在 <span class="math inline">t_1,\dots,t_n</span>
-每一响，他对两只盒子都只按 CHSH 用的 0 或 1，记下输赢，算出平均分 <span class="math inline">\bar I_n</span>。</p>
+每一响，他分别、私下、均匀随机地给两只盒子各选一个 CHSH 输入 0 或
+1，记下输出并计算平均分 <span class="math inline">\bar
+I_n</span>。随机输入不能让盒子提前知道这一轮会被问哪一题。</p>
 <ul>
 <li>平均分低于及格线：他宣布失败，协议结束。（即使大家都诚实，偶尔也会因运气差发生；轮数很多时可以很少发生。）</li>
 <li>及格：他抛一枚硬币，决定把<strong>哪一只</strong>盒子寄给
@@ -991,9 +1085,9 @@ Alice，自己留下另一只。</li>
 <p><strong>为什么 <span class="math inline">n</span> 必须保密：</strong>
 若 Alice 知道“就考 <span class="math inline">n</span> 轮”，她让前 <span class="math inline">n</span> 轮完美、第 <span class="math inline">n+1</span> 轮完全听她指挥。Bob
 的考试永远及格，她永远能改口。</p>
-<p><strong>她唯一稳能做手脚的一轮</strong>是“第 <span class="math inline">N+1</span> 次使用”——因为那一轮永远不会拿来打
-CHSH，只可能拿来核对。Bob 抽到 <span class="math inline">n=N</span>
-的概率只有 <span class="math inline">1/N</span>。这就是后文有一项 <span class="math inline">1/N</span> 的原因。</p>
+<p>对“按使用次数切换”的这类计数器攻击，第 <span class="math inline">N+1</span> 次使用是唯一可被盒子确定识别为非 CHSH
+测试的一轮——它只可能用于核验。Bob 抽到 <span class="math inline">n=N</span> 的概率为 <span class="math inline">1/N</span>，这解释了有限轮界中的显式 <span class="math inline">1/N</span>
+项；一般攻击还会产生由统计集中控制的额外误差。</p>
 <h3 id="第二幕alice-封存">第二幕：Alice 封存</h3>
 <p>Alice 想封比特 <span class="math inline">b</span>（0 或
 1）。她在自己那只盒子上按承诺键（论文写成 <span class="math inline">b+2</span>，意思是用 2 号键封 0、用 3 号键封
@@ -1192,6 +1286,11 @@ b=0\oplus1=1</span>，通过；</li>
 <li>真实仪器有噪声：揭示阶段仍可能对不上，即使 Alice
 没骗。任何实用协议都有这种烦恼，与“设备无关”无关。</li>
 </ul>
+<h3 id="阈值不是越高或越低越好">阈值不是越高或越低越好</h3>
+<p>提高 <span class="math inline">I_{\mathrm{th}}</span>：通过的盒子更接近理想量子关联，Alice
+更难改口；但诚实设备因噪声或统计波动被误杀的概率上升。降低阈值：诚实通过更容易，但
+Bob 对 Alice 的安全保证变弱，因为控制函数 <span class="math inline">C(I)</span> 随允许的 CHSH
+分数下降而上升。实际选择必须同时报告 <span class="math inline">N</span>、诚实设备预期分数、阈值和目标安全界；本文主要给安全上界，不提供一套现成的工程参数。</p>
 <h2 id="严格说来这不算随开随揭的比特承诺">4.5
 严格说来这不算“随开随揭”的比特承诺</h2>
 <p>Alice
@@ -1280,8 +1379,8 @@ ab</span></th>
 <li>Alice 把她的按钮插在<strong>两根指针正中间</strong>，这样无论 Bob
 核对哪一边，她蒙对的机会一样大。</li>
 </ul>
-<p>两根指针若夹角是 90
-度的一半那种“量子最优”摆法，中间那一刀对应的蒙对率就是</p>
+<p>在 CHSH 达到 Tsirelson 上限时，Bob 的两根核验轴彼此夹角为 <span class="math inline">90^\circ</span>。Alice
+选正中间的轴，因此离每根核验轴都是 <span class="math inline">45^\circ</span>，对应的蒙对率是</p>
 <p><span class="math display">
 \cos^2(\pi/8)\simeq 0.8536.
 </span></p>
@@ -1300,12 +1399,14 @@ Bob 两根轴的夹角对半找到中线，再由量子关联公式对半。</p>
 <p>CHSH 打得越差（<span class="math inline">I</span>
 越小），两根指针可以靠得越近，她蒙对率就越高，直到完全不神奇时她可以接近
 100% 改口——但那时 Bob 在第一幕就会因分数不够而停考。</p>
-<p>论文用计算机把“所有可能的量子盒子”搜了一遍（NPA
-方法，入门不必会），发现上面这套几何已经是最优。所以 <strong>85%
-不是随手一写的分数，是量子力学允许 Alice 改口的上限（在 CHSH
-打满的时候）。</strong></p>
-<p>轮数有限、盒子可以记仇时，还要再加一项大约 <span class="math inline">1/N</span>
-的“最后一轮放水”。轮数趋于无穷，就回到这个 85%。</p>
+<p>论文在 NPA 层级 2
+上计算了一个<strong>包含所有量子策略的放松集合</strong>的 SDP
+上界，并给出上述显式量子策略作为下界；两者在约 <span class="math inline">10^{-8}</span>
+的数值精度内吻合。因此这不是逐个穷举所有盒子，而是“外部上界与内部可达策略相遇”。在该数值认证精度下，85%
+是最大 CHSH、渐近情形的最优控制率。</p>
+<p>轮数有限、盒子可以记仇时，除了显式 <span class="math inline">1/N</span> 的“第 <span class="math inline">N+1</span> 次使用”风险，还有经验 CHSH
+与下一轮条件期望之间的集中误差；它依赖 <span class="math inline">N</span>、阈值和优化参数，不能统称为 <span class="math inline">1/N</span>。合适取极限时这些修正消失，才回到约
+85%。</p>
 <h3 id="为什么需要-sdp-npa只讲逻辑角色">为什么需要 SDP /
 NPA（只讲逻辑角色）</h3>
 <p>“中间方向”只说明 Alice <strong>能做到</strong>约
@@ -1354,13 +1455,15 @@ SDP，但必须知道它承担的是<strong>排除更好作弊策略</strong>的
 <tr class="even">
 <td>Alice</td>
 <td>封上之后改口</td>
-<td><span class="math inline">\cos^2(\pi/8)\simeq 0.85</span></td>
+<td><span class="math inline">\cos^2(\pi/8)\simeq 0.85</span>（最大
+CHSH、渐近）</td>
 <td>盒子必须继续表现得会打 CHSH</td>
 </tr>
 </tbody>
 </table>
-<p>两边都不是 50%。量子比特承诺本来就不能两边同时完美。本文选择了一头
-85%、一头 75% 的不平衡点，换来的是：<strong>只用一对盒子、只打
+<p>两边都不是 50%。量子比特承诺本来就不能两边同时完美。在最大
+CHSH、无限测试的极限，本文得到一头 85%、一头 75%
+的不平衡点，换来的是：<strong>只用一对盒子、只打
 CHSH、仪器内部可以完全不透明、还可以有记忆。</strong></p>
 <h2 id="检查点-2">5.4 检查点</h2>
 <ul>
@@ -1376,8 +1479,9 @@ A：如果世界允许“必赢的盒子”</h2>
 <p>想象 CHSH 可以 100% 赢，同时还不能发电报。这种虚构道具叫 <strong>PR
 盒</strong>。</p>
 <p>那时又可以回到 GHZ
-那种招数：<strong>按一次键，既检查盒子，又检查承诺。</strong> 不再需要抽
-<span class="math inline">n</span>、打很多轮。结果变成两边都是
+那种招数：在同一轮随机一致性检验中同时约束揭示内容与 PR
+关系，违反关系便立即失败。它不需要主协议那样先抽 <span class="math inline">n</span>、再做多轮 CHSH
+统计；但单次成功本身不等于对任意未知设备做了统计认证。结果变成两边都是
 75%，协议更“对称”。现实实验室做不出 PR
 盒；这一节是在问“安全到底来自量子，还是来自不许传信”。</p>
 <h2 id="附录-b想开就开但-alice-更会改口">6.2 附录 B：想开就开，但 Alice
@@ -1391,9 +1495,10 @@ A：如果世界允许“必赢的盒子”</h2>
 <h2 id="附录-c很多对盒子想开就开安全性不降">6.3 附录
 C：很多对盒子，想开就开，安全性不降</h2>
 <p>不实际：实验室里摆 <span class="math inline">N+1</span>
-对互相隔离的盒子。Bob 随机挑一对寄一只给 Alice，其余的用来打
-CHSH，同时核对那一对。因为考试发生在<strong>别的盒子</strong>上，留下的那只不必用“下一铃假装还在考试”。论文用“这只会让
-Alice 更强”的比较，说明改口率不会差过原来的序贯协议。</p>
+对互相隔离的盒子。Bob 私下随机挑一对作为承诺对，再随机选其中一只寄给
+Alice。Alice 可在任意时刻揭示；揭示后，Bob 对其余 <span class="math inline">N</span> 对并行做 CHSH
+测试，同时在被选中的承诺对上用匹配输入检查两输出是否相同。因为考试发生在<strong>其他盒对</strong>上，留下的那只不必用“下一铃假装还在考试”。论文通过两步“只会让
+Alice 更强”的放松，把该场景归约到原序贯安全界。</p>
 <h2 id="白话读完后技术章节怎么接">6.4 白话读完后，技术章节怎么接</h2>
 <p>你现在已经有一张地图。原来的英文练习册是在逼你<strong>自己写出公式</strong>。建议顺序：</p>
 <ol type="1">
@@ -2117,7 +2222,7 @@ CHSH 测试轮。盒子能通过计数器识别它并确定性作弊。Bob 均�
 <tr class="even">
 <td>device-independent (DI)</td>
 <td>设备无关</td>
-<td>不相信机器内部，只看输入输出统计</td>
+<td>不依赖内部实现；仍需量子理论、可信随机数、隔离、无泄漏、无损失等假设</td>
 </tr>
 <tr class="odd">
 <td>black box</td>

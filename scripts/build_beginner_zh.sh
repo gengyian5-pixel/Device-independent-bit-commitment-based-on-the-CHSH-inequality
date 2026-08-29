@@ -28,7 +28,6 @@ COMMON=(
   --resource-path="$SG:$BG:$SG/figures"
   -M title="CHSH 设备无关比特承诺：零量子力学起点"
   -M author="Aharon 等（NJP 18, 025014, 2016）论文自学指南"
-  -M lang=zh-CN
 )
 
 echo "Writing Chinese HTML (KaTeX)..."
