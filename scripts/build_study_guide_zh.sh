@@ -23,6 +23,7 @@ CHAPTERS=(
   11-write-the-paper.md
   equation-map.md
   reconstruction-checklist.md
+  solutions.md
   unicode-math.md
   how-to-rebuild.md
 )
@@ -39,6 +40,7 @@ COMMON=(
   --resource-path="$SG:$FIGURES"
   -M title="CHSH 设备无关比特承诺：完整中文学习指南"
   -M author="Aharon 等（NJP 18, 025014, 2016）论文重建工作簿"
+  -V toc-title="目录"
 )
 
 echo "Writing complete Chinese HTML (KaTeX)..."
