@@ -9,6 +9,7 @@ mkdir -p "$OUT"
 
 CHAPTERS=(
   00-how-to-use.md
+  00-no-quantum.md
   01-prerequisites.md
   02-the-research-question.md
   03-bit-commitment.md

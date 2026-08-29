@@ -6,6 +6,8 @@ NJP **18**, 025014 (2016).
 
 Work in this order:
 
+**If you have no quantum mechanics:** [00-no-quantum.md](00-no-quantum.md) or the Chinese path [beginner/README.md](beginner/README.md).
+
 0. [How to use this guide](00-how-to-use.md)
 1. [Prerequisites](01-prerequisites.md) ([Chinese / 中文](01-prerequisites.zh.md))
 2. [The research question](02-the-research-question.md)

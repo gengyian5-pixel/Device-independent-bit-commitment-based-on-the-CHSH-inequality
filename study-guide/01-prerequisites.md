@@ -1,6 +1,6 @@
 # 1. Prerequisites
 
-[Chinese](01-prerequisites.zh.md)
+[Chinese](01-prerequisites.zh.md) · [No quantum mechanics?](00-no-quantum.md) · [Plain-language path](beginner/README.md)
 
 Do not open the paper until you can do the exercises in this chapter from memory. Everything later is a cryptographic wrapping of these facts.
 

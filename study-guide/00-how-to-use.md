@@ -1,5 +1,12 @@
 # 0. How to use this guide
 
+**If you do not know quantum mechanics,** start here instead of §1:
+
+- English: [00-no-quantum.md](00-no-quantum.md)
+- Longer plain-language path (Chinese): [beginner/README.md](beginner/README.md)
+
+Then return to the table below.
+
 ## What “build the paper yourself” means
 
 The finished paper is a *report* of a finished argument. This guide is the argument in the order you should *discover* it. If you complete every checkpoint, you will have:

@@ -266,6 +266,18 @@ skip)</a></li>
 <li><a href="#notation-you-should-adopt-from-the-start" id="toc-notation-you-should-adopt-from-the-start">Notation you should
 adopt from the start</a></li>
 </ul></li>
+<li><a href="#start-here-if-you-do-not-know-quantum-mechanics" id="toc-start-here-if-you-do-not-know-quantum-mechanics">Start here if
+you do not know quantum mechanics</a>
+<ul>
+<li><a href="#the-story-in-one-page" id="toc-the-story-in-one-page">The
+story in one page</a></li>
+<li><a href="#a-quiz-called-chsh" id="toc-a-quiz-called-chsh">A quiz
+called CHSH</a></li>
+<li><a href="#the-protocol-as-a-play" id="toc-the-protocol-as-a-play">The protocol as a play</a></li>
+<li><a href="#the-two-cheating-numbers" id="toc-the-two-cheating-numbers">The two cheating numbers</a></li>
+<li><a href="#what-to-read-next" id="toc-what-to-read-next">What to read
+next</a></li>
+</ul></li>
 <li><a href="#prerequisites" id="toc-prerequisites">1. Prerequisites</a>
 <ul>
 <li><a href="#quantum-measurements-and-no-signalling" id="toc-quantum-measurements-and-no-signalling">1.1 Quantum measurements
@@ -492,6 +504,13 @@ files</a></li>
 </ul>
 </nav>
 <h1 id="how-to-use-this-guide">0. How to use this guide</h1>
+<p><strong>If you do not know quantum mechanics,</strong> start here
+instead of §1:</p>
+<ul>
+<li>English: <a href="00-no-quantum.md">00-no-quantum.md</a></li>
+<li>Longer plain-language path (Chinese): <a href="beginner/README.md">beginner/README.md</a></li>
+</ul>
+<p>Then return to the table below.</p>
 <h2 id="what-build-the-paper-yourself-means">What “build the paper
 yourself” means</h2>
 <p>The finished paper is a <em>report</em> of a finished argument. This
@@ -657,8 +676,117 @@ history <span class="math inline">\mathbf{W}_k=\{W_1,\dots,W_k\}</span>.</li>
 Alice receives; <span class="math inline">\bar c=1-c</span> is the box
 Bob keeps.</li>
 </ul>
+<h1 id="start-here-if-you-do-not-know-quantum-mechanics">Start here if
+you do not know quantum mechanics</h1>
+<p>You do not need wavefunctions, Hilbert space, or “what is a photon”.
+This paper can be read as a story about <strong>two black
+boxes</strong>, a <strong>quiz the boxes play</strong>, and a
+<strong>sealed envelope</strong>.</p>
+<p>The full plain-language path is in Chinese under <a href="beginner/README.md"><code>beginner/</code></a> (recommended if you
+read Chinese). This page is the same map in English, compressed.</p>
+<h2 id="the-story-in-one-page">The story in one page</h2>
+<p>Alice wants to <strong>seal</strong> a bit <span class="math inline">0</span> or <span class="math inline">1</span> and
+open it later:</p>
+<ul>
+<li>After sealing she should not be able to change her mind.</li>
+<li>Before opening, Bob should not be able to read the bit.</li>
+</ul>
+<p>A perfect seal is impossible in quantum theory. This paper gives an
+imperfect one, and it is <strong>device-independent</strong>: you never
+trust what is inside the machines—only the buttons you press and the
+<span class="math inline">0/1</span> lights you see.</p>
+<p>Each machine is a <strong>box</strong>: you type a setting <span class="math inline">0,1,2,3</span>, it shows a bit. Two boxes may be
+spookily correlated, but they must obey <strong>no signalling</strong>:
+looking only at <em>your</em> light, you cannot tell which button the
+other person pressed (otherwise the boxes would be a telegraph).</p>
+<h2 id="a-quiz-called-chsh">A quiz called CHSH</h2>
+<p>A referee gives Alice and Bob random questions <span class="math inline">x,y\in\{0,1\}</span>. They answer <span class="math inline">a,b\in\{0,1\}</span> without talking. They win if
+<span class="math inline">a\oplus b=x\cdot y</span> (same answers,
+except when both questions are <span class="math inline">1</span>, when
+they need opposite answers).</p>
+<ul>
+<li>If they only agreed a table in advance, they win at most
+<strong>75%</strong> of the time. That is the classical / local bound
+(the paper’s <span class="math inline">I\le 2</span>).</li>
+<li>Quantum boxes can reach about <strong>85%</strong>, never 100%. That
+is Tsirelson’s bound <span class="math inline">I=2\sqrt{2}</span>.</li>
+<li>If you keep only “no telegraph” and drop quantum theory, 100% is
+possible (a PR box, <span class="math inline">I=4</span>). Nature does
+not give you that.</li>
+</ul>
+<p>An older device-independent protocol used a <em>different</em> quiz
+(GHZ) that quantum players <strong>always</strong> win. Then one
+measurement can both “test the boxes” and “check Alice’s opening”. CHSH
+cannot always win, so this paper’s trick is: <strong>hide which round is
+the check</strong>. Bob secretly picks how many quiz rounds to run,
+always presses buttons at public clock times, and the leftover box
+cannot tell “another quiz round” from “catching a liar”.</p>
+<h2 id="the-protocol-as-a-play">The protocol as a play</h2>
+<ol type="1">
+<li><strong>Quiz.</strong> Bob secretly chooses <span class="math inline">n</span>, plays CHSH for <span class="math inline">n</span> public bell-times, aborts if the score is
+too low, then mails Alice one of the two boxes.</li>
+<li><strong>Seal.</strong> Alice presses a “commit” button that depends
+on her bit <span class="math inline">b</span>, sees a light <span class="math inline">r</span>, and mails a masked voucher <span class="math inline">q=r\oplus (a\cdot b)</span> (<span class="math inline">a</span> is a private coin).</li>
+<li><strong>Open.</strong> Before the <em>next</em> public bell she must
+send <span class="math inline">b</span> and <span class="math inline">r</span>. Bob checks the voucher, then at that bell
+presses the matching button on the box he kept; the two lights should
+agree.</li>
+</ol>
+<p>If <span class="math inline">n</span> were public, Alice would make
+the first <span class="math inline">n</span> uses look brilliant and the
+next use obey her. If the last press happened at a weird time, the box’s
+internal clock would know the exam was over.</p>
+<h2 id="the-two-cheating-numbers">The two cheating numbers</h2>
+<table>
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Cheater</th>
+<th>Goal</th>
+<th>Best success (many quiz rounds, max CHSH)</th>
+<th>Why not better</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Bob</td>
+<td>Guess <span class="math inline">b</span> before opening</td>
+<td><span class="math inline">3/4</span></td>
+<td>No signalling: <span class="math inline">q</span> is a real mask
+three quarters of the time</td>
+</tr>
+<tr class="even">
+<td>Alice</td>
+<td>Open whichever bit she wants</td>
+<td><span class="math inline">\cos^2(\pi/8)\simeq 0.85</span></td>
+<td>The kept box must still look CHSH-like; her best shot is to aim
+<em>between</em> Bob’s two check buttons</td>
+</tr>
+</tbody>
+</table>
+<p>The protocol is <strong>not</strong> balanced (<span class="math inline">0.85\neq 0.75</span>) and <strong>not</strong>
+perfect. Opening time is <strong>fixed</strong> by the clock (appendices
+B/C relax that).</p>
+<h2 id="what-to-read-next">What to read next</h2>
+<p>Chinese, slow and complete: <a href="beginner/README.md"><code>beginner/README.md</code></a>.</p>
+<p>Then the exercise book, starting at <a href="01-prerequisites.md"><code>01-prerequisites.md</code></a>
+(Chinese: <a href="01-prerequisites.zh.md"><code>01-prerequisites.zh.md</code></a>).
+Translate as you go:</p>
+<ul>
+<li>POVM = the rule that turns a button into a random <span class="math inline">0/1</span> light</li>
+<li>no-signalling identity = your light’s statistics do not depend on
+their button</li>
+<li><span class="math inline">I</span> = CHSH quiz score</li>
+<li>martingale / Azuma = even a box with a grudge cannot make the
+running average jump away from its true level too far, too often</li>
+</ul>
 <h1 id="prerequisites">1. Prerequisites</h1>
-<p><a href="01-prerequisites.zh.md">Chinese</a></p>
+<p><a href="01-prerequisites.zh.md">Chinese</a> · <a href="00-no-quantum.md">No quantum mechanics?</a> · <a href="beginner/README.md">Plain-language path</a></p>
 <p>Do not open the paper until you can do the exercises in this chapter
 from memory. Everything later is a cryptographic wrapping of these
 facts.</p>

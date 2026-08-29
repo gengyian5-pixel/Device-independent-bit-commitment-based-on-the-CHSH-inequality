@@ -6,7 +6,12 @@ Study materials for reconstructing Aharon, Massar, Pironio, and Silman,
 
 ## Start here
 
-Read [`study-guide/00-how-to-use.md`](study-guide/00-how-to-use.md) and then work through the numbered chapters in order. Chapter 1 has a Chinese translation: [`study-guide/01-prerequisites.zh.md`](study-guide/01-prerequisites.zh.md).
+**No quantum mechanics?** Read the plain-language path first:
+
+- English: [`study-guide/00-no-quantum.md`](study-guide/00-no-quantum.md)
+- 中文（更完整）：[`study-guide/beginner/README.md`](study-guide/beginner/README.md)
+
+Then read [`study-guide/00-how-to-use.md`](study-guide/00-how-to-use.md) and work through the numbered chapters. Chapter 1 also has a Chinese translation: [`study-guide/01-prerequisites.zh.md`](study-guide/01-prerequisites.zh.md).
 
 The guide is a reconstruction workbook, not a paraphrase of the paper. Each chapter tells you **what to derive**, **why it is needed**, and **how to check yourself**. Worked solutions live in [`study-guide/solutions.md`](study-guide/solutions.md); use them only after you have attempted the exercises. An equation-by-equation index is in [`study-guide/equation-map.md`](study-guide/equation-map.md).
 
@@ -42,11 +47,13 @@ The price is that Alice cannot choose the reveal time freely. Appendices B and C
 
 ```
 study-guide/          reconstruction workbook
+  00-no-quantum.md     start here with no QM (English)
+  beginner/            白话零基础（中文，不需要量子力学）
   ...
-  unicode-math.md      Unicode / LaTeX symbol card
+  unicode-math.md
   build/
-    study-guide.html   KaTeX HTML
-    study-guide.pdf    XeLaTeX PDF (Unicode math font)
+    study-guide.html
+    study-guide.pdf
 scripts/
   reconstruct_figures.py
   convert_math_delimiters.py
