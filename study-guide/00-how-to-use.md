@@ -40,7 +40,7 @@ bash scripts/build_study_guide.sh
 
 | Order | Chapter | Paper analogue | Output of the chapter |
 |---|---|---|---|
-| 1 | [01 Prerequisites](01-prerequisites.md) | implicit | CHSH, Tsirelson, PR boxes, POVMs, martingales |
+| 1 | [01 Prerequisites](01-prerequisites.md) ([Chinese](01-prerequisites.zh.md)) | implicit | CHSH, Tsirelson, PR boxes, POVMs, martingales |
 | 2 | [02 Research question](02-the-research-question.md) | §1 | one-sentence thesis of the paper |
 | 3 | [03 Bit commitment](03-bit-commitment.md) | §2.1 | $P_{\mathrm{cont}}$, $P_{\mathrm{gain}}$, balance |
 | 4 | [04 Device-independence](04-device-independence.md) | §2.2 | the five assumptions and what “sending a box” means |

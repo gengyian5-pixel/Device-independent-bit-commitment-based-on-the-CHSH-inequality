@@ -559,7 +559,7 @@ skip)</h2>
 <tbody>
 <tr class="odd">
 <td>1</td>
-<td><a href="01-prerequisites.md">01 Prerequisites</a></td>
+<td><a href="01-prerequisites.md">01 Prerequisites</a> (<a href="01-prerequisites.zh.md">Chinese</a>)</td>
 <td>implicit</td>
 <td>CHSH, Tsirelson, PR boxes, POVMs, martingales</td>
 </tr>
@@ -658,6 +658,7 @@ Alice receives; <span class="math inline">\bar c=1-c</span> is the box
 Bob keeps.</li>
 </ul>
 <h1 id="prerequisites">1. Prerequisites</h1>
+<p><a href="01-prerequisites.zh.md">中文</a></p>
 <p>Do not open the paper until you can do the exercises in this chapter
 from memory. Everything later is a cryptographic wrapping of these
 facts.</p>
@@ -3124,9 +3125,8 @@ script.</p>
 <p>To see whether the PDF actually contains Unicode math (not raw TeX
 source):</p>
 <div class="sourceCode" id="cb19"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="ex">pdftotext</span> <span class="at">-f</span> 1 <span class="at">-l</span> 5 study-guide/build/study-guide.pdf <span class="at">-</span> <span class="kw">|</span> <span class="fu">head</span></span></code></pre></div>
-<p>You want characters such as <code>𝑛</code>, <code>𝑃</code>,
-<code>≤</code>, <code>∞</code>, not <code>\mathrm</code> and
-<code>\le</code>.</p>
+<p>You want italic letters and symbols such as n, P, ≤, ∞, not
+<code>\mathrm</code> and <code>\le</code>.</p>
 <hr />
 <h2 id="one-shot-recipe-everything">One-shot recipe (everything)</h2>
 <p>From the repo root, after tools are installed:</p>

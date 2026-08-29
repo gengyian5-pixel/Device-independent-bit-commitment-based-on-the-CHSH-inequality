@@ -7,7 +7,7 @@ NJP **18**, 025014 (2016).
 Work in this order:
 
 0. [How to use this guide](00-how-to-use.md)
-1. [Prerequisites](01-prerequisites.md)
+1. [Prerequisites](01-prerequisites.md) ([Chinese / 中文](01-prerequisites.zh.md))
 2. [The research question](02-the-research-question.md)
 3. [Bit commitment](03-bit-commitment.md)
 4. [Device-independence](04-device-independence.md)

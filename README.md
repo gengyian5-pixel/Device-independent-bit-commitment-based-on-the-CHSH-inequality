@@ -6,7 +6,7 @@ Study materials for reconstructing Aharon, Massar, Pironio, and Silman,
 
 ## Start here
 
-Read [`study-guide/00-how-to-use.md`](study-guide/00-how-to-use.md) and then work through the numbered chapters in order.
+Read [`study-guide/00-how-to-use.md`](study-guide/00-how-to-use.md) and then work through the numbered chapters in order. Chapter 1 has a Chinese translation: [`study-guide/01-prerequisites.zh.md`](study-guide/01-prerequisites.zh.md).
 
 The guide is a reconstruction workbook, not a paraphrase of the paper. Each chapter tells you **what to derive**, **why it is needed**, and **how to check yourself**. Worked solutions live in [`study-guide/solutions.md`](study-guide/solutions.md); use them only after you have attempted the exercises. An equation-by-equation index is in [`study-guide/equation-map.md`](study-guide/equation-map.md).
 
