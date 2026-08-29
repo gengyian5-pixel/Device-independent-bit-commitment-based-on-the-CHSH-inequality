@@ -5,7 +5,7 @@
 ## 11.1 标题、作者、关键词
 
 - 标题可以保持描述性：设备无关（device-independent, DI）、比特承诺（bit commitment）、CHSH。
-- NJP 使用的关键词：量子密码学、设备无关量子信息、比特承诺、非局域性。
+- NJP 使用的关键词：量子密码学（quantum cryptography）、设备无关量子信息（device-independent quantum information）、比特承诺、非局域性（nonlocality）。
 
 ## 11.2 摘要（一段）
 
@@ -24,8 +24,8 @@
 段落规划（已发表版本的顺序很好；借用其*顺序*，不要照搬句子）：
 
 1. 一般意义下的密码学假设；量子与经典；设备依赖与 DI。
-2. 通过贝尔测试实现 DI；以设备无关量子密钥分发（device-independent quantum key distribution, DIQKD）为旗舰应用；防范黑客攻击的动机。
-3. 其他 DI 任务（随机性、自测试、估计、多体纠缠）。
+2. 通过贝尔测试（Bell test）实现 DI；以设备无关量子密钥分发（device-independent quantum key distribution, DIQKD）为旗舰应用；防范黑客攻击的动机。
+3. 其他 DI 任务（随机性、自测试（self-testing）、估计、多体纠缠（multipartite entanglement））。
 4. 互不信任密码学（distrustful cryptography）带来的额外挑战（目标相互冲突）。
 5. Silman11 / Aharon14：GHZ；整个互不信任密码学类别能否实现 DI 仍是开放问题。
 6. 使用 GHZ 的原因（伪心灵感应；用相同测量进行测试和检查）。
@@ -48,7 +48,7 @@
 - 含噪情形。
 - 带编号的协议 1–3，其中包含时刻 $t^a,t^b,t^c,t^d,t_i$。
 - $\bar I_n$ 和 $I(W_k)$ 的公式 (3)–(4)。
-- 完备性讨论（统计性中止与含噪揭示中止）。
+- 完备性（completeness）讨论（统计性中止与含噪揭示中止）。
 - 时序论证（保留的盒不能知道自己将用于揭示）。
 - “并非严格意义上的比特承诺”段落 + 指向附录 B–C 的说明。
 
@@ -91,7 +91,7 @@
 - 不要声称主协议中揭示时间可由 Alice 选择。
 - 不要声称有限-$N$ 界是紧的。
 - 应当声称，**在无限次测试极限下**，结果与 Silman *et al.* 相同。
-- 应当声称使用屏蔽，而不是类空间隔离。
+- 应当声称使用屏蔽，而不是类空间隔离（spacelike separation）。
 - 应当提到，总是发送同一个盒子会帮助 Alice。
 
 ## 11.11 初稿完成之后

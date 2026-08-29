@@ -2,9 +2,9 @@
 
 论文对应部分：§5.3 和附录 D。目标：如果设备具有**任意记忆（arbitrary memory）**，Alice 的控制力仍然受到某个界的约束，且当 $N\to\infty$ 时，该界趋于 $C(I_{\mathrm{th}})$。
 
-这是论文中 Reichardt–Unger–Vazirani 风格的部分，但简化了许多：你只需要对 CHSH 指示量构造一个鞅（martingale），而不需要完整的自测试定理（self-testing theorem）。
+这是论文中 Reichardt–Unger–Vazirani 风格的部分，但简化了许多：你只需要对 CHSH 指示量（indicator）构造一个鞅（martingale），而不需要完整的自测试定理（self-testing theorem）。
 
-## 9.1 为什么不能使用 i.i.d. 假设
+## 9.1 为什么不能使用独立同分布（independent and identically distributed, i.i.d.）假设
 
 不诚实的 Alice 可以编程实现：
 
@@ -12,7 +12,7 @@
 - 依赖历史的测量：在某些路径上让 CHSH 测试失败，再在另一些路径上补偿；
 - 一种使第 $n+1$ 轮预期 CHSH 值*不等于*经验值 $\bar I_n$ 的策略。
 
-因此，你不能直接把 $\bar I_n$ 代入 $C(\cdot)$ 就认为万事大吉。你需要证明：除去一个很小的概率，经验 CHSH 值 $\approx$ *下一轮*的条件期望 CHSH 值，而且这一结论对所有策略一致成立。
+因此，你不能直接把 $\bar I_n$ 代入 $C(\cdot)$ 就认为万事大吉。你需要证明：除去一个很小的概率，经验（empirical）CHSH 值 $\approx$ *下一轮*的条件期望（conditional expectation）CHSH 值，而且这一结论对所有策略一致成立。
 
 ## 9.2 将 $P_{\mathrm{cont}}$ 表示为对 $n$ 和历史的平均
 
@@ -58,7 +58,7 @@ $$
 
 **练习 9.4。** 从式 (12) 推出式 (14)。论文中之所以是不等式，是因为某些 $n<K$ 可能满足 $\Theta=0$。
 
-## 9.5 在 $K_0=\lceil(N-1)C(I_{\mathrm{th}})\rceil$ 处分拆并使用凹性
+## 9.5 在 $K_0=\lceil(N-1)C(I_{\mathrm{th}})\rceil$ 处分拆并使用凹性（concavity）
 
 $C(I)$ 是凹函数（图 1 是凹的；你可以直接依据图像，也可以注意到：半正定规划（semidefinite program, SDP）的最优值作为线性约束的函数时，对该约束是凹的）。对于 $k\ge K_0$，
 
@@ -70,7 +70,7 @@ $$
 
 **练习 9.5。** 这一分拆看起来像魔法。它唯一的目的在于：即使 Alice 在这些项上令 $C=1$，“小 $k$”部分的贡献也不会超过约 $C(I_{\mathrm{th}})$，因为这样的项很少。检查式 (15) 中第一个求和的算术运算。
 
-## 9.6 典型性：经验 CHSH 值与条件期望
+## 9.6 典型性（typicality）：经验 CHSH 值与条件期望
 
 将满足下式的 $k$-历史组成的坏集合定义为 $\pi_k(\varepsilon)$：
 
@@ -117,7 +117,7 @@ $$
 
 **练习 9.9。** 将两者都绘制出来。它们在有限 $N$ 时不同，但具有相同的极限。在你的论文中，选择其中一个，并在图注和正文中统一使用。按照 `scripts/reconstruct_figures.py`，在数值上对式 (19) 关于 $\varepsilon$ 最小化。
 
-Azuma 尾界较为保守（$D=4+2\sqrt{2}$ 是一个粗略的直径）。可以预期，在 $N$ 极大之前，界 (19) 会远高于 $C(I_{\mathrm{th}})$；在图 3 上叠加 $C(I_{\mathrm{th}})$ 可以清楚显示这一差距。已发表的图 3 是式 (19) 的数值最小值，而不是实验结果。
+Azuma 尾界（tail bound）较为保守（$D=4+2\sqrt{2}$ 是一个粗略的直径）。可以预期，在 $N$ 极大之前，界 (19) 会远高于 $C(I_{\mathrm{th}})$；在图 3 上叠加 $C(I_{\mathrm{th}})$ 可以清楚显示这一差距。已发表的图 3 是式 (19) 的数值最小值，而不是实验结果。
 
 **练习 9.10。** 论文称，因为 $Q(\varepsilon)\ne 0$，有限-$N$ 界很可能不是紧的。你同意吗？松弛出现在哪里？
 
