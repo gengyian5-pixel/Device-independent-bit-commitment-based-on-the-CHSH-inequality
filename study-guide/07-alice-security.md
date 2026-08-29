@@ -61,23 +61,21 @@ $$
 
 (the paper’s form; equivalently a bound on the remaining four terms). Conclude $P_{\mathrm{gain}}\le 3/4$.
 
-Hint for the first inequality: $P(0,0\mid 2,0)\le P(g=0\mid m=0)$ and $P(1,0\mid 2,1)\le P(g=0\mid m=1)$, but those are *different* $m$, so that is not enough. Instead compare both terms to Alice-box marginals, or add them as a combination bounded by a NS marginal of Bob. A clean route is:
-
-- $P(0,0\mid 2,0)+P(1,0\mid 2,1)\le P(r=0\mid s=2)+P(r=1\mid s=2)=1$ is false in general because the $g$ values differ… wait, first term has $g=0$, second has $g=0$ as well! Both have $g=0$. First has $r=0,m=0$; second has $r=1,m=1$.
-
-Better route used implicitly in the paper: the two terms $P(0,0\mid 2,0)$ and $P(1,0\mid 2,1)$ are probabilities of *disjoint* $(r,m)$ pairs but $m$ is chosen by Bob as a function of $r$ in the real protocol, which is already expanded. For the *max over behaviours*, use:
+Hint for the first inequality: discard the restriction on $g$ and use Alice’s no-signalling marginal,
 
 $$
-P(0,0\mid 2,0)\le P(g=0\mid m=0),\qquad P(1,0\mid 2,1)\le P(g=0\mid m=1).
+P(0,0\mid2,0)\le P(r=0\mid s=2),\qquad
+P(1,0\mid2,1)\le P(r=1\mid s=2).
 $$
 
-Those still do not sum to $\le 1$. The paper’s stated inequality is $P(0,0\mid 2,0)+P(1,0\mid 2,1)\le 1$. Prove it from NS as follows:
+The two right-hand sides sum to $1$. For the second family, use Bob’s no-signalling marginal:
 
-$P(0,0\mid 2,0)+P(1,0\mid 2,1)=P(0,0\mid 2,0)+P(1,0\mid 2,0)+P(1,0\mid 2,1)-P(1,0\mid 2,0)$.
+$$
+P(m,0\mid2,m)\le P(g=0\mid m),\qquad
+P(0,1\mid3,m)+P(1,1\mid3,m)=P(g=1\mid m).
+$$
 
-And $P(0,0\mid 2,0)+P(1,0\mid 2,0)=P(g=0\mid m=0)$ independent of $s$. Also $P(1,0\mid 2,1)\le P(r=1\mid s=2)$, and $P(1,0\mid 2,0)\ge 0$, which is too loose.
-
-A direct proof: consider the NS equality of Bob’s marginal at $m=0$ and $m=1$. Work with the four probabilities $P(r,g\mid s=2,m)$ as a $2\times 2$ matrix for each $m$, rows summing to $P(r\mid 2)$. See [solutions.md](solutions.md) §7 if stuck after 20 minutes.
+Their sum is at most $1$. Apply this once for $m=0$ and once for $m=1$, then regroup the six terms in (5). See [solutions.md](solutions.md) §7 if stuck after 20 minutes.
 
 ## 7.3 Saturating strategies (you must exhibit one)
 

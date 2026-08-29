@@ -7,6 +7,7 @@ There are three products:
 | Product | Command | Output |
 |---|---|---|
 | Typeset HTML + PDF | `bash scripts/build_study_guide.sh` | `study-guide/build/study-guide.html`, `study-guide/build/study-guide.pdf` |
+| 中文零基础 HTML + PDF | `bash scripts/build_beginner_zh.sh` | `study-guide/build/beginner-zh.html`, `study-guide/build/beginner-zh.pdf` |
 | Figs. 1 and 3 | `python scripts/reconstruct_figures.py` | `study-guide/figures/*.png` |
 | Math-delimiter fix | `python scripts/convert_math_delimiters.py study-guide/*.md` | rewrites the `.md` files in place |
 
@@ -90,6 +91,12 @@ python3 -m pip install -r scripts/requirements.txt
 ```
 
 That installs `numpy` and `matplotlib`.
+
+To build the Chinese beginner book, also install CJK fonts and XeLaTeX support:
+
+```bash
+sudo apt-get install -y fonts-noto-cjk texlive-lang-chinese
+```
 
 Then repeat **Step 1**.
 
@@ -263,3 +270,11 @@ ls -lh study-guide/build/study-guide.html study-guide/build/study-guide.pdf
 ```
 
 Then open `study-guide/build/study-guide.pdf`.
+
+For the detailed Chinese beginner edition:
+
+```bash
+bash scripts/build_beginner_zh.sh
+```
+
+Then open `study-guide/build/beginner-zh.pdf`.

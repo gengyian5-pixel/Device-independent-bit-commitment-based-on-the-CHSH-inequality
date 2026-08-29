@@ -9,7 +9,8 @@ Study materials for reconstructing Aharon, Massar, Pironio, and Silman,
 **No quantum mechanics?** Read the plain-language path first:
 
 - English: [`study-guide/00-no-quantum.md`](study-guide/00-no-quantum.md)
-- 中文（更完整）：[`study-guide/beginner/README.md`](study-guide/beginner/README.md)
+- 中文（详细零基础教材）：[`study-guide/beginner/README.md`](study-guide/beginner/README.md)
+- 中文电子书：[HTML](study-guide/build/beginner-zh.html) · [PDF](study-guide/build/beginner-zh.pdf)
 
 Then read [`study-guide/00-how-to-use.md`](study-guide/00-how-to-use.md) and work through the numbered chapters. Chapter 1 also has a Chinese translation: [`study-guide/01-prerequisites.zh.md`](study-guide/01-prerequisites.zh.md).
 
@@ -23,6 +24,7 @@ To get a typeset copy with Unicode math fonts (XeLaTeX + TeX Gyre DejaVu Math), 
 
 ```bash
 bash scripts/build_study_guide.sh
+bash scripts/build_beginner_zh.sh
 ```
 
 Then open:
