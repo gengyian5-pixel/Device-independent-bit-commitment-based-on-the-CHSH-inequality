@@ -71,7 +71,7 @@ bash scripts/build_study_guide.sh
 
 - 两个盒子，标记为 $i\in\{0,1\}$。
 - 四个输入 $s\in\{0,1,2,3\}$，两个输出 $r\in\{0,1\}$。
-- 盒子 $i$ 的第 $k$ 次使用：随机变量 $S^i_k$、$R^i_k$；实现值 $s^i_k$、$r^i_k$。
+- 第 $k$ 次使用盒子 $i$：随机变量 $S^i_k$、$R^i_k$；实现值 $s^i_k$、$r^i_k$。
 - $W_k=\{S^0_k,S^1_k,R^0_k,R^1_k\}$，历史 $\mathbf{W}_k=\{W_1,\dots,W_k\}$。
 - $\sigma_\theta=\cos\theta\,\sigma_z+\sin\theta\,\sigma_x$。
 - $|0\rangle,|1\rangle$ 是 $\sigma_z$ 的 $\pm 1$ 本征态。
