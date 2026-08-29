@@ -110,12 +110,12 @@ $$
 **8.8.** 每个关联量都是两测量轴之差的余弦：
 
 $$
-\begin{align*}
+\begin{aligned}
 \langle\sigma_{2\theta}\otimes\sigma_{2\theta-\varphi}\rangle&=\cos\varphi,\\
 \langle\sigma_{2\theta}\otimes\sigma_{4\theta-\varphi}\rangle&=\cos(2\theta-\varphi),\\
 \langle\sigma_z\otimes\sigma_{2\theta-\varphi}\rangle&=\cos(\varphi-2\theta),\\
 \langle\sigma_z\otimes\sigma_{4\theta-\varphi}\rangle&=\cos(\varphi-4\theta).
-\end{align*}
+\end{aligned}
 $$
 
 符号为 $+{+}{+}-$ 的 CHSH 组合利用余弦的偶性可化简为 (9)。
