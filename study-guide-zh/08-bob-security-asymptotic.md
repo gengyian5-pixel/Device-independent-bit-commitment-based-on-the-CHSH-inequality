@@ -11,7 +11,7 @@
 1. 承诺：进行一次产生 $q$ 的二结果测量。
 2. 揭示：进行一次依赖于 $q$ 以及她此时想揭示的比特的测量，产生所宣告的 $r^c$。
 
-**习题 8.1。** 论证：如果她想揭示 $0$，Bob 要求 $q=r^c$，所以针对 $b=0$ 的揭示测量是多余的；她不妨从一开始就令 $r^c=q$。因此，在揭示阶段，她只需要与揭示 $1$ 相关的两次测量。将它们与承诺测量合并为 $\mathcal{H}^c$ 上的**单个四结果 POVM（positive operator-valued measure，正算符值测度）** $\{M_{kl}^c\}_{k,l\in\{0,1\}}$，其含义为：
+**习题 8.1。** 论证：如果她想揭示 $0$，Bob 要求 $q=r^c$，所以针对 $b=0$ 的揭示测量是多余的；她不妨从一开始就令 $r^c=q$。因此，在揭示阶段，她只需要与揭示 $1$ 相关的两次测量。将它们与承诺测量合并为**单个四结果 POVM（positive operator-valued measure，正算符值测度）** $\{M_{kl}^c\}_{k,l\in\{0,1\}}$，它作用于 $\mathcal{H}^c$，其含义为：
 
 - 她在承诺时发送 $q=k$；
 - 如果揭示 $0$，她宣告 $r^c=k$；
@@ -68,17 +68,17 @@ $$
 阅读 §5.2 前先猜测其几何结构：
 
 - 使用一个 EPR 对 $|\phi^+\rangle$。
-- 对于给定盒子，Bob 的两个检查设置应当是 $zx$ 平面内的两条轴；当 $I<2\sqrt{2}$ 时，它们**不一定**相差 $\pi/2$。
+- 对于给定盒子，Bob 的两个检查设置应当是 $zx$ 平面内的两条轴，它们**不一定**相差 $\pi/2$（当 $I<2\sqrt{2}$ 时）。
 - 收到另一个盒子的 Alice 应当测量 Bob 两条轴的**中间**方向，使她与任一检查设置之间的夹角相同。于是 $p_0=p_1$。
 - 一次二结果测量已经足够（所以四结果 POVM 在最优解处显得多余）。在论文的意义下，她把该结果同时宣告为 $b$ 和 $r^c$：她发送的 $b$ 和 $r^c$ 都等于其测量结果。
 
-**习题 8.6。** 如果两个赤道可观测量（equatorial observables）之间的夹角为 $\theta$，证明在 $|\phi^+\rangle$ 上
+**习题 8.6。** 如果两个赤道可观测量（equatorial observables）之间的夹角为 $\theta$，证明
 
 $$
 P(\text{equal outcomes})=\cos^2(\theta/2)
 $$
 
-因此，该策略给出
+在 $|\phi^+\rangle$ 上成立。因此，该策略给出
 
 $$
 P_{\mathrm{cont}}=\cos^2(\theta/2).
@@ -106,7 +106,7 @@ $$
 I=2\cos(2\theta-\varphi)-\cos(4\theta-\varphi)+\cos\varphi.
 $$
 
-**习题 8.9。** 对固定的 $\theta$，在 $\varphi$ 上最大化 $I$。证明一个临界点为
+**习题 8.9。** 对固定的 $\theta$，在 $I$ 上关于 $\varphi$ 取最大值。证明一个临界点为
 
 $$
 \varphi_{\mathrm{opt}}=\arccos\Biggl(2\frac{\cos(2\theta)+\sin^2(2\theta)}{\sqrt{6-2\cos(4\theta)}}\Biggr).
@@ -114,7 +114,7 @@ $$
 
 （对 (9) 求导并求解 $\partial I/\partial\varphi=0$。该反余弦形式是一个特解；在 $\theta=\pi/4$ 处检验它，此时必须得到 $\varphi_{\mathrm{opt}}=\pi/4$ 和 $I=2\sqrt{2}$。）
 
-**习题 8.10。** 消去 $\varphi$，得到 $\theta\in(0,\pi/2]$ 上的参数曲线 $(I(\theta),P_{\mathrm{cont}}(\theta))$。这就是图 1。在 `scripts/reconstruct_figures.py` 中实现它。
+**习题 8.10。** 消去 $\varphi$，得到参数曲线 $(I(\theta),P_{\mathrm{cont}}(\theta))$，其中 $\theta\in(0,\pi/2]$。这就是图 1。在 `scripts/reconstruct_figures.py` 中实现它。
 
 特殊值：
 
@@ -123,7 +123,7 @@ $$
 | $\pi/4$ | $\cos^2(\pi/8)\simeq 0.8536$ | $2\sqrt{2}$ | Tsirelson / GHZ 一致 |
 | $\to 0$ | $\to 1$ | $\to$ 某个 $\le 2$ 的值 | Alice 几乎是确定性的；CHSH 不可能仍高于 2 |
 
-**习题 8.11。** 在 $\theta\to 0$ 且取 $\varphi_{\mathrm{opt}}$ 时计算 $I$。你应当看到，Alice 若要令 $P_{\mathrm{cont}}\to 1$，就必须放弃 Bell 违反，这与预期一致。
+**习题 8.11。** 计算 $I$ 在 $\theta\to 0$ 且取 $\varphi_{\mathrm{opt}}$ 时的值。你应当看到，Alice 若要令 $P_{\mathrm{cont}}\to 1$，就必须放弃 Bell 违反，这与预期一致。
 
 ## 8.6 如何撰写 §5.1–5.2
 
