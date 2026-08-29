@@ -1601,36 +1601,21 @@ P(m,0\mid 2,m)+P(0,1\mid 3,m)+P(1,1\mid 3,m)\le 1
 </span></p>
 <p>(the paper’s form; equivalently a bound on the remaining four terms).
 Conclude <span class="math inline">P_{\mathrm{gain}}\le 3/4</span>.</p>
-<p>Hint for the first inequality: <span class="math inline">P(0,0\mid
-2,0)\le P(g=0\mid m=0)</span> and <span class="math inline">P(1,0\mid
-2,1)\le P(g=0\mid m=1)</span>, but those are <em>different</em> <span class="math inline">m</span>, so that is not enough. Instead compare
-both terms to Alice-box marginals, or add them as a combination bounded
-by a NS marginal of Bob. A clean route is:</p>
-<ul>
-<li><span class="math inline">P(0,0\mid 2,0)+P(1,0\mid 2,1)\le P(r=0\mid
-s=2)+P(r=1\mid s=2)=1</span> is false in general because the <span class="math inline">g</span> values differ… wait, first term has <span class="math inline">g=0</span>, second has <span class="math inline">g=0</span> as well! Both have <span class="math inline">g=0</span>. First has <span class="math inline">r=0,m=0</span>; second has <span class="math inline">r=1,m=1</span>.</li>
-</ul>
-<p>Better route used implicitly in the paper: the two terms <span class="math inline">P(0,0\mid 2,0)</span> and <span class="math inline">P(1,0\mid 2,1)</span> are probabilities of
-<em>disjoint</em> <span class="math inline">(r,m)</span> pairs but <span class="math inline">m</span> is chosen by Bob as a function of <span class="math inline">r</span> in the real protocol, which is already
-expanded. For the <em>max over behaviours</em>, use:</p>
+<p>Hint for the first inequality: discard the restriction on <span class="math inline">g</span> and use Alice’s no-signalling marginal,</p>
 <p><span class="math display">
-P(0,0\mid 2,0)\le P(g=0\mid m=0),\qquad P(1,0\mid 2,1)\le P(g=0\mid
-m=1).
+P(0,0\mid2,0)\le P(r=0\mid s=2),\qquad
+P(1,0\mid2,1)\le P(r=1\mid s=2).
 </span></p>
-<p>Those still do not sum to <span class="math inline">\le 1</span>. The
-paper’s stated inequality is <span class="math inline">P(0,0\mid
-2,0)+P(1,0\mid 2,1)\le 1</span>. Prove it from NS as follows:</p>
-<p><span class="math inline">P(0,0\mid 2,0)+P(1,0\mid 2,1)=P(0,0\mid
-2,0)+P(1,0\mid 2,0)+P(1,0\mid 2,1)-P(1,0\mid 2,0)</span>.</p>
-<p>And <span class="math inline">P(0,0\mid 2,0)+P(1,0\mid 2,0)=P(g=0\mid
-m=0)</span> independent of <span class="math inline">s</span>. Also
-<span class="math inline">P(1,0\mid 2,1)\le P(r=1\mid s=2)</span>, and
-<span class="math inline">P(1,0\mid 2,0)\ge 0</span>, which is too
-loose.</p>
-<p>A direct proof: consider the NS equality of Bob’s marginal at <span class="math inline">m=0</span> and <span class="math inline">m=1</span>.
-Work with the four probabilities <span class="math inline">P(r,g\mid
-s=2,m)</span> as a <span class="math inline">2\times 2</span> matrix for
-each <span class="math inline">m</span>, rows summing to <span class="math inline">P(r\mid 2)</span>. See <a href="solutions.md">solutions.md</a> §7 if stuck after 20 minutes.</p>
+<p>The two right-hand sides sum to <span class="math inline">1</span>.
+For the second family, use Bob’s no-signalling marginal:</p>
+<p><span class="math display">
+P(m,0\mid2,m)\le P(g=0\mid m),\qquad
+P(0,1\mid3,m)+P(1,1\mid3,m)=P(g=1\mid m).
+</span></p>
+<p>Their sum is at most <span class="math inline">1</span>. Apply this
+once for <span class="math inline">m=0</span> and once for <span class="math inline">m=1</span>, then regroup the six terms in (5). See
+<a href="solutions.md">solutions.md</a> §7 if stuck after 20
+minutes.</p>
 <h2 id="saturating-strategies-you-must-exhibit-one">7.3 Saturating
 strategies (you must exhibit one)</h2>
 <p>The bound is useless for the paper unless it is tight: otherwise you
@@ -3007,11 +2992,17 @@ or when math is not displaying.</p>
 <code>study-guide/build/study-guide.pdf</code></td>
 </tr>
 <tr class="even">
+<td>Chinese beginner HTML + PDF</td>
+<td><code>bash scripts/build_beginner_zh.sh</code></td>
+<td><code>study-guide/build/beginner-zh.html</code>,
+<code>study-guide/build/beginner-zh.pdf</code></td>
+</tr>
+<tr class="odd">
 <td>Figs. 1 and 3</td>
 <td><code>python scripts/reconstruct_figures.py</code></td>
 <td><code>study-guide/figures/*.png</code></td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td>Math-delimiter fix</td>
 <td><code>python scripts/convert_math_delimiters.py study-guide/*.md</code></td>
 <td>rewrites the <code>.md</code> files in place</td>
@@ -3081,13 +3072,16 @@ the tools (only if Step 1 failed)</h2>
 <p>For the figure script only:</p>
 <div class="sourceCode" id="cb8"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="ex">python3</span> <span class="at">-m</span> pip install <span class="at">-r</span> scripts/requirements.txt</span></code></pre></div>
 <p>That installs <code>numpy</code> and <code>matplotlib</code>.</p>
+<p>To build the Chinese beginner book, also install CJK fonts and
+XeLaTeX support:</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt-get install <span class="at">-y</span> fonts-noto-cjk texlive-lang-chinese</span></code></pre></div>
 <p>Then repeat <strong>Step 1</strong>.</p>
 <hr />
 <h2 id="step-3.-optional-rebuild-figures-1-and-3">Step 3. (Optional)
 Rebuild Figures 1 and 3</h2>
 <p>Do this if you changed the analytic formulae, or if
 <code>study-guide/figures/</code> is missing the PNGs.</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="ex">python3</span> scripts/reconstruct_figures.py</span></code></pre></div>
+<div class="sourceCode" id="cb10"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="ex">python3</span> scripts/reconstruct_figures.py</span></code></pre></div>
 <p><strong>What should happen</strong></p>
 <pre><code>sanity checks passed:
   theta=pi/4 =&gt; phi=0.785398, I=2.828427, C=0.853553
@@ -3104,26 +3098,26 @@ math delimiters</h2>
 <li>inline math: <code>$P_{\mathrm{cont}}$</code></li>
 <li>display math:</li>
 </ul>
-<div class="sourceCode" id="cb11"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>$$</span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>P_{\mathrm{cont}}=\cos^2(\theta/2)</span>
-<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>$$</span></code></pre></div>
+<div class="sourceCode" id="cb12"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>P_{\mathrm{cont}}=\cos^2(\theta/2)</span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>$$</span></code></pre></div>
 <p>They do <strong>not</strong> render <code>\( ... \)</code> /
 <code>\[ ... \]</code> reliably.</p>
 <p>If you (or an editor) typed the LaTeX-style delimiters, convert them
 first:</p>
-<div class="sourceCode" id="cb12"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="ex">python3</span> scripts/convert_math_delimiters.py study-guide/<span class="pp">*</span>.md</span></code></pre></div>
+<div class="sourceCode" id="cb13"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="ex">python3</span> scripts/convert_math_delimiters.py study-guide/<span class="pp">*</span>.md</span></code></pre></div>
 <p>The script rewrites those files in place and skips fenced code blocks
 (including mermaid). If a file was already using <code>$...$</code>, it
 prints <code>unchanged</code>.</p>
 <p>Check one file:</p>
-<div class="sourceCode" id="cb13"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">grep</span> <span class="at">-n</span> <span class="st">&#39;$P_{\\mathrm{cont}}$&#39;</span> study-guide/03-bit-commitment.md <span class="kw">|</span> <span class="fu">head</span></span></code></pre></div>
+<div class="sourceCode" id="cb14"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">grep</span> <span class="at">-n</span> <span class="st">&#39;$P_{\\mathrm{cont}}$&#39;</span> study-guide/03-bit-commitment.md <span class="kw">|</span> <span class="fu">head</span></span></code></pre></div>
 <p>You should see dollar-delimited math, not <code>\(</code>
 <code>\)</code>.</p>
 <hr />
 <h2 id="step-5.-rebuild-the-html-and-pdf-the-main-step">Step 5. Rebuild
 the HTML and PDF (the main step)</h2>
 <p>From the repo root:</p>
-<div class="sourceCode" id="cb14"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">bash</span> scripts/build_study_guide.sh</span></code></pre></div>
+<div class="sourceCode" id="cb15"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">bash</span> scripts/build_study_guide.sh</span></code></pre></div>
 <p><strong>What the script does, in order</strong></p>
 <ol type="1">
 <li>Resolves the repo root from the location of
@@ -3154,19 +3148,19 @@ Wrote:
 <p>The PDF step takes a few seconds. If it fails, the terminal will show
 a XeLaTeX error; see <strong>Troubleshooting</strong> below.</p>
 <p>Confirm the files are new:</p>
-<div class="sourceCode" id="cb16"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> <span class="at">-lh</span> study-guide/build/study-guide.html study-guide/build/study-guide.pdf</span></code></pre></div>
+<div class="sourceCode" id="cb17"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> <span class="at">-lh</span> study-guide/build/study-guide.html study-guide/build/study-guide.pdf</span></code></pre></div>
 <p>The timestamps should be “just now”.</p>
 <hr />
 <h2 id="step-6.-open-the-rebuilt-files">Step 6. Open the rebuilt
 files</h2>
 <p><strong>HTML (fastest way to check that math rendered)</strong></p>
-<div class="sourceCode" id="cb17"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">xdg-open</span> study-guide/build/study-guide.html</span></code></pre></div>
+<div class="sourceCode" id="cb18"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="fu">xdg-open</span> study-guide/build/study-guide.html</span></code></pre></div>
 <p>Or in Cursor: right-click
 <code>study-guide/build/study-guide.html</code> → Open. You should see a
 table of contents and typeset formulae (Greek letters, fractions,
 subscripts), not raw <code>$...$</code>.</p>
 <p><strong>PDF</strong></p>
-<div class="sourceCode" id="cb18"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="fu">xdg-open</span> study-guide/build/study-guide.pdf</span></code></pre></div>
+<div class="sourceCode" id="cb19"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="fu">xdg-open</span> study-guide/build/study-guide.pdf</span></code></pre></div>
 <p>Or open it from the file tree. Search for <code>P_cont</code> or look
 at Chapter 1: CHSH and <span class="math inline">\le</span>, <span class="math inline">\otimes</span>, <span class="math inline">\pi</span>
 should be real glyphs.</p>
@@ -3252,16 +3246,19 @@ script.</p>
 </table>
 <p>To see whether the PDF actually contains Unicode math (not raw TeX
 source):</p>
-<div class="sourceCode" id="cb19"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="ex">pdftotext</span> <span class="at">-f</span> 1 <span class="at">-l</span> 5 study-guide/build/study-guide.pdf <span class="at">-</span> <span class="kw">|</span> <span class="fu">head</span></span></code></pre></div>
+<div class="sourceCode" id="cb20"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="ex">pdftotext</span> <span class="at">-f</span> 1 <span class="at">-l</span> 5 study-guide/build/study-guide.pdf <span class="at">-</span> <span class="kw">|</span> <span class="fu">head</span></span></code></pre></div>
 <p>You want italic letters and symbols such as n, P, ≤, ∞, not
 <code>\mathrm</code> and <code>\le</code>.</p>
 <hr />
 <h2 id="one-shot-recipe-everything">One-shot recipe (everything)</h2>
 <p>From the repo root, after tools are installed:</p>
-<div class="sourceCode" id="cb20"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="ex">python3</span> scripts/convert_math_delimiters.py study-guide/<span class="pp">*</span>.md</span>
-<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a><span class="ex">python3</span> scripts/reconstruct_figures.py</span>
-<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a><span class="fu">bash</span> scripts/build_study_guide.sh</span>
-<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> <span class="at">-lh</span> study-guide/build/study-guide.html study-guide/build/study-guide.pdf</span></code></pre></div>
+<div class="sourceCode" id="cb21"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="ex">python3</span> scripts/convert_math_delimiters.py study-guide/<span class="pp">*</span>.md</span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a><span class="ex">python3</span> scripts/reconstruct_figures.py</span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a><span class="fu">bash</span> scripts/build_study_guide.sh</span>
+<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> <span class="at">-lh</span> study-guide/build/study-guide.html study-guide/build/study-guide.pdf</span></code></pre></div>
 <p>Then open <code>study-guide/build/study-guide.pdf</code>.</p>
+<p>For the detailed Chinese beginner edition:</p>
+<div class="sourceCode" id="cb22"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="fu">bash</span> scripts/build_beginner_zh.sh</span></code></pre></div>
+<p>Then open <code>study-guide/build/beginner-zh.pdf</code>.</p>
 </body>
 </html>
