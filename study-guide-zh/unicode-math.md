@@ -46,17 +46,17 @@ XeLaTeX 随 **TeX Live**、**fontspec** 和 **unicode-math** 一同安装。正�
 | 积分 | ∫ | `\int` |
 | 右箭头 | → | `\to` |
 | 蕴含 | ⇒ | `\Rightarrow` |
-| 左矢 / 右矢括号 | ⟨ ⟩ | `\langle` `\rangle` |
-| 实数 | ℝ | `\mathbb{R}` |
-| 复数 | ℂ | `\mathbb{C}` |
-| 恒等算符 | 𝟙 | `\mathbb{1}` |
+| 左矢 / 右矢括号 | $\langle\ \rangle$ | `\langle` `\rangle` |
+| 实数 | $\mathbb{R}$ | `\mathbb{R}` |
+| 复数 | $\mathbb{C}$ | `\mathbb{C}` |
+| 恒等算符 | $\mathbb{1}$ | `\mathbb{1}` |
 | 空集 | $\emptyset$ | `\emptyset` |
 | 对所有 | ∀ | `\forall` |
 | 存在 | ∃ | `\exists` |
 | 约化普朗克常数 hbar | ℏ | `\hbar` |
 | 厄米共轭 dagger | † | `\dagger` |
-| 圆圈 / 复合 | ∘ | `\circ` |
-| 相似 | ∼ | `\sim` |
+| 圆圈 / 复合 | $\circ$ | `\circ` |
+| 相似 | $\sim$ | `\sim` |
 | 成正比 | ∝ | `\propto` |
 
 论文专用速记：
