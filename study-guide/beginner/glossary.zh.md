@@ -9,7 +9,7 @@
 | concealing | 隐藏性 | Bob 不能提前偷看 |
 | binding | 绑定性 | Alice 不能事后改口 |
 | distrustful cryptography | 互不信任密码学 | Alice 和 Bob 可能互相作弊 |
-| device-independent (DI) | 设备无关 | 不相信机器内部，只看输入输出统计 |
+| device-independent (DI) | 设备无关 | 不依赖内部实现；仍需量子理论、可信随机数、隔离、无泄漏、无损失等假设 |
 | black box | 黑盒子 | 只有按钮和灯 |
 | input / setting $s$ | 输入 / 设置 | 按哪个按钮 |
 | output $r$ | 输出 | 哪盏灯亮 |
