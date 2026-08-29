@@ -74,6 +74,6 @@ bash scripts/build_study_guide.sh
 - 第 $k$ 次使用盒子 $i$：随机变量 $S^i_k$、$R^i_k$；实现值 $s^i_k$、$r^i_k$。
 - $W_k=\{S^0_k,S^1_k,R^0_k,R^1_k\}$，历史 $\mathbf{W}_k=\{W_1,\dots,W_k\}$。
 - $\sigma_\theta=\cos\theta\,\sigma_z+\sin\theta\,\sigma_x$。
-- $|0\rangle,|1\rangle$ 是 $\sigma_z$ 的 $\pm 1$ 本征态。
+- $|0\rangle,|1\rangle$ 是本征值为 $\pm 1$ 的 $\sigma_z$ 本征态。
 - Alice 承诺的比特 $b$；凭证比特 $q$；一次性密码本比特 $a$。
 - 硬币 $c\in\{0,1\}$ 决定 Alice 收到哪个盒子；$\bar c=1-c$ 是 Bob 保留的盒子。
