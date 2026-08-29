@@ -1,6 +1,6 @@
 # 1. Prerequisites
 
-[中文](01-prerequisites.zh.md)
+[Chinese](01-prerequisites.zh.md)
 
 Do not open the paper until you can do the exercises in this chapter from memory. Everything later is a cryptographic wrapping of these facts.
 
