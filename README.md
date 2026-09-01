@@ -6,9 +6,42 @@ Study materials for reconstructing Aharon, Massar, Pironio, and Silman,
 
 ## Start here
 
-Read [`study-guide/00-how-to-use.md`](study-guide/00-how-to-use.md) and then work through the numbered chapters in order.
+**No quantum mechanics?** Read the plain-language path first:
+
+- English: [`study-guide/00-no-quantum.md`](study-guide/00-no-quantum.md)
+- 中文（详细零基础教材）：[`study-guide/beginner/README.md`](study-guide/beginner/README.md)
+- 中文电子书：[HTML](study-guide/build/beginner-zh.html) · [PDF](study-guide/build/beginner-zh.pdf)
+- 完整中文技术学习指南：[`study-guide-zh/README.md`](study-guide-zh/README.md)
+- 完整中文版电子书：[HTML](study-guide-zh/build/study-guide-zh.html) · [PDF](study-guide-zh/build/study-guide-zh.pdf)
+- 英文原文 + 中文译文对照（学习指南）：[`study-guide-bilingual/README.md`](study-guide-bilingual/README.md)
+- 学习指南英中对照电子书：[HTML](study-guide-bilingual/build/study-guide-bilingual.html) · [PDF](study-guide-bilingual/build/study-guide-bilingual.pdf)
+- **论文英中逐段对照**：[`paper-bilingual/README.md`](paper-bilingual/README.md)
+- 论文英中对照电子书：[HTML](paper-bilingual/build/paper-bilingual.html) · [PDF](paper-bilingual/build/paper-bilingual.pdf)
+
+Then read [`study-guide/00-how-to-use.md`](study-guide/00-how-to-use.md) and work through the numbered chapters. Chapter 1 also has a Chinese translation: [`study-guide/01-prerequisites.zh.md`](study-guide/01-prerequisites.zh.md).
 
 The guide is a reconstruction workbook, not a paraphrase of the paper. Each chapter tells you **what to derive**, **why it is needed**, and **how to check yourself**. Worked solutions live in [`study-guide/solutions.md`](study-guide/solutions.md); use them only after you have attempted the exercises. An equation-by-equation index is in [`study-guide/equation-map.md`](study-guide/equation-map.md).
+
+## How to see the math
+
+Chapters use GitHub-style math (`$...$` inline, `$$...$$` display). That renders in GitHub and in Cursor’s markdown preview.
+
+To get a typeset copy with Unicode math fonts (XeLaTeX + TeX Gyre DejaVu Math), follow the numbered steps in [`study-guide/how-to-rebuild.md`](study-guide/how-to-rebuild.md). The short version is:
+
+```bash
+bash scripts/build_study_guide.sh
+bash scripts/build_beginner_zh.sh
+bash scripts/build_study_guide_zh.sh
+bash scripts/build_study_guide_bilingual.sh
+bash scripts/build_paper_bilingual.sh
+```
+
+Then open:
+
+- [`study-guide/build/study-guide.html`](study-guide/build/study-guide.html) — KaTeX in the browser
+- [`study-guide/build/study-guide.pdf`](study-guide/build/study-guide.pdf) — printable PDF
+
+A Unicode symbol card (π, ≤, ⊕, ⊗, …) is in [`study-guide/unicode-math.md`](study-guide/unicode-math.md).
 
 ## Target numbers (so you know what you are aiming at)
 
@@ -16,8 +49,8 @@ In the infinite-test limit the protocol matches the GHZ-based protocol of Silman
 
 | Quantity | Symbol | Value |
 |---|---|---|
-| Alice’s control (cheating probability) | \(P_{\mathrm{cont}}\) | \(\cos^2(\pi/8)\simeq 0.8536\) |
-| Bob’s information gain | \(P_{\mathrm{gain}}\) | \(3/4 = 0.75\) |
+| Alice’s control (cheating probability) | $P_{\mathrm{cont}}$ | $\cos^2(\pi/8)\simeq 0.8536$ |
+| Bob’s information gain | $P_{\mathrm{gain}}$ | $3/4 = 0.75$ |
 
 The price is that Alice cannot choose the reveal time freely. Appendices B and C of the paper remove that restriction in two different ways.
 
@@ -25,20 +58,19 @@ The price is that Alice cannot choose the reveal time freely. Appendices B and C
 
 ```
 study-guide/          reconstruction workbook
-  00-how-to-use.md
-  01-prerequisites.md
-  02-the-research-question.md
-  03-bit-commitment.md
-  04-device-independence.md
-  05-honest-resources.md
-  06-protocol.md
-  07-alice-security.md
-  08-bob-security-asymptotic.md
-  09-bob-security-finite.md
-  10-appendices.md
-  11-write-the-paper.md
-  reconstruction-checklist.md
-  solutions.md
+  00-no-quantum.md     start here with no QM (English)
+  beginner/            白话零基础（中文，不需要量子力学）
+  ...
+  unicode-math.md
+  build/
+    study-guide.html
+    study-guide.pdf
+study-guide-zh/        full Chinese technical guide
+study-guide-bilingual/ paired English + Chinese study guide
+paper-bilingual/       paragraph-paired English original + Chinese translation of the paper
 scripts/
-  reconstruct_figures.py   rebuild Figs. 1 and 3 from the analytic formulae
+  reconstruct_figures.py
+  convert_math_delimiters.py
+  build_study_guide.sh
+  build_paper_bilingual.sh
 ```
