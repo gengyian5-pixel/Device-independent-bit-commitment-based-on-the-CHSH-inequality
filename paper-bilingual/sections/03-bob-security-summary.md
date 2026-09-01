@@ -68,7 +68,7 @@ Figure 1: Alice’s control as a function of $I_{\mathrm{th}}$ in the asymptotic
 
 图 1：渐近极限下 Alice 的控制力随 $I_{\mathrm{th}}$ 变化的关系。该曲线由式 (8)–(10) 得到。该曲线达到式 (7) 的二阶松弛上界，误差在 $10^{-8}$ 以内——即 SDP 求解器的数值精度。
 
-![Figure 1 / 图 1](figures/fig1.png){ width=70% }
+![](figures/fig1.png){ width=70% }
 
 
 ### V.2 Alice’s optimal cheating strategy in the asymptotic limit
@@ -126,7 +126,7 @@ Figure 2: Schematic representation of the alignment of the measurement axes in A
 
 图 2：Alice 最优作弊策略中测量轴排列方式的示意图。实线（虚线）轴对应 Bob 在盒子 $0$（$1$）上的测量。点线轴对应 Alice 的测量（Alice 总是在 Bob 的两条轴正中间进行测量）。所有轴都位于 $zx$ 平面内。$\alpha=2\theta-\varphi_{\mathrm{opt}}$。$\varphi_{\mathrm{opt}}$ 与 $\theta$ 通过式 (10) 相关联。
 
-![Figure 2 / 图 2](figures/fig2.png){ width=70% }
+![](figures/fig2.png){ width=70% }
 
 
 ### V.3 Alice’s control in the general case of an arbitrary number of tests
@@ -269,7 +269,7 @@ Figure 3: Upper bound on Alice’s control as a function of $\log_{10}N$ . The c
 
 图 3：Alice 控制力的上界随 $\log_{10}N$ 变化的关系。在给定 $I_{\mathrm{th}}=2\sqrt{2}(1-\frac{1}{\sqrt{N}})$ 时，该曲线给出了针对不同 $N$ 值对式 (19) 进行数值求解的结果。在 $N\rightarrow\infty$ 的极限下，Alice 的控制力趋于渐近线 $\cos^{2}\bigl(\frac{\pi}{8}\bigr)\simeq 0.854$（以虚线表示）。
 
-![Figure 3 / 图 3](figures/fig3.png){ width=70% }
+![](figures/fig3.png){ width=70% }
 
 
 **English original**

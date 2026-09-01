@@ -332,17 +332,17 @@ def insert_figures(text: str) -> str:
     pairs = [
         (
             "图 1：渐近极限下 Alice 的控制力随 $I_{\\mathrm{th}}$ 变化的关系。该曲线由式 (8)–(10) 得到。该曲线达到式 (7) 的二阶松弛上界，误差在 $10^{-8}$ 以内——即 SDP 求解器的数值精度。",
-            "\n\n![Figure 1 / 图 1](figures/fig1.png){ width=70% }\n",
+            "\n\n![](figures/fig1.png){ width=70% }\n",
             "figures/fig1.png",
         ),
         (
             "图 2：Alice 最优作弊策略中测量轴排列方式的示意图。实线（虚线）轴对应 Bob 在盒子 $0$（$1$）上的测量。点线轴对应 Alice 的测量（Alice 总是在 Bob 的两条轴正中间进行测量）。所有轴都位于 $zx$ 平面内。$\\alpha=2\\theta-\\varphi_{\\mathrm{opt}}$。$\\varphi_{\\mathrm{opt}}$ 与 $\\theta$ 通过式 (10) 相关联。",
-            "\n\n![Figure 2 / 图 2](figures/fig2.png){ width=70% }\n",
+            "\n\n![](figures/fig2.png){ width=70% }\n",
             "figures/fig2.png",
         ),
         (
             "图 3：Alice 控制力的上界随 $\\log_{10}N$ 变化的关系。在给定 $I_{\\mathrm{th}}=2\\sqrt{2}(1-\\frac{1}{\\sqrt{N}})$ 时，该曲线给出了针对不同 $N$ 值对式 (19) 进行数值求解的结果。在 $N\\rightarrow\\infty$ 的极限下，Alice 的控制力趋于渐近线 $\\cos^{2}\\bigl(\\frac{\\pi}{8}\\bigr)\\simeq 0.854$（以虚线表示）。",
-            "\n\n![Figure 3 / 图 3](figures/fig3.png){ width=70% }\n",
+            "\n\n![](figures/fig3.png){ width=70% }\n",
             "figures/fig3.png",
         ),
     ]
