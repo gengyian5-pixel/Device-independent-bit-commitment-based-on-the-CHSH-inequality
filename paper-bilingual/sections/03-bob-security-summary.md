@@ -104,9 +104,7 @@ By plugging $\varphi_{\mathrm{opt}}$ into Eq. (9), and using Eq. (8) to obtain $
 
 **English original**
 
-Figure 2: Schematic representation of the alignment of the measurement axes in Alice’s optimal cheating strategy. The solid (dashed) axes correspond to Bob’s measurement on box $0$ ( $1$ ). The dotted axes correspond to Alice’s measurements (Alice always measures midway between Bob’s axes). The axes all lie in the $zx$ -plane. $\alpha=2\theta-\varphi_{\mathrm{opt}}$ . $\varphi_{\mathrm{opt}}$ and $\theta$ are related via Eq. (10)
-
-.
+Figure 2: Schematic representation of the alignment of the measurement axes in Alice’s optimal cheating strategy. The solid (dashed) axes correspond to Bob’s measurement on box $0$ ( $1$ ). The dotted axes correspond to Alice’s measurements (Alice always measures midway between Bob’s axes). The axes all lie in the $zx$ -plane. $\alpha=2\theta-\varphi_{\mathrm{opt}}$ . $\varphi_{\mathrm{opt}}$ and $\theta$ are related via Eq. (10).
 
 **中文译文**
 
@@ -299,4 +297,4 @@ S.P., S.M., and J.S. acknowledge financial support from the European Union under
 
 **中文译文**
 
-S.P.、S.M. 和 J.S. 感谢欧盟通过 QCS、QALGO 和 DIQIP 项目提供的资助，以及 F.R.S.-FNRS 通过 DIQIP 项目提供的资助。S.P. 感谢布鲁塞尔首都大区通过一项 BB2B 资助提供的支持。S.P. 是科学研究基金会 F.R.S.-FNRS（比利时）的研究副教授。开展本项研究时，J.S. 是科学研究基金会 F.R.S.-FNRS（比利时）的博士后研究员。N.A 感谢 BSF（资助编号 32/08）和下萨克森—以色列研究合作计划的支持。求解式 (7) 的 SDP 问题时使用了 Matlab 工具箱 YALMIP YALMIP 和 SeDuMi SeDuMi。
+S.P.、S.M. 和 J.S. 感谢欧盟通过 QCS、QALGO 和 DIQIP 项目提供的资助，以及 F.R.S.-FNRS 通过 DIQIP 项目提供的资助。S.P. 感谢布鲁塞尔首都大区通过一项 BB2B 资助提供的支持。S.P. 是科学研究基金会 F.R.S.-FNRS（比利时）的研究员。开展本项研究时，J.S. 是科学研究基金会 F.R.S.-FNRS（比利时）的博士后研究员。N.A 感谢 BSF（资助编号 32/08）和下萨克森—以色列研究合作计划的支持。求解式 (7) 的 SDP 问题时使用了 Matlab 工具箱 YALMIP YALMIP 和 SeDuMi SeDuMi。
