@@ -50,7 +50,7 @@ In the following, it will be convenient to think of the PR box as consisting of 
 
 **English original**
 
-The PR-based protocol is essentially a simplified version of our earlier protocols with the first step (statistical estimation of the CHSH violation and random selection of the box used to encode Alice’s commitment) omitted, and with the verification of nonlocal correlations and Alice’s commitment being performed at the same time. This last possibility follows from pseudo-telepathy, as in the protocol of [30].
+The PR-based protocol is essentially a simplified version of our earlier protocols with the first step (statistical estimation of the CHSH violation and random selection of the box used to encode Alice's commitment) omitted, and with the verification of nonlocal correlations and Alice's commitment being performed at the same time. This last possibility follows from pseudo-telepathy, as in the protocol of [30].
 
 **中文译文**
 
@@ -80,11 +80,11 @@ We assume that at the start of the protocol Alice has box $0$ and Bob has box $1
 
 2. 揭示阶段——Alice 向 Bob 发送 $s^{0}$ 和 $r^{0}$。Bob 检查 $q=r^{0}$ 或 $q=r^{0}\oplus s^{0}$ 是否成立。如果两个关系均不成立，他就中止协议。否则，他均匀随机地选择一个输入 $s^{1}$，并验证 $r^{0}\oplus r^{1}=s^{0}\cdot s^{1}$。如果最后这项检验失败，他就中止协议。
 
-### Alice’s security / Alice 的安全性
+### Alice's security / Alice 的安全性
 
 **English original**
 
-We recall that in the quantum case (both in the GHZ-based and CHSH-based formulations) Alice’s security relies only on the no-signaling constraints. Since we are still working in a non-signaling setting, Alice’s security will remain unchanged, i.e. Bob’s information gain is upper-bounded by $\frac{3}{4}$ . The proof proceeds exactly as in Subsection IV.A, except that the instead of inputting $2$ and $3$ , Alice inputs $0$ and $1$ .
+We recall that in the quantum case (both in the GHZ-based and CHSH-based formulations) Alice's security relies only on the no-signaling constraints. Since we are still working in a non-signaling setting, Alice's security will remain unchanged, i.e. Bob's information gain is upper-bounded by $\frac{3}{4}$ . The proof proceeds exactly as in Subsection IV.A, except that the instead of inputting $2$ and $3$ , Alice inputs $0$ and $1$ .
 
 **中文译文**
 
@@ -92,17 +92,17 @@ We recall that in the quantum case (both in the GHZ-based and CHSH-based formula
 
 **English original**
 
-One optimal strategy for Bob is to assume that $q=r^{0}$ , and input $s^{1}=1$ , obtaining an output $r^{1}$ . He then guesses $g=r^{0}\oplus r^{1}$ . When $s^{0}=0$ , $q=r^{0}$ and Bob’s guess, $g=r^{0}\oplus r^{1}=s^{0}$ , is correct. When $s^{0}=1$ and $a=0$ , $q=r^{0}$ and Bob’s guess, $g=r^{0}\oplus r^{1}=s^{0}$ , is again correct. However, when $s^{0}=1$ and $a=1$ , $q=r^{0}\oplus 1$ and Bob’s guess, $g=r^{0}\oplus r^{1}\oplus 1=s^{0}\oplus 1$ , is wrong. Since Alice is honest she picks $a$ uniformly at random, implying that $P_{\mathrm{gain}}=\frac{3}{4}$ .
+One optimal strategy for Bob is to assume that $q=r^{0}$ , and input $s^{1}=1$ , obtaining an output $r^{1}$ . He then guesses $g=r^{0}\oplus r^{1}$ . When $s^{0}=0$ , $q=r^{0}$ and Bob's guess, $g=r^{0}\oplus r^{1}=s^{0}$ , is correct. When $s^{0}=1$ and $a=0$ , $q=r^{0}$ and Bob's guess, $g=r^{0}\oplus r^{1}=s^{0}$ , is again correct. However, when $s^{0}=1$ and $a=1$ , $q=r^{0}\oplus 1$ and Bob's guess, $g=r^{0}\oplus r^{1}\oplus 1=s^{0}\oplus 1$ , is wrong. Since Alice is honest she picks $a$ uniformly at random, implying that $P_{\mathrm{gain}}=\frac{3}{4}$ .
 
 **中文译文**
 
 Bob 的一种最优策略是假设 $q=r^{0}$，并输入 $s^{1}=1$，得到输出 $r^{1}$。然后他猜测 $g=r^{0}\oplus r^{1}$。当 $s^{0}=0$ 时，$q=r^{0}$，且 Bob 的猜测 $g=r^{0}\oplus r^{1}=s^{0}$ 正确。当 $s^{0}=1$ 且 $a=0$ 时，$q=r^{0}$，Bob 的猜测 $g=r^{0}\oplus r^{1}=s^{0}$ 仍然正确。然而，当 $s^{0}=1$ 且 $a=1$ 时，$q=r^{0}\oplus 1$，Bob 的猜测 $g=r^{0}\oplus r^{1}\oplus 1=s^{0}\oplus 1$ 是错误的。由于 Alice 是诚实的，她均匀随机地选择 $a$，这意味着 $P_{\mathrm{gain}}=\frac{3}{4}$。
 
-### Bob’s security / Bob 的安全性
+### Bob's security / Bob 的安全性
 
 **English original**
 
-Recall that in a device-independent scenario dishonest Alice can prepare the boxes in any state she wishes, possibly entangled with ancillary systems in her possession. Since in the commit phase Alice sends a classical bit $q$ as a token of her commitment, without receiving any information from Bob, without loss of generality we may assume that she decides on the value of $q$ before the start of the protocol, and accordingly prepares the boxes to maximize $P_{\mathrm{cont}}$ . Furthermore, since Alice’s cheating probability is invariant under the simultaneous relabeling $q\rightarrow q\oplus 1$ and $r^{0}\rightarrow r^{0}\oplus 1$ , no value of $q$ is preferable, and we may assume that she sends $q=0$ .
+Recall that in a device-independent scenario dishonest Alice can prepare the boxes in any state she wishes, possibly entangled with ancillary systems in her possession. Since in the commit phase Alice sends a classical bit $q$ as a token of her commitment, without receiving any information from Bob, without loss of generality we may assume that she decides on the value of $q$ before the start of the protocol, and accordingly prepares the boxes to maximize $P_{\mathrm{cont}}$ . Furthermore, since Alice's cheating probability is invariant under the simultaneous relabeling $q\rightarrow q\oplus 1$ and $r^{0}\rightarrow r^{0}\oplus 1$ , no value of $q$ is preferable, and we may assume that she sends $q=0$ .
 
 **中文译文**
 
@@ -110,7 +110,7 @@ Recall that in a device-independent scenario dishonest Alice can prepare the box
 
 **English original**
 
-Suppose now that Alice wishes to reveal $0$ . Since $s^{0}=0$ , it follows that Alice must send $r^{0}=0$ as Bob will first check whether $r^{0}=0$ or not. Bob will then test whether the PR box correlations, Eq. (20), are satisfied: Bob will uniformly at random pick a value of $s^{1}$ and verify that $r^{1}=0$ . Alice’s control in this case equals $\frac{1}{2}\left[P\left(r^{1}=0|s^{1}=0\right)+P\left(r^{1}=0|s^{1}=1\right)\right]$ . Suppose now that Alice wishes to reveal $1$ , then both values of $r^{1}$ are possible, and the only relevant test is whether the PR box correlations are satisfied. Alice’s control in this case equals $\frac{1}{2}\sum_{r^{0}=0,\,1}\left[P\left(r^{0},\,r^{1}=r^{0}|s^{0}=1,\,s^{1}=0\right)+P\left(r^{0},\,r^{1}=r^{0}\oplus 1|s^{0}=1,\,s^{1}=1\right)\right]$ . Alice’s overall control is obtained by maximizing
+Suppose now that Alice wishes to reveal $0$ . Since $s^{0}=0$ , it follows that Alice must send $r^{0}=0$ as Bob will first check whether $r^{0}=0$ or not. Bob will then test whether the PR box correlations, Eq. (20), are satisfied: Bob will uniformly at random pick a value of $s^{1}$ and verify that $r^{1}=0$ . Alice's control in this case equals $\frac{1}{2}\left[P\left(r^{1}=0|s^{1}=0\right)+P\left(r^{1}=0|s^{1}=1\right)\right]$ . Suppose now that Alice wishes to reveal $1$ , then both values of $r^{1}$ are possible, and the only relevant test is whether the PR box correlations are satisfied. Alice's control in this case equals $\frac{1}{2}\sum_{r^{0}=0,\,1}\left[P\left(r^{0},\,r^{1}=r^{0}|s^{0}=1,\,s^{1}=0\right)+P\left(r^{0},\,r^{1}=r^{0}\oplus 1|s^{0}=1,\,s^{1}=1\right)\right]$ . Alice's overall control is obtained by maximizing
 
 **中文译文**
 
@@ -152,7 +152,7 @@ and is easily seen to be no greater than $\frac{3}{4}$ .
 
 **English original**
 
-Alice’s optimal strategy is to prepare Bob’s box such that $P(r^{1}=0|s^{1}=0)=P(r^{1}=0|s^{1}=1)=1$ , i.e. a classical box.
+Alice's optimal strategy is to prepare Bob's box such that $P(r^{1}=0|s^{1}=0)=P(r^{1}=0|s^{1}=1)=1$ , i.e. a classical box.
 
 **中文译文**
 
@@ -165,7 +165,7 @@ Alice 的最优策略是将 Bob 的盒制备为满足 $P(r^{1}=0|s^{1}=0)=P(r^{1
 
 **English original**
 
-In this appendix we consider a modification of the protocol, such that the reveal time can be chosen at will. This comes at the price of increasing Alice’s control. The protocol proceeds as follows:
+In this appendix we consider a modification of the protocol, such that the reveal time can be chosen at will. This comes at the price of increasing Alice's control. The protocol proceeds as follows:
 
 **中文译文**
 
@@ -195,21 +195,21 @@ In this appendix we consider a modification of the protocol, such that the revea
 
 3. 揭示阶段——在 Alice 选择的任意时刻 $t>t^{c}$，她向 Bob 发送 $b$ 和 $r^{c}_{n+1}$。Bob 检查 $q=r^{c}_{n+1}$ 或 $q=r^{c}_{n+1}\oplus b$ 是否成立。如果两个关系均不成立，他就中止协议。否则，如果 $s^{\bar{c}}_{n+1}=s^{c}_{n+1}-2$（即 $d=b-2$），他就验证 $r^{\bar{c}}_{n+1}=r^{c}_{n+1}$。如果最后这项检验失败，他就中止协议。
 
-### Alice’s security / Alice 的安全性
+### Alice's security / Alice 的安全性
 
 **English original**
 
-Clearly, the analysis of Alice’s security remains the same as in the original protocol.
+Clearly, the analysis of Alice's security remains the same as in the original protocol.
 
 **中文译文**
 
 显然，对 Alice 安全性的分析与原协议相同。
 
-### Bob’s security / Bob 的安全性
+### Bob's security / Bob 的安全性
 
 **English original**
 
-Bob’s random choice of the $n+1\,$ th input into box $\bar{c}$ implies that half the time he will not be able to carry out the last test in the reveal phase and will accept whatever value dishonest Alice reveals, independently of her cheating strategy. The remaining half of the time, Bob’s actions will precisely be identical to those analyzed previously (in particular, the last input is introduced into box $\bar{c}$ at time $t_{n+1}$ , and thus, unless $n=N$ , this box cannot tell whether it is measured in the random selection phase or the reveal phase). Alice’s control is therefore modified as follows: $P_{\mathrm{cont}}\rightarrow\frac{1}{2}(P_{\mathrm{cont}}+1)$ .
+Bob's random choice of the $n+1\,$ th input into box $\bar{c}$ implies that half the time he will not be able to carry out the last test in the reveal phase and will accept whatever value dishonest Alice reveals, independently of her cheating strategy. The remaining half of the time, Bob's actions will precisely be identical to those analyzed previously (in particular, the last input is introduced into box $\bar{c}$ at time $t_{n+1}$ , and thus, unless $n=N$ , this box cannot tell whether it is measured in the random selection phase or the reveal phase). Alice's control is therefore modified as follows: $P_{\mathrm{cont}}\rightarrow\frac{1}{2}(P_{\mathrm{cont}}+1)$ .
 
 **中文译文**
 
@@ -265,21 +265,21 @@ The protocol proceeds as follows:
 
 3. 揭示阶段——Alice 向 Bob 发送 $b$ 和 $r^{c}_{n}$。Bob 检查 $q=r^{c}_{n}$ 或 $q=r^{c}_{n}\oplus b$ 是否成立。如果两个关系均不成立，他就中止协议。否则，他均匀随机地选择两个输入串 $\mathrm{\mathbf{s}}^{0}_{\bar{n}}\in\{0,\,1\}^{N}$ 和 $\mathrm{\mathbf{s}}^{1}_{\bar{n}}\in\{0,\,1\}^{N}$，并将其送入相应的盒。同时，他将 $s^{\bar{c}}_{n}=s^{c}_{n}-2=b$ 输入第 $n$ 对的盒 $\bar{c}$。如果 $r^{\bar{c}}_{n+1}\neq r^{c}_{n+1}$，他就中止协议。否则，他使用相应的输出串 $\mathrm{\mathbf{r}}^{0}_{\bar{n}}$ 和 $\mathrm{\mathbf{r}}^{1}_{\bar{n}}$ 计算观测到的 CHSH 违反 $\bar{I}_{\bar{n}}(\mathbf{w}_{\bar{n}})=\frac{1}{N}\sum_{k\neq n}I(w_{k})$，并将其与事先约定的阈值 $I_{\mathrm{th}}$ 比较。如果最后这项检验失败，他就中止协议。
 
-### Alice’s security / Alice 的安全性
+### Alice's security / Alice 的安全性
 
 **English original**
 
-Clearly, the analysis of Alice’s security remains the same as in the original protocol.
+Clearly, the analysis of Alice's security remains the same as in the original protocol.
 
 **中文译文**
 
 显然，对 Alice 安全性的分析与原协议相同。
 
-### Bob’s security / Bob 的安全性
+### Bob's security / Bob 的安全性
 
 **English original**
 
-We will not derive here the dependence of Alice’s control on the number of pairs $N+1$ . Instead, we will show that it is upper-bounded by that of the original protocol (Section III). To see this, consider another protocol, identical to the one above in all except that instead of using the inputs and outputs of all the pairs (bar the one chosen for the commitment) to estimate the CHSH violation, Bob uses only those of the first $n-1$ pairs (Alice is of course aware of this and of the numbering of the pairs). Clearly, the new protocol can only increase Alice’s control.
+We will not derive here the dependence of Alice's control on the number of pairs $N+1$ . Instead, we will show that it is upper-bounded by that of the original protocol (Section III). To see this, consider another protocol, identical to the one above in all except that instead of using the inputs and outputs of all the pairs (bar the one chosen for the commitment) to estimate the CHSH violation, Bob uses only those of the first $n-1$ pairs (Alice is of course aware of this and of the numbering of the pairs). Clearly, the new protocol can only increase Alice's control.
 
 **中文译文**
 
@@ -287,7 +287,7 @@ We will not derive here the dependence of Alice’s control on the number of pai
 
 **English original**
 
-Now we note that this protocol would be identical to that of the sequential case, up to the fact that the reveal time can be chosen at will,[^7] if box $i$ of pair $k$ were to have full information about the inputs and outputs of all the $i\,$ th boxes of the first $k-1$ pairs. Clearly, such a modification can only increase Alice’s control.
+Now we note that this protocol would be identical to that of the sequential case, up to the fact that the reveal time can be chosen at will,[^7] if box $i$ of pair $k$ were to have full information about the inputs and outputs of all the $i\,$ th boxes of the first $k-1$ pairs. Clearly, such a modification can only increase Alice's control.
 
 **中文译文**
 
@@ -295,7 +295,7 @@ Now we note that this protocol would be identical to that of the sequential case
 
 **English original**
 
-We therefore conclude that Alice’s control in the sequential case provides an upper bound on her control in the large office scenario.
+We therefore conclude that Alice's control in the sequential case provides an upper bound on her control in the large office scenario.
 
 **中文译文**
 
@@ -422,7 +422,7 @@ where $\pi_{k}\left(\varepsilon\right)$ is defined to be the union of all histor
 - [33] R.W. Spekkens and T. Rudolph, Phys. Rev. A 65, 012310 (2001).
 - [34] A. Chailloux and I. Kerenidis, in Proceedings of the 52nd Annual Symposium on Foundations of Computer Science (CS Press, 2011), p. 354.
 - [35] N. Aharon et al., in Proceedings of the 6th Conference on the Theory of Quantum Computation, Communication, and Cryptography (Springer, 2014), p. 1.
-- [36] D.M. Greenberger, M.A. Horne, and A. Zeilinger, in Bell’s Theorem, Quantum Theory, and Conceptions of the Universe (Kluwer, 1989), p. 74.
+- [36] D.M. Greenberger, M.A. Horne, and A. Zeilinger, in Bell's Theorem, Quantum Theory, and Conceptions of the Universe (Kluwer, 1989), p. 74.
 - [37] N.D. Mermin, Phys. Today 43, 9 (1990).
 - [38] L. Vaidman, Found. Phys. 29, 615 (1999).
 - [39] N. Gisin. A.A. Méthot, and V. Scarani, Int. J. Quant. Inf. 5, 525 (2007).

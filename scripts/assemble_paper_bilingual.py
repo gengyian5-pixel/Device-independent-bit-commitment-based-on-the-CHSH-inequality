@@ -78,7 +78,8 @@ CITE = {
 }
 
 KEYS = sorted(CITE, key=len, reverse=True)
-KEY_ALT = "|".join(re.escape(k) for k in KEYS)
+# Toolbox names also appear as words; they are handled separately.
+KEY_ALT = "|".join(re.escape(k) for k in KEYS if k not in {"YALMIP", "SeDuMi"})
 SEP = r"(?:\s*[;；,，]\s*|\s+and\s+|\s+和\s+)"
 CITE_SEQ = re.compile(rf"(?<![A-Za-z])({KEY_ALT})(?:{SEP}({KEY_ALT}))*(?![A-Za-z0-9])")
 
@@ -192,6 +193,14 @@ def restore_citations(text: str) -> str:
 
     body = body.replace("YALMIP YALMIP", "YALMIP [44]")
     body = body.replace("SeDuMi SeDuMi", "SeDuMi [45]")
+    body = body.replace(
+        "The Matlab toolboxes [44] [44] and [45] [45]",
+        "The Matlab toolboxes YALMIP [44] and SeDuMi [45]",
+    )
+    body = body.replace(
+        "Matlab 工具箱 [44] [44] 和 [45] [45]",
+        "Matlab 工具箱 YALMIP [44] 和 SeDuMi [45]",
+    )
 
     def repl(match: re.Match[str]) -> str:
         found = re.findall(KEY_ALT, match.group(0))
@@ -368,6 +377,8 @@ def latex_compat(text: str) -> str:
     text = text.replace(r"\begin{align*}", r"\begin{aligned}")
     text = text.replace(r"\end{align*}", r"\end{aligned}")
     text = text.replace(r"\mathds{1}", r"\mathbb{1}")
+    # Noto CJK body font lacks U+2019, which otherwise renders as "Bob' s".
+    text = text.replace("\u2019", "'").replace("\u2018", "'")
     return text
 
 

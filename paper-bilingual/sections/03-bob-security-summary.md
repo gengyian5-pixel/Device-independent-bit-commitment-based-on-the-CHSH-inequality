@@ -1,14 +1,14 @@
-## V Bob’s security
+## V Bob's security
 
 **English original**
 
-This section is divided into three. In Subsections A and B we consider the case where the boxes at the $n+1$ th iteration (i.e. after Bob’s CHSH estimation) are known to be characterized by a fixed Bell violation $I\geq I_{\mathrm{th}}$ . As we will see in Subsection C, this is equivalent to considering the asymptotic limit in which the number of tests Bob carries out tends to infinity. Specifically, in Subsection A we derive an upper bound on Alice’s control, given the CHSH expectation value $I$ , and in Subsection B we present an optimal cheating strategy which saturates it. Finally, in Subsection C we use the bound derived in Subsection A to derive an upper bound on Alice’s control in the general case where Bob carries out an arbitrary number of tests. In the limit that this number tends to infinity we recover the bound of Subsection A.
+This section is divided into three. In Subsections A and B we consider the case where the boxes at the $n+1$ th iteration (i.e. after Bob's CHSH estimation) are known to be characterized by a fixed Bell violation $I\geq I_{\mathrm{th}}$ . As we will see in Subsection C, this is equivalent to considering the asymptotic limit in which the number of tests Bob carries out tends to infinity. Specifically, in Subsection A we derive an upper bound on Alice's control, given the CHSH expectation value $I$ , and in Subsection B we present an optimal cheating strategy which saturates it. Finally, in Subsection C we use the bound derived in Subsection A to derive an upper bound on Alice's control in the general case where Bob carries out an arbitrary number of tests. In the limit that this number tends to infinity we recover the bound of Subsection A.
 
 **中文译文**
 
 本节分为三个部分。在 A、B 两个小节中，我们考虑盒子在第 $n+1$ 次迭代（即 Bob 完成 CHSH 估计之后）时已知具有固定的 Bell 违反值 $I\geq I_{\mathrm{th}}$ 的情形。正如我们将在 C 小节中看到的，这等价于考虑 Bob 所执行的测试次数趋于无穷的渐近极限。具体而言，在 A 小节中，我们在给定 CHSH 期望值 $I$ 的情况下推导 Alice 控制力的一个上界；在 B 小节中，我们给出一种达到该上界的最优作弊策略。最后，在 C 小节中，我们利用 A 小节推导出的界，针对 Bob 执行任意次数测试的一般情形推导 Alice 控制力的一个上界。当测试次数趋于无穷时，我们重新得到 A 小节的界。
 
-### V.1 Alice’s control in the asymptotic limit
+### V.1 Alice's control in the asymptotic limit
 
 **English original**
 
@@ -20,7 +20,7 @@ Most generally, in the commit phase Alice carries out a two-outcome measurement 
 
 **English original**
 
-Suppose that Alice wishes to reveal $b=0$ ( $s^{c}=2$ ). Bob will first check whether $r^{c}=q$ (since $b=0$ , $r^{c}\oplus b=r^{c}$ ). Bob will then input $s^{\bar{c}}=0$ and verify that $r^{\bar{c}}=r^{c}$ . In this case Alice’s cheating probability equals $\frac{1}{2}\sum_{k,\,l=0,\,1}\left[P(r^{1}=k,\,(k,\,l)|s^{1}=0,\,\mathcal{M}^{0})+P(r^{0}=k,\,(k,\,l)|s^{0}=0,\,\mathcal{M}^{1})\right]$ , where the factor of $\frac{1}{2}$ is due to Bob sending boxes $0$ and $1$ with equal probability. Suppose that Alice wishes to reveal $b=1$ ( $s^{c}=3$ ), then $r^{c}=b$ or $r^{c}=b\oplus 1$ . Bob will input $s^{\bar{c}}=1$ and verify that $r^{\bar{c}}=r^{c}$ . In this case Alice’s cheating probability equals $\frac{1}{2}\sum_{k,\,l=0,\,1}\left[P(r^{1}=l,\,(k,\,l)|s^{1}=1,\,\mathcal{M}^{0})+P(r^{0}=l,\,(k,\,l)|s^{0}=1,\,\mathcal{M}^{1})\right]$ . Alice’s overall cheating probability is therefore given by
+Suppose that Alice wishes to reveal $b=0$ ( $s^{c}=2$ ). Bob will first check whether $r^{c}=q$ (since $b=0$ , $r^{c}\oplus b=r^{c}$ ). Bob will then input $s^{\bar{c}}=0$ and verify that $r^{\bar{c}}=r^{c}$ . In this case Alice's cheating probability equals $\frac{1}{2}\sum_{k,\,l=0,\,1}\left[P(r^{1}=k,\,(k,\,l)|s^{1}=0,\,\mathcal{M}^{0})+P(r^{0}=k,\,(k,\,l)|s^{0}=0,\,\mathcal{M}^{1})\right]$ , where the factor of $\frac{1}{2}$ is due to Bob sending boxes $0$ and $1$ with equal probability. Suppose that Alice wishes to reveal $b=1$ ( $s^{c}=3$ ), then $r^{c}=b$ or $r^{c}=b\oplus 1$ . Bob will input $s^{\bar{c}}=1$ and verify that $r^{\bar{c}}=r^{c}$ . In this case Alice's cheating probability equals $\frac{1}{2}\sum_{k,\,l=0,\,1}\left[P(r^{1}=l,\,(k,\,l)|s^{1}=1,\,\mathcal{M}^{0})+P(r^{0}=l,\,(k,\,l)|s^{0}=1,\,\mathcal{M}^{1})\right]$ . Alice's overall cheating probability is therefore given by
 
 **中文译文**
 
@@ -35,7 +35,7 @@ $$
 $$
 **English original**
 
-To obtain Alice’s control, we must maximize the above expression under the constraint that the CHSH expectation value is no less than $I_{\mathrm{th}}$ . This translates to the following optimization problem
+To obtain Alice's control, we must maximize the above expression under the constraint that the CHSH expectation value is no less than $I_{\mathrm{th}}$ . This translates to the following optimization problem
 
 **中文译文**
 
@@ -54,7 +54,7 @@ P_{\mathrm{cont}}
 $$
 **English original**
 
-where $\mathcal{Q}=\bigl\{\mathcal{H}^{c},\,\rho,\,\{\Pi_{i|j}^{c}\},\,\mathcal{M}^{c}\bigr\}_{c}$ and $\Pi_{r|s}^{c}$ is the POVM element corresponding to inputting $s$ into box $c$ and obtaining the output $r$ . Problems of this type can be relaxed to a hierarchy of semi-definite programming (SDP) problems, using the method introduced in [42, 43]. This hierarchy provides increasingly tighter upper bounds on the solution of the original problem, which are guaranteed to converge to it at a sufficiently high order. We have solved the second order SDP relaxation of Eq. (7). In the next subsection we present a cheating strategy which saturates it (up to $10^{-8}$ – the numerical accuracy of the SDP solver), implying that the second order relaxation already converges. Fig. 1 presents Alice’s control as a function of the CHSH expectation value.
+where $\mathcal{Q}=\bigl\{\mathcal{H}^{c},\,\rho,\,\{\Pi_{i|j}^{c}\},\,\mathcal{M}^{c}\bigr\}_{c}$ and $\Pi_{r|s}^{c}$ is the POVM element corresponding to inputting $s$ into box $c$ and obtaining the output $r$ . Problems of this type can be relaxed to a hierarchy of semi-definite programming (SDP) problems, using the method introduced in [42, 43]. This hierarchy provides increasingly tighter upper bounds on the solution of the original problem, which are guaranteed to converge to it at a sufficiently high order. We have solved the second order SDP relaxation of Eq. (7). In the next subsection we present a cheating strategy which saturates it (up to $10^{-8}$ – the numerical accuracy of the SDP solver), implying that the second order relaxation already converges. Fig. 1 presents Alice's control as a function of the CHSH expectation value.
 
 **中文译文**
 
@@ -62,7 +62,7 @@ where $\mathcal{Q}=\bigl\{\mathcal{H}^{c},\,\rho,\,\{\Pi_{i|j}^{c}\},\,\mathcal{
 
 **English original**
 
-Figure 1: Alice’s control as a function of $I_{\mathrm{th}}$ in the asymptotic limit. The curve was obtained from Eqs. (8)-(10). The curve saturates the second order relaxation of Eq. (7) up to $10^{-8}$ – the numerical accuracy of the SDP solver.
+Figure 1: Alice's control as a function of $I_{\mathrm{th}}$ in the asymptotic limit. The curve was obtained from Eqs. (8)-(10). The curve saturates the second order relaxation of Eq. (7) up to $10^{-8}$ – the numerical accuracy of the SDP solver.
 
 **中文译文**
 
@@ -71,11 +71,11 @@ Figure 1: Alice’s control as a function of $I_{\mathrm{th}}$ in the asymptotic
 ![](figures/fig1.png){ width=70% }
 
 
-### V.2 Alice’s optimal cheating strategy in the asymptotic limit
+### V.2 Alice's optimal cheating strategy in the asymptotic limit
 
 **English original**
 
-We present below an optimal cheating strategy, in which it suffices for Alice to perform a single two-outcome measurement, rather than a four-outcome one as described in the previous subsection. The strategy proceeds as follows. Alice prepares the boxes such that each contains one qubit out of a pair in the maximally entangled state $\left|\phi^{+}\right\rangle=\frac{1}{\sqrt{2}}\left(\left|00\right\rangle+\left|11\right\rangle\right)$ . Box $0$ is prepared such that inputting $0$ and $1$ gives rise to the measurements $\sigma_{2\theta}$ and $\sigma_{z}$ , respectively, where $\sigma_{\alpha}=\cos\alpha\sigma_{z}+\sin\alpha\sigma_{x}$ . Box $1$ is prepared such that inputting $0$ and $1$ gives rise to the measurements $\sigma_{2\theta-\varphi}$ and $\sigma_{4\theta-\varphi}$ , respectively. If Alice receives box $0$ ( $1$ ) she measures $\sigma_{3\theta-\varphi}$ ( $\sigma_{\theta}$ ). That is, she always measures along an axis midway between Bob’s measurement axes in $zx$ -plane (see Fig. 2). She then sends Bob values of $b$ and $r^{c}$ equal to the result of her measurement. Pairs of measurements along axes, differing by an angle of $\theta$ , in the $zx$ -plane (since $|\phi^{+}\rangle$ is invariant under rotations in the $zx$ -plane) give rise to correlated outcomes with probability $\cos^{2}\bigl(\frac{\theta}{2}\bigr)$ . Therefore, irrespectively of whether Alice reveals $0$ or $1$ (or, what is the same thing, whether Bob inputs $0$ or $1$ ), her cheating probability equals
+We present below an optimal cheating strategy, in which it suffices for Alice to perform a single two-outcome measurement, rather than a four-outcome one as described in the previous subsection. The strategy proceeds as follows. Alice prepares the boxes such that each contains one qubit out of a pair in the maximally entangled state $\left|\phi^{+}\right\rangle=\frac{1}{\sqrt{2}}\left(\left|00\right\rangle+\left|11\right\rangle\right)$ . Box $0$ is prepared such that inputting $0$ and $1$ gives rise to the measurements $\sigma_{2\theta}$ and $\sigma_{z}$ , respectively, where $\sigma_{\alpha}=\cos\alpha\sigma_{z}+\sin\alpha\sigma_{x}$ . Box $1$ is prepared such that inputting $0$ and $1$ gives rise to the measurements $\sigma_{2\theta-\varphi}$ and $\sigma_{4\theta-\varphi}$ , respectively. If Alice receives box $0$ ( $1$ ) she measures $\sigma_{3\theta-\varphi}$ ( $\sigma_{\theta}$ ). That is, she always measures along an axis midway between Bob's measurement axes in $zx$ -plane (see Fig. 2). She then sends Bob values of $b$ and $r^{c}$ equal to the result of her measurement. Pairs of measurements along axes, differing by an angle of $\theta$ , in the $zx$ -plane (since $|\phi^{+}\rangle$ is invariant under rotations in the $zx$ -plane) give rise to correlated outcomes with probability $\cos^{2}\bigl(\frac{\theta}{2}\bigr)$ . Therefore, irrespectively of whether Alice reveals $0$ or $1$ (or, what is the same thing, whether Bob inputs $0$ or $1$ ), her cheating probability equals
 
 **中文译文**
 
@@ -120,7 +120,7 @@ By plugging $\varphi_{\mathrm{opt}}$ into Eq. (9), and using Eq. (8) to obtain $
 
 **English original**
 
-Figure 2: Schematic representation of the alignment of the measurement axes in Alice’s optimal cheating strategy. The solid (dashed) axes correspond to Bob’s measurement on box $0$ ( $1$ ). The dotted axes correspond to Alice’s measurements (Alice always measures midway between Bob’s axes). The axes all lie in the $zx$ -plane. $\alpha=2\theta-\varphi_{\mathrm{opt}}$ . $\varphi_{\mathrm{opt}}$ and $\theta$ are related via Eq. (10).
+Figure 2: Schematic representation of the alignment of the measurement axes in Alice's optimal cheating strategy. The solid (dashed) axes correspond to Bob's measurement on box $0$ ( $1$ ). The dotted axes correspond to Alice's measurements (Alice always measures midway between Bob's axes). The axes all lie in the $zx$ -plane. $\alpha=2\theta-\varphi_{\mathrm{opt}}$ . $\varphi_{\mathrm{opt}}$ and $\theta$ are related via Eq. (10).
 
 **中文译文**
 
@@ -129,11 +129,11 @@ Figure 2: Schematic representation of the alignment of the measurement axes in A
 ![](figures/fig2.png){ width=70% }
 
 
-### V.3 Alice’s control in the general case of an arbitrary number of tests
+### V.3 Alice's control in the general case of an arbitrary number of tests
 
 **English original**
 
-For any given value of $n$ , Alice’s control is a function of the CHSH expectation value $E(I(W_{n+1})|\mathrm{\mathbf{w}}_{n})$ characterizing the behavior of the devices at step $n+1$ given the history $\mathrm{\mathbf{w}}_{n}$ . Alice’s control can therefore be expressed as
+For any given value of $n$ , Alice's control is a function of the CHSH expectation value $E(I(W_{n+1})|\mathrm{\mathbf{w}}_{n})$ characterizing the behavior of the devices at step $n+1$ given the history $\mathrm{\mathbf{w}}_{n}$ . Alice's control can therefore be expressed as
 
 **中文译文**
 
@@ -158,7 +158,7 @@ where $\Theta(\bar{I}_{n}(\mathrm{\mathbf{w}}_{n})-I_{\mathrm{th}})$ is the unit
 
 **English original**
 
-For each history $\mathrm{\mathbf{w}}_{n}$ with $n\leq N-2$ we can define the set of all compatible histories $\mathrm{\mathbf{w}}_{N-1}$ that could have occurred had Bob carried out $N-1$ repetitions instead of $n$ . Alice’s control can therefore be re-expressed as
+For each history $\mathrm{\mathbf{w}}_{n}$ with $n\leq N-2$ we can define the set of all compatible histories $\mathrm{\mathbf{w}}_{N-1}$ that could have occurred had Bob carried out $N-1$ repetitions instead of $n$ . Alice's control can therefore be re-expressed as
 
 **中文译文**
 
@@ -182,7 +182,7 @@ K(\mathrm{\mathbf{w}}_{N-1})=\max_{k\leq N-1}\{k\mid \bar{I}_{k}(\mathrm{\mathbf
 $$
 **English original**
 
-We can bound Alice’s control probability as follows:
+We can bound Alice's control probability as follows:
 
 **中文译文**
 
@@ -263,7 +263,7 @@ $$
 $$
 **English original**
 
-Figure 3: Upper bound on Alice’s control as a function of $\log_{10}N$ . The curve presents the results of numerical solutions of Eq. (19) for different values of $N$ , given $I_{\mathrm{th}}=2\sqrt{2}(1-\frac{1}{\sqrt{N}})$ . In the limit $N\rightarrow\infty$ Alice’s control tends to the asymptote $\cos^{2}\bigl(\frac{\pi}{8}\bigr)\simeq 0.854$ (represented by the dashed curve).
+Figure 3: Upper bound on Alice's control as a function of $\log_{10}N$ . The curve presents the results of numerical solutions of Eq. (19) for different values of $N$ , given $I_{\mathrm{th}}=2\sqrt{2}(1-\frac{1}{\sqrt{N}})$ . In the limit $N\rightarrow\infty$ Alice's control tends to the asymptote $\cos^{2}\bigl(\frac{\pi}{8}\bigr)\simeq 0.854$ (represented by the dashed curve).
 
 **中文译文**
 
@@ -295,7 +295,7 @@ P_{\mathrm{cont}}
 $$
 **English original**
 
-Note that if we choose the behavior of $\varepsilon$ such that in the limit $N\rightarrow\infty$ it decays more slowly than $N^{-1/2}$ , then $\lim_{N\rightarrow\infty}Q(\varepsilon)\rightarrow 0$ and the bound tends to $C(I_{\mathrm{th}})$ . For finite $N$ it seems unlikely that the bound is saturable, since $Q(\varepsilon)$ is non-vanishing. Fig. 3 presents the results of numerical solutions of Eq. (19) for different values of $N$ for $I_{\mathrm{th}}=2\sqrt{2}-\frac{1}{\sqrt{N}}$ . In particular, in the limit $N\rightarrow\infty$ Alice’s control tends to $\cos^{2}\left(\frac{\pi}{8}\right)$ , recovering the result of [30].
+Note that if we choose the behavior of $\varepsilon$ such that in the limit $N\rightarrow\infty$ it decays more slowly than $N^{-1/2}$ , then $\lim_{N\rightarrow\infty}Q(\varepsilon)\rightarrow 0$ and the bound tends to $C(I_{\mathrm{th}})$ . For finite $N$ it seems unlikely that the bound is saturable, since $Q(\varepsilon)$ is non-vanishing. Fig. 3 presents the results of numerical solutions of Eq. (19) for different values of $N$ for $I_{\mathrm{th}}=2\sqrt{2}-\frac{1}{\sqrt{N}}$ . In particular, in the limit $N\rightarrow\infty$ Alice's control tends to $\cos^{2}\left(\frac{\pi}{8}\right)$ , recovering the result of [30].
 
 **中文译文**
 
@@ -339,8 +339,8 @@ Finally, we point out that the techniques developed in this work are not especia
 
 **English original**
 
-S.P., S.M., and J.S. acknowledge financial support from the European Union under the projects QCS, QALGO, and DIQIP, and from the F.R.S.-FNRS under the project DIQIP. S.P. acknowledges support from the Brussels-Capital Region through a BB2B grant. S.P. is a Research Associate of the Fonds de la Recherche Scientifique F.R.S.- FNRS (Belgium). J.S. was a postdoctoral researcher of the Fonds de la Recherche Scientifique F.R.S.- FNRS (Belgium) at the time this research was carried out. N.A acknowledges support from the BSF (grant no. 32/08) and the Niedersachsen-Israeli Research Cooperation Program. The Matlab toolboxes [44] [44] and [45] [45] were used to solve the SDP problem Eq. (7).
+S.P., S.M., and J.S. acknowledge financial support from the European Union under the projects QCS, QALGO, and DIQIP, and from the F.R.S.-FNRS under the project DIQIP. S.P. acknowledges support from the Brussels-Capital Region through a BB2B grant. S.P. is a Research Associate of the Fonds de la Recherche Scientifique F.R.S.- FNRS (Belgium). J.S. was a postdoctoral researcher of the Fonds de la Recherche Scientifique F.R.S.- FNRS (Belgium) at the time this research was carried out. N.A acknowledges support from the BSF (grant no. 32/08) and the Niedersachsen-Israeli Research Cooperation Program. The Matlab toolboxes YALMIP [44] and SeDuMi [45] were used to solve the SDP problem Eq. (7).
 
 **中文译文**
 
-S.P.、S.M. 和 J.S. 感谢欧盟通过 QCS、QALGO 和 DIQIP 项目提供的资助，以及 F.R.S.-FNRS 通过 DIQIP 项目提供的资助。S.P. 感谢布鲁塞尔首都大区通过一项 BB2B 资助提供的支持。S.P. 是科学研究基金会 F.R.S.-FNRS（比利时）的研究员。开展本项研究时，J.S. 是科学研究基金会 F.R.S.-FNRS（比利时）的博士后研究员。N.A 感谢 BSF（资助编号 32/08）和下萨克森—以色列研究合作计划的支持。求解式 (7) 的 SDP 问题时使用了 Matlab 工具箱 [44] [44] 和 [45] [45]。
+S.P.、S.M. 和 J.S. 感谢欧盟通过 QCS、QALGO 和 DIQIP 项目提供的资助，以及 F.R.S.-FNRS 通过 DIQIP 项目提供的资助。S.P. 感谢布鲁塞尔首都大区通过一项 BB2B 资助提供的支持。S.P. 是科学研究基金会 F.R.S.-FNRS（比利时）的研究员。开展本项研究时，J.S. 是科学研究基金会 F.R.S.-FNRS（比利时）的博士后研究员。N.A 感谢 BSF（资助编号 32/08）和下萨克森—以色列研究合作计划的支持。求解式 (7) 的 SDP 问题时使用了 Matlab 工具箱 YALMIP [44] 和 SeDuMi [45]。

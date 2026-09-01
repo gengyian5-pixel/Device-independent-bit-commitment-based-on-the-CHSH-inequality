@@ -10,7 +10,7 @@ N. Aharon<sup>1,2</sup>、S. Massar<sup>3</sup>、S. Pironio<sup>3</sup> 和 J. 
 
 **English original**
 
-Affiliation: <sup>1</sup>School of Physics and Astronomy, Tel-Aviv University, Tel-Aviv 69978, Israel; <sup>2</sup>Racah Institute of Physics, The Hebrew University of Jerusalem, Jerusalem 91904, Israel; <sup>3</sup>Laboratoire d’Information Quantique, Université Libre de Bruxelles (ULB), 1050 Bruxelles, Belgium
+Affiliation: <sup>1</sup>School of Physics and Astronomy, Tel-Aviv University, Tel-Aviv 69978, Israel; <sup>2</sup>Racah Institute of Physics, The Hebrew University of Jerusalem, Jerusalem 91904, Israel; <sup>3</sup>Laboratoire d'Information Quantique, Université Libre de Bruxelles (ULB), 1050 Bruxelles, Belgium
 
 **中文译文**
 
@@ -39,7 +39,7 @@ Bit commitment and coin flipping occupy a unique place in the device-independent
 
 **English original**
 
-The security of cryptographic protocols, whether quantum or classical, depends on the satisfaction of certain assumptions. These include the integrity of each party’s lab and their having a trusted source of randomness to make the random choices called for by the protocol. Beyond these, classical protocols will also usually include assumptions regarding the computational power of dishonest parties. The security of quantum protocols, in contrast, is based only on the validity of quantum theory. Nevertheless, to harness this validity, assumptions regarding the implementation must be made. Most protocols make many such assumptions, including regarding the internal workings of the devices used in the implementation, e.g. specifying the Hilbert space dimension of the quantum systems used and the bases of the measurements performed. Protocols of this type are said to be device-dependent. Clearly, it is desirable to base security on a minimum number of assumptions, as this facilitates its evaluation. The aim of the device-independent approach to quantum cryptography [1, 2] is to do just that by doing away with a maximum number of assumptions regarding the implementation.
+The security of cryptographic protocols, whether quantum or classical, depends on the satisfaction of certain assumptions. These include the integrity of each party's lab and their having a trusted source of randomness to make the random choices called for by the protocol. Beyond these, classical protocols will also usually include assumptions regarding the computational power of dishonest parties. The security of quantum protocols, in contrast, is based only on the validity of quantum theory. Nevertheless, to harness this validity, assumptions regarding the implementation must be made. Most protocols make many such assumptions, including regarding the internal workings of the devices used in the implementation, e.g. specifying the Hilbert space dimension of the quantum systems used and the bases of the measurements performed. Protocols of this type are said to be device-dependent. Clearly, it is desirable to base security on a minimum number of assumptions, as this facilitates its evaluation. The aim of the device-independent approach to quantum cryptography [1, 2] is to do just that by doing away with a maximum number of assumptions regarding the implementation.
 
 **中文译文**
 
@@ -63,7 +63,7 @@ In addition to quantum key-distribution, device-independent protocols have been 
 
 **English original**
 
-A notable feature of the protocols of [30, 35] is that they are based on GHZ correlations [36, 37]. Indeed, bit commitment and coin flipping are the only examples we have of bipartite tasks, which admit a device-independent formulation, but which are not known to admit one based on CHSH testing (i.e. sequential tests of the CHSH inequality), or, more generally, on some other bipartite Bell inequality testing. This is especially interesting in light of Reichardt et al.’s recent demonstration [8] that CHSH testing can provide the basis for many device-independent applications in the most general settings where the devices have long-term quantum memory.
+A notable feature of the protocols of [30, 35] is that they are based on GHZ correlations [36, 37]. Indeed, bit commitment and coin flipping are the only examples we have of bipartite tasks, which admit a device-independent formulation, but which are not known to admit one based on CHSH testing (i.e. sequential tests of the CHSH inequality), or, more generally, on some other bipartite Bell inequality testing. This is especially interesting in light of Reichardt et al.'s recent demonstration [8] that CHSH testing can provide the basis for many device-independent applications in the most general settings where the devices have long-term quantum memory.
 
 **中文译文**
 
@@ -71,7 +71,7 @@ A notable feature of the protocols of [30, 35] is that they are based on GHZ cor
 
 **English original**
 
-In [30, 35], the pseudo-telepathic nature of GHZ correlations is exploited to circumvent the unique difficulties associated with distrustful cryptography, specifically, the fact that different parties have conflicting goals and do not trust each other. Quantum pseudo-telepathy is the term coined for the phenomenon of always winning in nonlocal games, which classically (i.e. without sharing entanglement) can only be won part of the time. A famous example is the GHZ game [38]. In particular, pseudo-telepathy entails perfect correlations. In [30] pseudo-telepathy is used to allow Bob to verify the presence of nonlocal correlations (GHZ correlations) and at the same time to verify Alice’s commitment (that the token of her commitment is consistent with the value of the bit she reveals). Crucially, Bob uses the same measurements to verify both the presence of nonlocality and the commitment.
+In [30, 35], the pseudo-telepathic nature of GHZ correlations is exploited to circumvent the unique difficulties associated with distrustful cryptography, specifically, the fact that different parties have conflicting goals and do not trust each other. Quantum pseudo-telepathy is the term coined for the phenomenon of always winning in nonlocal games, which classically (i.e. without sharing entanglement) can only be won part of the time. A famous example is the GHZ game [38]. In particular, pseudo-telepathy entails perfect correlations. In [30] pseudo-telepathy is used to allow Bob to verify the presence of nonlocal correlations (GHZ correlations) and at the same time to verify Alice's commitment (that the token of her commitment is consistent with the value of the bit she reveals). Crucially, Bob uses the same measurements to verify both the presence of nonlocality and the commitment.
 
 **中文译文**
 
@@ -87,7 +87,7 @@ Unfortunately, pseudo-telepathy is absent in the CHSH setting [39], and so it is
 
 **English original**
 
-In this work we present a device-independent bit commitment protocol, based on CHSH testing, which achieves the same security as that of [30]: (In the limit of an infinite number of tests) Alice’s control equals $\cos^{2}(\frac{\pi}{8})\simeq 0.8536$ , while Bob’s information gain equals $0.75$ . This shows that pseudo-telepathy is not only inessential for device-independent distrustful cryptography, but that its absence does not necessarily impact security. Specifically, we show how to guarantee that the devices have no way of telling whether they are used as part of the nonlocality testing phase or the verification of the commitment; this being the crucial element on which security hinges.
+In this work we present a device-independent bit commitment protocol, based on CHSH testing, which achieves the same security as that of [30]: (In the limit of an infinite number of tests) Alice's control equals $\cos^{2}(\frac{\pi}{8})\simeq 0.8536$ , while Bob's information gain equals $0.75$ . This shows that pseudo-telepathy is not only inessential for device-independent distrustful cryptography, but that its absence does not necessarily impact security. Specifically, we show how to guarantee that the devices have no way of telling whether they are used as part of the nonlocality testing phase or the verification of the commitment; this being the crucial element on which security hinges.
 
 **中文译文**
 
@@ -103,7 +103,7 @@ Our security analysis covers the case of imperfect devices (i.e. the CHSH inequa
 
 **English original**
 
-It should be noted that in our protocol the reveal time is fixed and cannot be chosen at will by Alice. Strictly speaking, the protocol is thus not a bit commitment protocol. Nevertheless, depending on the application, it may still be used as a primitive. For example, our protocol can be used to implement coin flipping. The restriction on the reveal time can be lifted at the price of increasing Alice’s cheating probability (see Appendix B), or by working in the large office scenario where instead of a pair of boxes there are many pairs (see Appendix C).
+It should be noted that in our protocol the reveal time is fixed and cannot be chosen at will by Alice. Strictly speaking, the protocol is thus not a bit commitment protocol. Nevertheless, depending on the application, it may still be used as a primitive. For example, our protocol can be used to implement coin flipping. The restriction on the reveal time can be lifted at the price of increasing Alice's cheating probability (see Appendix B), or by working in the large office scenario where instead of a pair of boxes there are many pairs (see Appendix C).
 
 **中文译文**
 
@@ -119,7 +119,7 @@ We also study the problem in a post-quantum world where both dishonest and hones
 
 **English original**
 
-The paper is structured as follows. We begin in Section II by defining the problem of bit commitment, and making explicit exactly what we mean by device-independence. Next, in Section III, we present the protocol, followed by the proofs of Alice’s and Bob’s securities in Sections IV and V, respectively. We conclude with a summary in Section VI. In Appendix A we present the post-quantum version of our protocol. Appendices B and C present modifications of the protocol where Alice can freely choose the reveal time.
+The paper is structured as follows. We begin in Section II by defining the problem of bit commitment, and making explicit exactly what we mean by device-independence. Next, in Section III, we present the protocol, followed by the proofs of Alice's and Bob's securities in Sections IV and V, respectively. We conclude with a summary in Section VI. In Appendix A we present the post-quantum version of our protocol. Appendices B and C present modifications of the protocol where Alice can freely choose the reveal time.
 
 **中文译文**
 
@@ -131,7 +131,7 @@ The paper is structured as follows. We begin in Section II by defining the probl
 
 **English original**
 
-Bit commitment is a cryptographic primitive comprising two remote, distrustful parties. Party $\mathcal{A}$ , usually referred to as Alice, commits a bit to party $\mathcal{B}$ , usually referred to as Bob, such that following her commitment Alice cannot change its value and Bob is unable to learn it until she chooses to reveal it. Classically, if the dishonest party’s computational power is unlimited, they can cheat perfectly. Quantumly, the dishonest party cannot cheat perfectly [33], though perfect bit commitment is still impossible [31, 32].
+Bit commitment is a cryptographic primitive comprising two remote, distrustful parties. Party $\mathcal{A}$ , usually referred to as Alice, commits a bit to party $\mathcal{B}$ , usually referred to as Bob, such that following her commitment Alice cannot change its value and Bob is unable to learn it until she chooses to reveal it. Classically, if the dishonest party's computational power is unlimited, they can cheat perfectly. Quantumly, the dishonest party cannot cheat perfectly [33], though perfect bit commitment is still impossible [31, 32].
 
 **中文译文**
 
@@ -139,7 +139,7 @@ Bit commitment is a cryptographic primitive comprising two remote, distrustful p
 
 **English original**
 
-A bit commitment protocol consists of two phases: the commit phase in which Alice sends Bob some token of her commitment, and the reveal phase in which Alice reveals to Bob the value of the committed bit. The probability with which dishonest Alice is able to control the value of the bit she wants to reveal following the commit phase, without being caught cheating by Bob, is referred to as Alice’s control, which we will denote by $P_{\mathrm{cont}}=\frac{1}{2}(p_{0}+p_{1})$ . Here $p_{0}$ ( $p_{1}$ ) is Alice’s probability of successfully revealing $0$ ( $1$ ) and the factor of $\frac{1}{2}$ is due to the implicit assumption that she is equally likely to wish to reveal $0$ as $1$ . Similarly, dishonest Bob’s probability of correctly learning the value of the bit before the reveal phase is referred to as Bob’s information gain, which we will denote by $P_{\mathrm{gain}}$ . In a perfect bit commitment protocol $P_{\mathrm{cont}}=P_{\mathrm{gain}}=\frac{1}{2}$ . A protocol is said to be balanced if $P_{\mathrm{cont}}=P_{\mathrm{gain}}$ . Quantumly, in any balanced protocol $P_{\mathrm{cont}}=P_{\mathrm{gain}}\gtrsim 0.739$ , with the bound being saturable [34].
+A bit commitment protocol consists of two phases: the commit phase in which Alice sends Bob some token of her commitment, and the reveal phase in which Alice reveals to Bob the value of the committed bit. The probability with which dishonest Alice is able to control the value of the bit she wants to reveal following the commit phase, without being caught cheating by Bob, is referred to as Alice's control, which we will denote by $P_{\mathrm{cont}}=\frac{1}{2}(p_{0}+p_{1})$ . Here $p_{0}$ ( $p_{1}$ ) is Alice's probability of successfully revealing $0$ ( $1$ ) and the factor of $\frac{1}{2}$ is due to the implicit assumption that she is equally likely to wish to reveal $0$ as $1$ . Similarly, dishonest Bob's probability of correctly learning the value of the bit before the reveal phase is referred to as Bob's information gain, which we will denote by $P_{\mathrm{gain}}$ . In a perfect bit commitment protocol $P_{\mathrm{cont}}=P_{\mathrm{gain}}=\frac{1}{2}$ . A protocol is said to be balanced if $P_{\mathrm{cont}}=P_{\mathrm{gain}}$ . Quantumly, in any balanced protocol $P_{\mathrm{cont}}=P_{\mathrm{gain}}\gtrsim 0.739$ , with the bound being saturable [34].
 
 **中文译文**
 
@@ -189,7 +189,7 @@ In this subsection we make more concrete exactly what we mean by device-independ
 
 5. **English original**
 
-   No information leaks out of an honest party’s lab.
+   No information leaks out of an honest party's lab.
 
    **中文译文**
 
@@ -210,7 +210,7 @@ $$
 
 **English original**
 
-where $\rho$ is some joint quantum state and $\Pi_{r^{i}|s^{i}}$ is the POVM element corresponding to inputting $s^{i}$ and outputting $r^{i}$ . This is the only constraint on the boxes’ behavior. Specifically, a dishonest party may choose the state $\rho$ and the POVM elements $\Pi_{r^{i}|s^{i}}$ as best suits them. The boxes may also have internal memories, clocks, gyroscopes, etc., allowing a dishonest party to program them such that their behavior depends on their location, their past trajectories, the time at which inputs are fed, or any other aspect of their past history.
+where $\rho$ is some joint quantum state and $\Pi_{r^{i}|s^{i}}$ is the POVM element corresponding to inputting $s^{i}$ and outputting $r^{i}$ . This is the only constraint on the boxes' behavior. Specifically, a dishonest party may choose the state $\rho$ and the POVM elements $\Pi_{r^{i}|s^{i}}$ as best suits them. The boxes may also have internal memories, clocks, gyroscopes, etc., allowing a dishonest party to program them such that their behavior depends on their location, their past trajectories, the time at which inputs are fed, or any other aspect of their past history.
 
 **中文译文**
 
@@ -218,7 +218,7 @@ where $\rho$ is some joint quantum state and $\Pi_{r^{i}|s^{i}}$ is the POVM ele
 
 **English original**
 
-In the following, we will consider situations where boxes are sent from one party to the other. By this, it is not meant that actual measurement devices are sent (though it is easier to present and formulate our results in this way). In fact, we do not assume anything beyond Alice and Bob having access to a quantum channel—as is necessarily required in quantum cryptography. What is meant is that whenever a box is sent, quantum information encoding instructions for the measurement devices (as well as the quantum state of the boxes) is exchanged between the parties, such that in an honest execution of the protocol the same state $\rho$ and the POVM elements $\Pi_{r^{i}|s^{i}}$ characterizing the behavior, say, of Alice’s box before the transmission of quantum information, will characterize the behavior of Bob’s box after receiving the transmission.
+In the following, we will consider situations where boxes are sent from one party to the other. By this, it is not meant that actual measurement devices are sent (though it is easier to present and formulate our results in this way). In fact, we do not assume anything beyond Alice and Bob having access to a quantum channel—as is necessarily required in quantum cryptography. What is meant is that whenever a box is sent, quantum information encoding instructions for the measurement devices (as well as the quantum state of the boxes) is exchanged between the parties, such that in an honest execution of the protocol the same state $\rho$ and the POVM elements $\Pi_{r^{i}|s^{i}}$ characterizing the behavior, say, of Alice's box before the transmission of quantum information, will characterize the behavior of Bob's box after receiving the transmission.
 
 **中文译文**
 

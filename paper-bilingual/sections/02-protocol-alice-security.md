@@ -121,7 +121,7 @@ We note that in an honest execution of the protocol, Bob may end up aborting the
 
 **English original**
 
-We have required that Bob’s measurements, including the one in the reveal phase, take place at fixed times $t_{i}$.[^4] This is in order to ensure that the box Bob keeps cannot tell whether it is being measured in the random selection phase or in the reveal phase (unless Bob picked $n=N$). Otherwise, Alice may program the boxes such that in the random selection phase they maximally violate the CHSH inequality, while in the reveal phase they behave deterministically, thereby allowing her to cheat perfectly. Specifically, the intervals $t_{i+1}-t_{i}$ must be sufficiently long to allow the following sequence of operations: (i) the sending of quantum information from Bob to Alice, (ii) Alice’s measurement of the quantum system received from Bob, (iii) the sending of classical information from Alice and its receipt by Bob, and (iv) Bob’s measurement of the quantum system remaining in his possession at $t_{i+1}$.
+We have required that Bob's measurements, including the one in the reveal phase, take place at fixed times $t_{i}$.[^4] This is in order to ensure that the box Bob keeps cannot tell whether it is being measured in the random selection phase or in the reveal phase (unless Bob picked $n=N$). Otherwise, Alice may program the boxes such that in the random selection phase they maximally violate the CHSH inequality, while in the reveal phase they behave deterministically, thereby allowing her to cheat perfectly. Specifically, the intervals $t_{i+1}-t_{i}$ must be sufficiently long to allow the following sequence of operations: (i) the sending of quantum information from Bob to Alice, (ii) Alice's measurement of the quantum system received from Bob, (iii) the sending of classical information from Alice and its receipt by Bob, and (iv) Bob's measurement of the quantum system remaining in his possession at $t_{i+1}$.
 
 **中文译文**
 
@@ -129,7 +129,7 @@ We have required that Bob’s measurements, including the one in the reveal phas
 
 **English original**
 
-As mentioned earlier, since the reveal time cannot be chosen at will, strictly speaking, the protocol is not a bit commitment protocol. Nevertheless, depending on the application, it may still be used as a primitive. For example, our protocol may be used to implement coin flipping. The restriction on the reveal time can be lifted at the price of increasing Alice’s control (see Appendix B), or by working in the large office scenario (see Appendix C).
+As mentioned earlier, since the reveal time cannot be chosen at will, strictly speaking, the protocol is not a bit commitment protocol. Nevertheless, depending on the application, it may still be used as a primitive. For example, our protocol may be used to implement coin flipping. The restriction on the reveal time can be lifted at the price of increasing Alice's control (see Appendix B), or by working in the large office scenario (see Appendix C).
 
 **中文译文**
 
@@ -147,7 +147,7 @@ As mentioned earlier, since the reveal time cannot be chosen at will, strictly s
 
 [^4-zh]: **中文译文** 实际上，只需要求测量 $i+1$ 在区间 $(t_{i},\,t_{i+1}]$ 内的任意时刻进行即可，只要这一时刻足够早，使得承诺阶段和揭示阶段能够在该区间的剩余时间内完成。
 
-# IV Alice’s security / Alice 的安全性
+# IV Alice's security / Alice 的安全性
 
 **English original**
 
@@ -157,11 +157,11 @@ In the following, when considering the $n+1$th measurement of the boxes, i.e. th
 
 下文在考虑盒子的第 $n+1$ 次测量，即承诺阶段和揭示阶段中进行的测量时，我们省略 $s^{i}_{n+1}$ 和 $r^{i}_{n+1}$ 的下标 $n+1$。
 
-## IV.1 Bob’s information gain / Bob 的信息增益
+## IV.1 Bob's information gain / Bob 的信息增益
 
 **English original**
 
-Alice only receives a single box from Bob and does not verify the CHSH violation. Bob’s most general cheating strategy is therefore to prepare Alice’s box in an entangled state with an ancillary system in his possession. Since in the commit phase Bob receives from Alice a single classical bit $q$, Bob will perform one out of a pair of two-outcome measurements on his ancillary system to infer Alice’s input $s^{c}$ (and consequently the committed bit $b=s^{c}-2$). We denote Bob’s binary input and output by $m$ and $g$, where $m=0$ ($m=1$) corresponds to the measurement he carries out when Alice sends $q=0$ ($q=1$), and $g$ is his guess of $s^{c}$. The probability $P\left(g\mid r^{c},\,s^{c},\,m\right)$ of obtaining the output $g$, given the input $m$, explicitly depends on Alice’s input-output pair $s^{c}$ and $r^{c}$ (or, what is the same thing, on $b$ and $r^{c}$) because Bob’s ancillary system and Alice’s box are entangled. Bob’s information gain is therefore given by:
+Alice only receives a single box from Bob and does not verify the CHSH violation. Bob's most general cheating strategy is therefore to prepare Alice's box in an entangled state with an ancillary system in his possession. Since in the commit phase Bob receives from Alice a single classical bit $q$, Bob will perform one out of a pair of two-outcome measurements on his ancillary system to infer Alice's input $s^{c}$ (and consequently the committed bit $b=s^{c}-2$). We denote Bob's binary input and output by $m$ and $g$, where $m=0$ ($m=1$) corresponds to the measurement he carries out when Alice sends $q=0$ ($q=1$), and $g$ is his guess of $s^{c}$. The probability $P\left(g\mid r^{c},\,s^{c},\,m\right)$ of obtaining the output $g$, given the input $m$, explicitly depends on Alice's input-output pair $s^{c}$ and $r^{c}$ (or, what is the same thing, on $b$ and $r^{c}$) because Bob's ancillary system and Alice's box are entangled. Bob's information gain is therefore given by:
 
 **中文译文**
 
@@ -207,11 +207,11 @@ where $\mathcal{S}$ denotes the set of all cheating strategies. Note that since 
 
 其中，$\mathcal{S}$ 表示所有作弊策略的集合。注意，由于 Alice 是诚实的，她完全随机地选取 $b$ 和 $a$，所以对于任意一对 $b$ 和 $a$，都有 $P(b,\,a)=\frac{1}{4}$。根据归一化条件和无信号约束（即 $\sum_{r^{1}=0,\,1}P(r^{0},\,r^{1}\mid s^{0},\,0)=\sum_{r^{1}=0,\,1}P(r^{0},\,r^{1}\mid s^{0},\,1)$ 以及 $\sum_{r^{0}=0,\,1}P(r^{0},\,r^{1}\mid 2,\,s^{1})=\sum_{r^{0}=0,\,1}P(r^{0},\,r^{1}\mid 3,\,s^{1})$），可得 $P(s^{1},\,0\mid 2,\,s^{1})+P(0,\,1\mid 3,\,s^{1})+P(1,\,1\mid 3,\,s^{1})\leq 1$ 和 $P\left(0,\,0\mid 2,\,0\right)+P\left(1,\,0\mid 2,\,1\right)\leq 1$，这意味着 $P_{\mathrm{gain}}\leq\frac{3}{4}$。
 
-## IV.2 Bob’s optimal cheating strategy / Bob 的最优作弊策略
+## IV.2 Bob's optimal cheating strategy / Bob 的最优作弊策略
 
 **English original**
 
-Bob’s optimal cheating strategy is to prepare Alice’s box such that $r^{c}=s^{c}-2$ and guess $b=q$. Since Alice is honest $q$ equals $r^{c}$ (and thus equals $b=s^{c}-2$) $75\%$ of the time. Alternately, Bob can employ a device-dependent strategy (i.e. where Alice’s measurements are those prescribed by the protocol). In this strategy Bob actually prepares the boxes as prescribed by the protocol. Noting that the measurement settings which correspond to $s^{\bar{c}}=0$ and $s^{c}=2$ are identical, Bob inputs $0$ into his box. Since $q$ equals Alice’s outcome $75\%$ of the time, Bob always treats it as her output. If his outcome equals $q$ Bob guesses that Alice input $2$, otherwise, he guesses that she input $3$. Whenever Alice inputs $2$, Bob’s guess is correct. Whenever Alice inputs $3$, Bob’s guess is correct only half of the time. Bob’s information gain is thus seen to equal the optimum, as well as the result of [30].
+Bob's optimal cheating strategy is to prepare Alice's box such that $r^{c}=s^{c}-2$ and guess $b=q$. Since Alice is honest $q$ equals $r^{c}$ (and thus equals $b=s^{c}-2$) $75\%$ of the time. Alternately, Bob can employ a device-dependent strategy (i.e. where Alice's measurements are those prescribed by the protocol). In this strategy Bob actually prepares the boxes as prescribed by the protocol. Noting that the measurement settings which correspond to $s^{\bar{c}}=0$ and $s^{c}=2$ are identical, Bob inputs $0$ into his box. Since $q$ equals Alice's outcome $75\%$ of the time, Bob always treats it as her output. If his outcome equals $q$ Bob guesses that Alice input $2$, otherwise, he guesses that she input $3$. Whenever Alice inputs $2$, Bob's guess is correct. Whenever Alice inputs $3$, Bob's guess is correct only half of the time. Bob's information gain is thus seen to equal the optimum, as well as the result of [30].
 
 **中文译文**
 
