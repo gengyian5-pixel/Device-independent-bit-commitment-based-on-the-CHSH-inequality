@@ -65,6 +65,10 @@ def demote_headings(text: str) -> str:
 
 def chapter(path: Path) -> str:
     text = path.read_text(encoding="utf-8").strip()
+    # Pandoc wraps $$...$$ in a display environment; align* nested inside it
+    # is invalid LaTeX, while aligned is explicitly designed for this use.
+    text = text.replace(r"\begin{align*}", r"\begin{aligned}")
+    text = text.replace(r"\end{align*}", r"\end{aligned}")
     return demote_headings(rewrite_links(text, path.parent))
 
 
