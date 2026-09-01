@@ -13,8 +13,10 @@ Study materials for reconstructing Aharon, Massar, Pironio, and Silman,
 - 中文电子书：[HTML](study-guide/build/beginner-zh.html) · [PDF](study-guide/build/beginner-zh.pdf)
 - 完整中文技术学习指南：[`study-guide-zh/README.md`](study-guide-zh/README.md)
 - 完整中文版电子书：[HTML](study-guide-zh/build/study-guide-zh.html) · [PDF](study-guide-zh/build/study-guide-zh.pdf)
-- 英文原文 + 中文译文对照：[`study-guide-bilingual/README.md`](study-guide-bilingual/README.md)
-- 英中对照电子书：[HTML](study-guide-bilingual/build/study-guide-bilingual.html) · [PDF](study-guide-bilingual/build/study-guide-bilingual.pdf)
+- 英文原文 + 中文译文对照（学习指南）：[`study-guide-bilingual/README.md`](study-guide-bilingual/README.md)
+- 学习指南英中对照电子书：[HTML](study-guide-bilingual/build/study-guide-bilingual.html) · [PDF](study-guide-bilingual/build/study-guide-bilingual.pdf)
+- **论文英中逐段对照**：[`paper-bilingual/README.md`](paper-bilingual/README.md)
+- 论文英中对照电子书：[HTML](paper-bilingual/build/paper-bilingual.html) · [PDF](paper-bilingual/build/paper-bilingual.pdf)
 
 Then read [`study-guide/00-how-to-use.md`](study-guide/00-how-to-use.md) and work through the numbered chapters. Chapter 1 also has a Chinese translation: [`study-guide/01-prerequisites.zh.md`](study-guide/01-prerequisites.zh.md).
 
@@ -29,6 +31,9 @@ To get a typeset copy with Unicode math fonts (XeLaTeX + TeX Gyre DejaVu Math), 
 ```bash
 bash scripts/build_study_guide.sh
 bash scripts/build_beginner_zh.sh
+bash scripts/build_study_guide_zh.sh
+bash scripts/build_study_guide_bilingual.sh
+bash scripts/build_paper_bilingual.sh
 ```
 
 Then open:
@@ -60,8 +65,12 @@ study-guide/          reconstruction workbook
   build/
     study-guide.html
     study-guide.pdf
+study-guide-zh/        full Chinese technical guide
+study-guide-bilingual/ paired English + Chinese study guide
+paper-bilingual/       paragraph-paired English original + Chinese translation of the paper
 scripts/
   reconstruct_figures.py
   convert_math_delimiters.py
   build_study_guide.sh
+  build_paper_bilingual.sh
 ```

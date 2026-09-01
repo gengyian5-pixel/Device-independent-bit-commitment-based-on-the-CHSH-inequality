@@ -4,19 +4,19 @@
 
 **English original**
 
-We present a device-independent bit commitment protocol using a PR box Popescu94.
+We present a device-independent bit commitment protocol using a PR box [46].
 
 **中文译文**
 
-我们提出一种使用 PR 盒 Popescu94 的设备无关比特承诺协议。
+我们提出一种使用 PR 盒 [46] 的设备无关比特承诺协议。
 
 **English original**
 
-We have seen that reformulating the GHZ-based protocol of Silman11 to be CHSH-based comes at the price of pseudo-telepathy. Indeed, quantum theory does not allow for pseudo-telepathy in a two-party, two-input setting Gisin07. However, in a post-quantum world – in which both dishonest and honest parties are restricted only by the no-signaling constraints -- pseudo-telepathy is restored. It is interesting to ask what would happen to our protocol if we were to adapt it to such a world. On the one hand, we might expect such a world to offer less security since a dishonest party would now have access to stronger correlations. On the other hand, we might expect the converse, since the protocol itself can be modified to make use of these stronger correlations. We will see that on the balance this allows for more security.[^5]
+We have seen that reformulating the GHZ-based protocol of [30] to be CHSH-based comes at the price of pseudo-telepathy. Indeed, quantum theory does not allow for pseudo-telepathy in a two-party, two-input setting [39]. However, in a post-quantum world – in which both dishonest and honest parties are restricted only by the no-signaling constraints -- pseudo-telepathy is restored. It is interesting to ask what would happen to our protocol if we were to adapt it to such a world. On the one hand, we might expect such a world to offer less security since a dishonest party would now have access to stronger correlations. On the other hand, we might expect the converse, since the protocol itself can be modified to make use of these stronger correlations. We will see that on the balance this allows for more security.[^5]
 
 **中文译文**
 
-我们已经看到，将 Silman11 中基于 GHZ 的协议改写为基于 CHSH 的协议，是以失去伪心灵感应为代价的。事实上，量子理论不允许在双方、双输入的场景中出现伪心灵感应 Gisin07。然而，在一个后量子世界中——无论不诚实方还是诚实方都只受无信号约束限制——伪心灵感应得以恢复。值得探究的是，如果我们调整协议以适应这样的世界，会发生什么。一方面，我们或许预期这样的世界安全性较低，因为不诚实方现在可以利用更强的关联。另一方面，我们也可能预期相反的结果，因为协议本身可以修改以利用这些更强的关联。我们将看到，总体而言，这会带来更高的安全性。[^5]
+我们已经看到，将 [30] 中基于 GHZ 的协议改写为基于 CHSH 的协议，是以失去伪心灵感应为代价的。事实上，量子理论不允许在双方、双输入的场景中出现伪心灵感应 [39]。然而，在一个后量子世界中——无论不诚实方还是诚实方都只受无信号约束限制——伪心灵感应得以恢复。值得探究的是，如果我们调整协议以适应这样的世界，会发生什么。一方面，我们或许预期这样的世界安全性较低，因为不诚实方现在可以利用更强的关联。另一方面，我们也可能预期相反的结果，因为协议本身可以修改以利用这些更强的关联。我们将看到，总体而言，这会带来更高的安全性。[^5]
 
 **English original**
 
@@ -50,11 +50,11 @@ In the following, it will be convenient to think of the PR box as consisting of 
 
 **English original**
 
-The PR-based protocol is essentially a simplified version of our earlier protocols with the first step (statistical estimation of the CHSH violation and random selection of the box used to encode Alice’s commitment) omitted, and with the verification of nonlocal correlations and Alice’s commitment being performed at the same time. This last possibility follows from pseudo-telepathy, as in the protocol of Silman11.
+The PR-based protocol is essentially a simplified version of our earlier protocols with the first step (statistical estimation of the CHSH violation and random selection of the box used to encode Alice’s commitment) omitted, and with the verification of nonlocal correlations and Alice’s commitment being performed at the same time. This last possibility follows from pseudo-telepathy, as in the protocol of [30].
 
 **中文译文**
 
-基于 PR 的协议本质上是我们先前协议的简化版本：省略了第一步（对 CHSH 违反进行统计估计，以及随机选择用于编码 Alice 承诺的盒），并同时执行非局域关联验证与 Alice 的承诺。后一种做法源于伪心灵感应，正如 Silman11 的协议一样。
+基于 PR 的协议本质上是我们先前协议的简化版本：省略了第一步（对 CHSH 违反进行统计估计，以及随机选择用于编码 Alice 承诺的盒），并同时执行非局域关联验证与 Alice 的承诺。后一种做法源于伪心灵感应，正如 [30] 的协议一样。
 
 **English original**
 
@@ -158,8 +158,8 @@ Alice’s optimal strategy is to prepare Bob’s box such that $P(r^{1}=0|s^{1}=
 
 Alice 的最优策略是将 Bob 的盒制备为满足 $P(r^{1}=0|s^{1}=0)=P(r^{1}=0|s^{1}=1)=1$ 的盒，即一个经典盒。
 
-[^5]: **English original:** The authors of Buhrman06 presented a perfect bit commitment protocol, assuming that honest parties have access to PR boxes and dishonest parties cannot tamper with them. We do not make these assumptions.  
-      **中文译文：** Buhrman06 的作者提出了一种完美比特承诺协议，其假设诚实方可以使用 PR 盒，且不诚实方无法篡改这些盒。我们不作这些假设。
+[^5]: **English original:** The authors of [47] presented a perfect bit commitment protocol, assuming that honest parties have access to PR boxes and dishonest parties cannot tamper with them. We do not make these assumptions.  
+      **中文译文：** [47] 的作者提出了一种完美比特承诺协议，其假设诚实方可以使用 PR 盒，且不诚实方无法篡改这些盒。我们不作这些假设。
 
 ## Appendix B / 附录 B
 
@@ -355,11 +355,11 @@ $$
 
 **English original**
 
-where $D=4+2\sqrt{2}=\left(1-\cos^{2}(\frac{\pi}{8})\right)^{-1}$ ; the $4$ coming from the $I\left(\mathrm{\mathbf{w}}_{k+1}\right)$ term and the $2\sqrt{2}$ from the $E\left(I\left(W_{k+1}\mid\mathrm{\mathbf{w}}_{k}\right)\right)$ term. The Azuma-Hoeffding inequality Azuma67 then tells us that
+where $D=4+2\sqrt{2}=\left(1-\cos^{2}(\frac{\pi}{8})\right)^{-1}$ ; the $4$ coming from the $I\left(\mathrm{\mathbf{w}}_{k+1}\right)$ term and the $2\sqrt{2}$ from the $E\left(I\left(W_{k+1}\mid\mathrm{\mathbf{w}}_{k}\right)\right)$ term. The Azuma-Hoeffding inequality [48] then tells us that
 
 **中文译文**
 
-其中 $D=4+2\sqrt{2}=\left(1-\cos^{2}(\frac{\pi}{8})\right)^{-1}$；其中的 $4$ 来自 $I\left(\mathrm{\mathbf{w}}_{k+1}\right)$ 项，$2\sqrt{2}$ 来自 $E\left(I\left(W_{k+1}\mid\mathrm{\mathbf{w}}_{k}\right)\right)$ 项。于是，Azuma-Hoeffding 不等式 Azuma67 告诉我们
+其中 $D=4+2\sqrt{2}=\left(1-\cos^{2}(\frac{\pi}{8})\right)^{-1}$；其中的 $4$ 来自 $I\left(\mathrm{\mathbf{w}}_{k+1}\right)$ 项，$2\sqrt{2}$ 来自 $E\left(I\left(W_{k+1}\mid\mathrm{\mathbf{w}}_{k}\right)\right)$ 项。于是，Azuma-Hoeffding 不等式 [48] 告诉我们
 
 **English original**
 
@@ -387,56 +387,54 @@ where $\pi_{k}\left(\varepsilon\right)$ is defined to be the union of all histor
 
 **English original**
 
-- (1) D. Mayers and A. Yao, Quantum Inf. Comput. 4, 273 (2004).
-- (2) J. Barrett, L. Hardy, and A. Kent, Phys. Rev. Lett. 95, 010503 (2005).
-- (3) J.F. Clauser et al., Phys. Rev. Lett. 23, 880 (1969).
-- (4) A. Acín et al., Phys. Rev. Lett. 98, 230501 (2007).
-- (5) S. Pironio et al., New J. Phys. 11, 045021 (2009).
-- (6) M. McKague, New J. Phys. 11, 103037 (2009).
-- (7) Ll. Masanes, S. Pironio, and A. Acín, Nat. Commun. 2, 238 (2011).
-- (8) B.W. Reichardt, F. Unger, and U. Vazirani, Nature 496, 456 (2013); B.W. Reichardt, F. Unger, and U. Vazirani, arXiv:1209.0448.
-- (9) S. Pironio et al., Phys. Rev. X 3, 031007 (2013).
-- (10) U. Vazirani and T. Vidick, arXiv:1210.1810.
-- (11) F. Magniez et al., in Proceedings of the 33rd International Colloquium on Automata, Languages and Programming (Springer, 2006), p. 72.
-- (12) A. Acín, N. Gisin, and Ll. Masanes, Phys. Rev. Lett. 97, 120405 (2006).
-- (13) F. Xu, B. Qi, and H.-K. Lo, New J. Phys. 12, 113026 (2010).
-- (14) L. Lydersen et al., Nat. Photonics 4, 686 (2010).
-- (15) R. Colbeck, PhD dissertation, Univ. Cambridge (2007), arXiv:0911.3814; R. Colbeck and A. Kent, J. Phys. A 44, 095305 (2011).
-- (16) S. Pironio et al., Nature 464, 1021 (2010).
-- (17) S. Pironio and S. Massar, Phys. Rev. A 87, 012336 (2013).
-- (18) S. Fehr, R. Gelles, and C. Schaffner, Phys. Rev. A 87, 012335 (2013).
-- (19) U. Vazirani and T. Vidick, Phil. Trans. R. Soc. A 370, 3432 (2012).
-- (20) C. A. Miller and Y. Shi, arXiv:1402.0489.
-- (21) M. Coudron and H. Yuen, arXiv:1310.6755.
-- (22) M. McKague and M. Mosca, in Proceedings of the 5th Conference on the Theory of Quantum Computation, Communication, and Cryptography (Springer, 2011), p. 113.
-- (23) C.-E. Bardyn et al., Phys. Rev. A 80, 062327 (2009).
-- (24) M. McKague, T.H. Yang, and V. Scarani, J. Phys. A 45, 455304 (2012).
-- (25) T.-H. Yang and M. Navascués, Phys. Rev. A 87, 050102(R) (2013).
-- (26) T.-H. Yang et al., Phys. Rev. Lett. 113, 040401 (2014).
-- (27) C. Bamps and S. Pironio, Phys. Rev. A 91, 052111 (2015).
-- (28) J.-D. Bancal et al., Phys. Rev. Lett. 106, 250404 (2011).
-- (29) T. Moroder et al., Phys. Rev. Lett. 111, 030501 (2013).
-- (30) J. Silman et al., Phys. Rev. Lett. 106, 220501 (2011).
-- (31) H.-K. Lo and H.F. Chau, Phys. Rev. Lett. 78, 3410 (1997).
-- (32) D. Mayers, Phys. Rev. Lett. 78, 3414 (1997).
-- (33) R.W. Spekkens and T. Rudolph, Phys. Rev. A 65, 012310 (2001).
-- (34) A. Chailloux and I. Kerenidis, in Proceedings of the 52nd Annual Symposium on Foundations of Computer Science (CS Press, 2011), p. 354.
-- (35) N. Aharon et al., in Proceedings of the 6th Conference on the Theory of Quantum Computation, Communication, and Cryptography (Springer, 2014), p. 1.
-- (36) D.M. Greenberger, M.A. Horne, and A. Zeilinger, in Bell’s Theorem, Quantum Theory, and Conceptions of the Universe (Kluwer, 1989), p. 74.
-- (37) N.D. Mermin, Phys. Today 43, 9 (1990).
-- (38) L. Vaidman, Found. Phys. 29, 615 (1999).
-- (39) N. Gisin. A.A. Méthot, and V. Scarani, Int. J. Quant. Inf. 5, 525 (2007).
-- (40) A. Kent, Phys. Rev. Lett. 83, 1447 (1999).
-- (41) E. Adlam and A. Kent, Phys. Rev. A 92, 022315 (2015).
-- (42) M. Navascués, S. Pironio, and A. Acín, Phys. Rev. Lett. 98, 010401 (2007); M. Navascués, S. Pironio, and A. Acín, New J. Phys. 10, 073013 (2008).
-- (43) S. Pironio, M. Navascués, and A. Acín, SIAM J. Optim. 20, 2157 (2010).
-- (44) M.A. Nielsen and C.L. Chuang, Quantum Information and Quantum Computation (Cambridge University Press, 2000).
-- (45) R.F. Werner, Phys. Rev. A 40, 4277 (1989).
-- (46) J. Löfberg, YALMIP: A Toolbox for Modeling and Optimization in MATLAB. Available at http://users.isy.liu.se/johanl/yalmip.
-- (47) J.F. Sturm and I. Pólik, SeDuMi: a package for conic optimization. Available at http://sedumi.ie.lehigh.edu.
-- (48) S. Popescu and D. Rohrlich, Found. Phys. 24, 379 (1994).
-- (49) H. Buhrman et al., Proc. R. Soc. A 462, 1919 (2006).
-- (50) K. Azuma, Tohoku Math. J. 19, 357 (1967).
+- [1] D. Mayers and A. Yao, Quantum Inf. Comput. 4, 273 (2004).
+- [2] J. Barrett, L. Hardy, and A. Kent, Phys. Rev. Lett. 95, 010503 (2005).
+- [3] J.F. Clauser et al., Phys. Rev. Lett. 23, 880 (1969).
+- [4] A. Acín et al., Phys. Rev. Lett. 98, 230501 (2007).
+- [5] S. Pironio et al., New J. Phys. 11, 045021 (2009).
+- [6] M. McKague, New J. Phys. 11, 103037 (2009).
+- [7] Ll. Masanes, S. Pironio, and A. Acín, Nat. Commun. 2, 238 (2011).
+- [8] B.W. Reichardt, F. Unger, and U. Vazirani, Nature 496, 456 (2013); B.W. Reichardt, F. Unger, and U. Vazirani, arXiv:1209.0448.
+- [9] S. Pironio et al., Phys. Rev. X 3, 031007 (2013).
+- [10] U. Vazirani and T. Vidick, arXiv:1210.1810.
+- [11] F. Magniez et al., in Proceedings of the 33rd International Colloquium on Automata, Languages and Programming (Springer, 2006), p. 72.
+- [12] A. Acín, N. Gisin, and Ll. Masanes, Phys. Rev. Lett. 97, 120405 (2006).
+- [13] F. Xu, B. Qi, and H.-K. Lo, New J. Phys. 12, 113026 (2010).
+- [14] L. Lydersen et al., Nat. Photonics 4, 686 (2010).
+- [15] R. Colbeck, PhD dissertation, Univ. Cambridge (2007), arXiv:0911.3814; R. Colbeck and A. Kent, J. Phys. A 44, 095305 (2011).
+- [16] S. Pironio et al., Nature 464, 1021 (2010).
+- [17] S. Pironio and S. Massar, Phys. Rev. A 87, 012336 (2013).
+- [18] S. Fehr, R. Gelles, and C. Schaffner, Phys. Rev. A 87, 012335 (2013).
+- [19] U. Vazirani and T. Vidick, Phil. Trans. R. Soc. A 370, 3432 (2012).
+- [20] C. A. Miller and Y. Shi, arXiv:1402.0489.
+- [21] M. Coudron and H. Yuen, arXiv:1310.6755.
+- [22] M. McKague and M. Mosca, in Proceedings of the 5th Conference on the Theory of Quantum Computation, Communication, and Cryptography (Springer, 2011), p. 113.
+- [23] C.-E. Bardyn et al., Phys. Rev. A 80, 062327 (2009).
+- [24] M. McKague, T.H. Yang, and V. Scarani, J. Phys. A 45, 455304 (2012).
+- [25] T.-H. Yang and M. Navascués, Phys. Rev. A 87, 050102(R) (2013).
+- [26] T.-H. Yang et al., Phys. Rev. Lett. 113, 040401 (2014).
+- [27] C. Bamps and S. Pironio, Phys. Rev. A 91, 052111 (2015).
+- [28] J.-D. Bancal et al., Phys. Rev. Lett. 106, 250404 (2011).
+- [29] T. Moroder et al., Phys. Rev. Lett. 111, 030501 (2013).
+- [30] J. Silman et al., Phys. Rev. Lett. 106, 220501 (2011).
+- [31] H.-K. Lo and H.F. Chau, Phys. Rev. Lett. 78, 3410 (1997).
+- [32] D. Mayers, Phys. Rev. Lett. 78, 3414 (1997).
+- [33] R.W. Spekkens and T. Rudolph, Phys. Rev. A 65, 012310 (2001).
+- [34] A. Chailloux and I. Kerenidis, in Proceedings of the 52nd Annual Symposium on Foundations of Computer Science (CS Press, 2011), p. 354.
+- [35] N. Aharon et al., in Proceedings of the 6th Conference on the Theory of Quantum Computation, Communication, and Cryptography (Springer, 2014), p. 1.
+- [36] D.M. Greenberger, M.A. Horne, and A. Zeilinger, in Bell’s Theorem, Quantum Theory, and Conceptions of the Universe (Kluwer, 1989), p. 74.
+- [37] N.D. Mermin, Phys. Today 43, 9 (1990).
+- [38] L. Vaidman, Found. Phys. 29, 615 (1999).
+- [39] N. Gisin. A.A. Méthot, and V. Scarani, Int. J. Quant. Inf. 5, 525 (2007).
+- [40] A. Kent, Phys. Rev. Lett. 83, 1447 (1999).
+- [41] E. Adlam and A. Kent, Phys. Rev. A 92, 022315 (2015).
+- [42] M. Navascués, S. Pironio, and A. Acín, Phys. Rev. Lett. 98, 010401 (2007); M. Navascués, S. Pironio, and A. Acín, New J. Phys. 10, 073013 (2008).
+- [43] S. Pironio, M. Navascués, and A. Acín, SIAM J. Optim. 20, 2157 (2010).
+- [44] J. Löfberg, YALMIP: A Toolbox for Modeling and Optimization in MATLAB. Available at http://users.isy.liu.se/johanl/yalmip.
+- [45] J.F. Sturm and I. Pólik, SeDuMi: a package for conic optimization. Available at http://sedumi.ie.lehigh.edu.
+- [46] S. Popescu and D. Rohrlich, Found. Phys. 24, 379 (1994).
+- [47] H. Buhrman et al., Proc. R. Soc. A 462, 1919 (2006).
+- [48] K. Azuma, Tohoku Math. J. 19, 357 (1967).
 
 **中文译文**
 
