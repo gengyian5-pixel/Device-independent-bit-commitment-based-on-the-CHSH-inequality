@@ -65,6 +65,18 @@ def demote_headings(text: str) -> str:
 
 def chapter(path: Path) -> str:
     text = path.read_text(encoding="utf-8").strip()
+    if path.name == "unicode-math.md":
+        # Route glyphs absent from the CJK body font through unicode-math.
+        replacements = {
+            "⟨ ⟩": r"$\langle\ \rangle$",
+            "ℝ": r"$\mathbb{R}$",
+            "ℂ": r"$\mathbb{C}$",
+            "𝟙": r"$\mathbb{1}$",
+            "∘": r"$\circ$",
+            "∼": r"$\sim$",
+        }
+        for plain, math in replacements.items():
+            text = text.replace(plain, math)
     # Pandoc wraps $$...$$ in a display environment; align* nested inside it
     # is invalid LaTeX, while aligned is explicitly designed for this use.
     text = text.replace(r"\begin{align*}", r"\begin{aligned}")
