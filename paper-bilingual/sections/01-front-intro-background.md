@@ -46,11 +46,11 @@ More specifically, a cryptographic protocol is said to be device-independent if 
 
 **English original**
 
-In addition to quantum key-distribution, device-independent protocols have been introduced for diverse tasks such as randomness generation Colbeck07; Pironio10A; Pironio13A; Fehr13; Vazirani12A; MillerShi; Coudron, the self-testing of quantum computers Mayers04; Magniez06; McKague11; Reichardt13A, state estimation Bardyn09; McKague12; Yang12; Yang13; Bamps, genuine multipartite entanglement certification Bancal11, and entanglement quantification Moroder13. However, until recently it was not known whether the scope of the device-independent approach also covers protocols in the distrustful cryptography class, where the parties do not trust each other and may have conflicting goals. Problems in this class present us with an extra challenge in device-independent settings as compared to tasks such as quantum-key distribution. Namely, how to allow remote distrustful parties to certify the presence of nonlocality without collaborating. In Silman11 it was shown that imperfect bit commitment[^1] admits a device-independent formulation, and, since bit commitment may serve as a primitive for coin flipping, so does coin flipping (a device-independent coin flipping protocol, not based on bit commitment, was also introduced in Aharon14). Whether these results extend to all problems in the distrustful cryptography class remains an open question.
+In addition to quantum key-distribution, device-independent protocols have been introduced for diverse tasks such as randomness generation Colbeck07; Pironio10A; Pironio13A; Fehr13; Vazirani12A; MillerShi; Coudron, the self-testing of quantum computers Mayers04; Magniez06; McKague11; Reichardt13A, state estimation Bardyn09; McKague12; Yang12; Yang13; Bamps, genuine multipartite entanglement certification Bancal11, and entanglement quantification Moroder13. However, until recently it was not known whether the scope of the device-independent approach also covers protocols in the distrustful cryptography class, where the parties do not trust each other and may have conflicting goals. Problems in this class present us with an extra challenge in device-independent settings as compared to tasks such as quantum-key distribution. Namely, how to allow remote distrustful parties to certify the presence of nonlocality without collaborating. In Silman11 it was shown that imperfect bit commitment<sup>1</sup> admits a device-independent formulation, and, since bit commitment may serve as a primitive for coin flipping, so does coin flipping (a device-independent coin flipping protocol, not based on bit commitment, was also introduced in Aharon14). Whether these results extend to all problems in the distrustful cryptography class remains an open question.
 
 **中文译文**
 
-除量子密钥分发之外，人们还针对多种任务提出了设备无关协议，例如随机数生成 Colbeck07; Pironio10A; Pironio13A; Fehr13; Vazirani12A; MillerShi; Coudron、量子计算机自测试 Mayers04; Magniez06; McKague11; Reichardt13A、量子态估计 Bardyn09; McKague12; Yang12; Yang13; Bamps、真正多方纠缠认证 Bancal11 和纠缠量化 Moroder13。然而，直到最近，人们仍不知道设备无关方法的适用范围是否也涵盖互不信任密码学（distrustful cryptography）这一类协议；在这类协议中，各方互不信任，并且目标可能相互冲突。与量子密钥分发等任务相比，这一类问题在设备无关情形下带来了额外挑战，即如何让彼此不信任的远程参与方在不合作的情况下认证非定域性的存在。Silman11 表明，不完美比特承诺[^1]可以采用设备无关表述；又因为比特承诺可以作为抛硬币的密码学原语，所以抛硬币同样可以采用设备无关表述（Aharon14 还提出了一种不基于比特承诺的设备无关抛硬币协议）。这些结果能否推广到互不信任密码学类的所有问题，仍是一个开放问题。
+除量子密钥分发之外，人们还针对多种任务提出了设备无关协议，例如随机数生成 Colbeck07; Pironio10A; Pironio13A; Fehr13; Vazirani12A; MillerShi; Coudron、量子计算机自测试 Mayers04; Magniez06; McKague11; Reichardt13A、量子态估计 Bardyn09; McKague12; Yang12; Yang13; Bamps、真正多方纠缠认证 Bancal11 和纠缠量化 Moroder13。然而，直到最近，人们仍不知道设备无关方法的适用范围是否也涵盖互不信任密码学（distrustful cryptography）这一类协议；在这类协议中，各方互不信任，并且目标可能相互冲突。与量子密钥分发等任务相比，这一类问题在设备无关情形下带来了额外挑战，即如何让彼此不信任的远程参与方在不合作的情况下认证非定域性的存在。Silman11 表明，不完美比特承诺<sup>1</sup>可以采用设备无关表述；又因为比特承诺可以作为抛硬币的密码学原语，所以抛硬币同样可以采用设备无关表述（Aharon14 还提出了一种不基于比特承诺的设备无关抛硬币协议）。这些结果能否推广到互不信任密码学类的所有问题，仍是一个开放问题。
 
 **English original**
 
@@ -225,12 +225,12 @@ Finally, we wish to emphasize that spacelike related measurements are not necess
 
 ---
 
-**English original — Footnote 1**
+#### Footnote 1 / 脚注 1
+
+**English original**
 
 While quantum mechanics does not allow for perfect bit commitment Lo97; Mayers97, imperfect bit commitment is nevertheless possible Spekkens01; Chailloux11.
 
-**中文译文 — 脚注 1**
+**中文译文**
 
 尽管量子力学不允许完美比特承诺 Lo97; Mayers97，但不完美比特承诺仍然是可能的 Spekkens01; Chailloux11。
-
-[^1]: See the bilingual footnote at the end of this file. / 见文末英中对照脚注。
